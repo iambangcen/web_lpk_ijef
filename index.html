@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPK IJEF - LPK Pelatihan Kerja ke Jepang</title>
+  
+  <!-- Font Google & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Canvas untuk Animasi Kelopak Sakura -->
+  <canvas id="sakura-canvas"></canvas>
+
+<!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        LPK <span>IJEF</span>
+      </a>
+
+      <!-- Tombol Hamburger untuk HP -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Overlay Gelap saat Sidebar Buka -->
+      <div class="nav-overlay" id="nav-overlay"></div>
+
+      <!-- Menu Navigation / Floating Sidebar -->
+      <ul class="nav-links" id="nav-links">
+        <!-- Tombol Close di Sidebar -->
+        <li class="close-menu-item">
+          <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+        <li><a href="#hero">Beranda</a></li>
+        <li><a href="#tentang">Tentang Kami</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#alur">Alur Pendaftaran</a></li>
+        <li><a href="#kontak" class="btn-primary">Daftar Sekarang</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-content">
+      <span class="badge-tag"><i class="fa-solid fa-flower"></i> Lembaga Pelatihan Kerja Jepang</span>
+      <h1>Wujudkan Impian Berkarier di Jepang Bersama <span>LPK IJEF</span></h1>
+      <p>Pusat pelatihan bahasa dan keterampilan kerja profesional dengan standar kurikulum Jepang terintegrasi.</p>
+      <div class="hero-buttons">
+        <a href="#program" class="btn-primary">Lihat Program</a>
+        <a href="#kontak" class="btn-secondary">Konsultasi Gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="tentang" class="section-padding">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2>Mengapa Memilih <span>LPK IJEF</span>?</h2>
+        <p>LPK IJEF berkomitmen mencetak tenaga kerja terampil, berkarakter, dan siap bersaing di dunia industri Jepang melalui program pelatihan Bahasa Jepang serta pembentukan fisik dan mental.</p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-circle-check"></i> Pengajar berpengalaman sertifikasi Jepang</li>
+          <li><i class="fa-solid fa-circle-check"></i> Kurikulum terpadu (N5 hingga N3 + Keterampilan Teknis)</li>
+          <li><i class="fa-solid fa-circle-check"></i> Pendampingan resmi hingga proses keberangkatan</li>
+        </ul>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <h3>500+</h3>
+          <p>Siswa Terlatih</p>
+        </div>
+        <div class="stat-card">
+          <h3>98%</h3>
+          <p>Kelulusan Ujian</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Section -->
+  <section id="program" class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Program <span>Pelatihan</span></h2>
+        <p>Pilih jalur karir yang sesuai dengan minat dan kualifikasi Anda</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>Tokutei Ginou (SSW)</h3>
+          <p>Program pekerja berkeahlian spesifik untuk tenaga kerja siap pakai di sektor manufaktur, perawat, dan pengolahan makanan.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3>Ginou Jisshusei (Magang)</h3>
+          <p>Program pemagangan kerja untuk mempelajari teknologi dan budaya kerja industri Jepang secara langsung.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-language"></i></div>
+          <h3>Intensif Bahasa Jepang</h3>
+          <p>Kelas kursus persiapan ujian JLPT (N5 - N3) dan JFT-Basic dengan metode belajar cepat dan efektif.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281234567890" class="wa-float" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer class="footer-with-bg">
+  <!-- Layer Overlay Transparan agar Teks Terbaca Jelas -->
+  <div class="footer-overlay"></div>
+
+  <div class="container footer-container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>LPK <span>IJEF</span></h3>
+        <p>Lembaga Pelatihan Kerja Terpercaya untuk Persiapan Karir di Jepang.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Kontak Asrama</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua Kabupaten Bandung Barat, Jawa Barat 40551</p>
+        <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 LPK IJEF. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

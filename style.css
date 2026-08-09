@@ -1,0 +1,562 @@
+:root {
+  /* Navy sebagai Warna Utama & Dominan */
+  --dark-navy: #0f172a;       /* Navy Gelap (Footer, Text) */
+  --primary-navy: #1e3a8a;    /* Navy Utama (Tombol Utama Desktop) */
+  --bright-navy: #2563eb;     /* Navy Terang (Aksen Icon, Badge, Highlight Teks) */
+  --navy-light-bg: #f8fafc;   /* Background Netral Biru/Sangat Terang */
+  
+  /* Pink Aksen Sakura */
+  --primary-pink: #f472b6;    
+  --soft-pink: #fce7f3;       
+  
+  /* Teks & Latar Belakang */
+  --text-color: #334155;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Canvas Sakura Background */
+#sakura-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   SMOOTH FLOATING NAVBAR (EFEK SCROLL HALUS & TIDAK KOTAK)
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 15px;                  /* Mengambang dari atas layar */
+  left: 50%;
+  transform: translateX(-50%); /* Mengetengahkan navbar */
+  width: 92%;                 /* Beri celah samping agar tidak kaku/menempel di tepi */
+  max-width: 1200px;
+  border-radius: 50px;         /* Ujung melengkung sempurna (Pill-shape) */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+  z-index: 1000;
+  /* Transisi ultra smooth saat di-scroll */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tampilan Navbar Saat Halaman Di-Scroll Ke Bawah */
+.navbar.scrolled {
+  top: 10px;
+  width: 95%;
+  background: rgba(15, 23, 42, 0.88); /* Berubah menjadi Navy Kaca saat scroll */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.25);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  padding: 0 25px;
+  transition: height 0.3s ease;
+}
+
+.navbar.scrolled .nav-container {
+  height: 60px; /* Sedikit memendek halus saat scroll */
+}
+
+/* Brand Logo */
+.brand-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.brand-logo span {
+  color: var(--bright-navy);
+  transition: color 0.3s;
+}
+
+.navbar.scrolled .brand-logo {
+  color: var(--white);
+}
+
+.navbar.scrolled .brand-logo span {
+  color: var(--primary-pink);
+}
+
+/* Menu Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--bright-navy);
+}
+
+.navbar.scrolled .nav-links a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.scrolled .nav-links a:hover {
+  color: var(--primary-pink);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-navy);
+  color: var(--white) !important;
+  padding: 9px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--bright-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.navbar.scrolled .btn-primary {
+  background-color: var(--primary-pink);
+  color: var(--white) !important;
+}
+
+.navbar.scrolled .btn-primary:hover {
+  background-color: #e11d48;
+  box-shadow: 0 4px 15px rgba(244, 114, 182, 0.4);
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary-navy);
+  color: var(--primary-navy);
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: all 0.3s;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-navy);
+  color: var(--white);
+}
+
+/* Pembungkus Tombol Hero / CTA (Untuk Layar Lebar/Desktop) */
+.hero-buttons,
+.cta-buttons,
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   HERO & SECTIONS
+   ========================================================================== */
+.hero-section {
+  padding: 130px 0 35px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
+  text-align: center;
+}
+
+.badge-tag {
+  background-color: #e0e7ff;
+  color: var(--bright-navy);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  color: var(--dark-navy);
+  margin: 20px 0;
+}
+
+.hero-content h1 span {
+  color: var(--bright-navy);
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 1.1rem;
+}
+
+.section-padding {
+  padding: 45px 0;
+}
+
+.bg-light {
+  background-color: var(--navy-light-bg);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  color: var(--dark-navy);
+}
+
+.section-header h2 span {
+  color: var(--bright-navy);
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #f1f5f9;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--bright-navy);
+  margin-bottom: 15px;
+}
+
+/* About Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.feature-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.feature-list li {
+  margin-bottom: 10px;
+}
+
+.feature-list i {
+  color: var(--bright-navy);
+  margin-right: 8px;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-card {
+  background: #f1f5f9;
+  border-left: 4px solid var(--bright-navy);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  color: var(--dark-navy);
+  font-weight: 700;
+}
+
+/* Floating WhatsApp */
+.wa-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   FOOTER DENGAN BACKGROUND FOTO KEGIATAN ASRAMA
+   ========================================================================== */
+footer.footer-with-bg {
+  position: relative;
+  /* Ganti URL gambar di bawah dengan path foto kegiatan asrama Anda */
+  background-image: url('assets/images/kegiatan-asrama.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efek parallax saat di-scroll */
+  color: var(--white);
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+/* Overlay Navy Transparan di Atas Foto */
+.footer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg, 
+    rgba(15, 23, 42, 0.88) 0%, 
+    rgba(30, 58, 138, 0.82) 100%
+  );
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/* Memastikan Konten Footer Berada di Atas Overlay */
+.footer-container {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-brand h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-brand h3 span {
+  color: var(--primary-pink);
+}
+
+.footer-contact h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #93c5fd; /* Soft Navy Light */
+}
+
+.footer-contact p {
+  margin-bottom: 8px;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  color: var(--primary-pink);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   MOBILE NAVIGATION & RESPONSIVE (LAYAR HP <= 768px)
+   ========================================================================== */
+.menu-toggle, .close-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--dark-navy);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar.scrolled .menu-toggle {
+  color: var(--white);
+}
+
+.close-menu-item {
+  display: none;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    width: 92%;
+    border-radius: 30px;
+  }
+  .hero-section {
+    padding: 120px 0 40px; /* Lebih rapat lagi di HP */
+  }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+  .menu-toggle, .close-menu-item {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    width: 260px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 20px;
+    gap: 18px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+    z-index: 1002;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-links.active {
+    right: 20px;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: var(--dark-navy) !important;
+  }
+
+  .nav-links a:hover {
+    background-color: #f1f5f9;
+    color: var(--bright-navy) !important;
+  }
+
+  /* MEMASTIKAN TOMBOL DAFTAR DI SIDEBAR HP TETAP HIJAU TERANG */
+  .nav-links .btn-primary,
+  .navbar.scrolled .nav-links .btn-primary {
+    background-color: #10b981 !important; /* Hijau Terang / Emerald */
+    color: #ffffff !important;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links .btn-primary:hover,
+  .navbar.scrolled .nav-links .btn-primary:hover {
+    background-color: #059669 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  }
+
+  /* PERBAIKAN TOMBOL HERO DI HP (SUPAYA TIDAK MEPET / MENUMPUK RAPI VETIKAL) */
+  .hero-buttons,
+  .cta-buttons,
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    margin-left: 0 !important; /* Menghapus offset margin kiri desktop */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
