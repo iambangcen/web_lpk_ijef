@@ -1,3 +1,6 @@
+// Popup muncul tepat setelah struktur HTML selesai dimuat
+    alert("cek bro waktu aktual server: " + new Date().toLocaleTimeString());
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Elemen Navigasi & Mobile Side Menu
   const menuToggle = document.querySelector('.menu-toggle');
@@ -5,9 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
   const navOverlay = document.querySelector('.nav-overlay');
   const navbar = document.querySelector('.navbar');
-
-  // Popup muncul tepat setelah struktur HTML selesai dimuat
-    alert("cek bro waktu aktual server: " + new Date().toLocaleTimeString());
   
   // Fungsi Buka Menu Mobile
   const openMenu = () => {
