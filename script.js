@@ -124,3 +124,5 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
   }
 });
+
+alert("cek waktu aktual server harus sesuai bro :D " + new Date().toLocaleTimeString());
