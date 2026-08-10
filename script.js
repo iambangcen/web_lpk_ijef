@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navOverlay = document.querySelector('.nav-overlay');
   const navbar = document.querySelector('.navbar');
 
+  // Popup muncul tepat setelah struktur HTML selesai dimuat
+    alert("cek bro waktu aktual server: " + new Date().toLocaleTimeString());
+  
   // Fungsi Buka Menu Mobile
   const openMenu = () => {
     navLinks.classList.add('active');
