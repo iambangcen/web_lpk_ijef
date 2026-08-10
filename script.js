@@ -125,7 +125,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Popup muncul tepat setelah struktur HTML selesai dimuat
-document.addEventListener("DOMContentLoaded", () => {
-    alert("cek bro waktu aktual server: " + new Date().toLocaleTimeString());
-});
