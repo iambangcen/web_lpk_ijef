@@ -102,16 +102,6 @@ body {
   flex-shrink: 0;     /* Mencegah gambar terdistorsi saat layar menyempit */
 }
 
-.nav-logo-img {
-  height: 34px;
-  width: 34px;
-  object-fit: contain;
-  border-radius: 50%;
-  background-color: #ffffff;
-  padding: 2px;
-  flex-shrink: 0;
-}
-
 .brand-logo span {
   color: var(--bright-navy);
   transition: color 0.3s;
