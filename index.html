@@ -8,24 +8,21 @@
   <!-- Font Google & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
-  <script>// Popup muncul tepat setelah struktur HTML selesai dimuat
-    alert("cek bro waktu aktual server: " + new Date().toLocaleTimeString());
-</script>
 </head>
 <body>
 
   <!-- Canvas untuk Animasi Kelopak Sakura -->
   <canvas id="sakura-canvas"></canvas>
 
-<!-- Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-container">
       <a href="#" class="brand-logo">
-        LPK <span>IJEF</span>
+        LPK <span>IJEF Corp.</span>
       </a>
 
       <!-- Tombol Hamburger untuk HP -->
@@ -36,17 +33,49 @@
       <!-- Overlay Gelap saat Sidebar Buka -->
       <div class="nav-overlay" id="nav-overlay"></div>
 
-      <!-- Menu Navigation / Floating Sidebar -->
+      <!-- Menu Navigation / Floating Sidebar Mobile -->
       <ul class="nav-links" id="nav-links">
-        <!-- Tombol Close di Sidebar -->
-        <li class="close-menu-item">
+        
+        <!-- Header Sidebar (Logo Lingkaran di HP) -->
+        <li class="sidebar-header">
+          <div class="logo-wrapper">
+            <img src="assets/ijefcorplogo.jpeg" alt="Logo LPK IJEF" class="sidebar-logo">
+          </div>
           <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
         </li>
+
         <li><a href="#hero">Beranda</a></li>
-        <li><a href="#tentang">Tentang Kami</a></li>
+
+        <!-- Dropdown Menu: Profile -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Profile</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="company-profile.html">Company Profile <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#izin">Izin S.O <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#team">Our Team <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#lokasi">Lokasi Pendidikan & Pelatihan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#kantor">Alamat Kantor Pusat <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Informasi -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Informasi</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+          </ul>
+        </li>
+
         <li><a href="#program">Program</a></li>
         <li><a href="#alur">Alur Pendaftaran</a></li>
-        <li><a href="#kontak" class="btn-primary">Daftar Sekarang</a></li>
+        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
       </ul>
     </div>
   </nav>
@@ -121,29 +150,88 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
+<!-- Footer -->
   <footer class="footer-with-bg">
-  <!-- Layer Overlay Transparan agar Teks Terbaca Jelas -->
-  <div class="footer-overlay"></div>
+    <div class="footer-overlay"></div>
+    <div class="container footer-container">
 
-  <div class="container footer-container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3>LPK <span>IJEF</span></h3>
-        <p>Lembaga Pelatihan Kerja Terpercaya untuk Persiapan Karir di Jepang.</p>
-      </div>
-      <div class="footer-contact">
-        <h4>Kontak Asrama</h4>
-        <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua Kabupaten Bandung Barat, Jawa Barat 40551</p>
-        <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2026 LPK IJEF. All Rights Reserved.</p>
-    </div>
-  </div>
-</footer>
+      <!-- Card Kontak WhatsApp Variant Landscape -->
+      <div class="footer-contact-card contact-landscape">
+        <div class="contact-header text-center">
+          <h3>Layanan Kontak & Pendaftaran</h3>
+        </div>
 
+        <div class="contact-grid">
+          <!-- Admin Matching Job -->
+          <div class="contact-card-item">
+            <div class="contact-info">
+              <div class="contact-icon-wrapper">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Salma</h4>
+                <span class="role-badge">Admin Matching Job</span>
+              </div>
+            </div>
+            <a href="https://wa.me/6282130826893" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
+              <i class="fa-brands fa-whatsapp"></i> Chat
+            </a>
+          </div>
+
+          <!-- Admin Penerimaan Siswa -->
+          <div class="contact-card-item">
+            <div class="contact-info">
+              <div class="contact-icon-wrapper">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Mira Tania</h4>
+                <span class="role-badge">Admin Penerimaan Siswa</span>
+              </div>
+            </div>
+            <a href="https://wa.me/6285722355853" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
+              <i class="fa-brands fa-whatsapp"></i> Chat
+            </a>
+          </div>
+
+          <!-- Sales -->
+          <div class="contact-card-item">
+            <div class="contact-info">
+              <div class="contact-icon-wrapper">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Agus Herlan</h4>
+                <span class="role-badge">Kontak Sales</span>
+              </div>
+            </div>
+            <a href="https://wa.me/6283842849749" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
+              <i class="fa-brands fa-whatsapp"></i> Chat
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Konten Utama Footer -->
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>LPK <span>IJEF</span></h3>
+          <p>Lembaga Pelatihan Kerja Terpercaya untuk Persiapan Karir di Jepang.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Alamat Kantor</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua Kabupaten Bandung Barat, Jawa Barat 40551</p>
+          <p><i class="fas fa-phone"></i> +62 belom ada nomor office</p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 LPK IJEF Corp. All Rights Reserved.</p>
+      </div>
+
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>

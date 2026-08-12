@@ -1,15 +1,17 @@
 :root {
-  /* Navy sebagai Warna Utama & Dominan */
-  --dark-navy: #0f172a;       /* Navy Gelap (Footer, Text) */
-  --primary-navy: #1e3a8a;    /* Navy Utama (Tombol Utama Desktop) */
-  --bright-navy: #2563eb;     /* Navy Terang (Aksen Icon, Badge, Highlight Teks) */
-  --navy-light-bg: #f8fafc;   /* Background Netral Biru/Sangat Terang */
+  /* Navy & Dark Theme Colors */
+  --dark-navy: #0f172a;
+  --primary-navy: #1e3a8a;
+  --bright-navy: #2563eb;
+  --sidebar-navy: #1e293b;
+  --submenu-bg: #334155;
+  --navy-light-bg: #f8fafc;
   
   /* Pink Aksen Sakura */
-  --primary-pink: #f472b6;    
-  --soft-pink: #fce7f3;       
+  --primary-pink: #f472b6;
+  --soft-pink: #fce7f3;
   
-  /* Teks & Latar Belakang */
+  /* Teks & Netral */
   --text-color: #334155;
   --white: #ffffff;
 }
@@ -28,7 +30,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Canvas Sakura Background */
 #sakura-canvas {
   position: fixed;
   top: 0;
@@ -46,31 +47,29 @@ body {
 }
 
 /* ==========================================================================
-   SMOOTH FLOATING NAVBAR (EFEK SCROLL HALUS & TIDAK KOTAK)
+   FLOATING NAVBAR DESKTOP
    ========================================================================== */
 .navbar {
   position: fixed;
-  top: 15px;                  /* Mengambang dari atas layar */
+  top: 15px;
   left: 50%;
-  transform: translateX(-50%); /* Mengetengahkan navbar */
-  width: 92%;                 /* Beri celah samping agar tidak kaku/menempel di tepi */
+  transform: translateX(-50%);
+  width: 92%;
   max-width: 1200px;
-  border-radius: 50px;         /* Ujung melengkung sempurna (Pill-shape) */
+  border-radius: 50px;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
   z-index: 1000;
-  /* Transisi ultra smooth saat di-scroll */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Tampilan Navbar Saat Halaman Di-Scroll Ke Bawah */
 .navbar.scrolled {
   top: 10px;
   width: 95%;
-  background: rgba(15, 23, 42, 0.88); /* Berubah menjadi Navy Kaca saat scroll */
+  background: rgba(15, 23, 42, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 12px 35px rgba(15, 23, 42, 0.25);
 }
@@ -85,10 +84,9 @@ body {
 }
 
 .navbar.scrolled .nav-container {
-  height: 60px; /* Sedikit memendek halus saat scroll */
+  height: 60px;
 }
 
-/* Brand Logo */
 .brand-logo {
   font-size: 1.4rem;
   font-weight: 700;
@@ -110,7 +108,7 @@ body {
   color: var(--primary-pink);
 }
 
-/* Menu Links */
+/* Desktop Menu Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -138,7 +136,12 @@ body {
   color: var(--primary-pink);
 }
 
-/* Buttons */
+/* Hide Submenu by Default on Desktop (Simple Hover Style) */
+.sidebar-header, .submenu, .icon-arrow, .arrow-sub {
+  display: none;
+}
+
+/* Buttons General */
 .btn-primary {
   background-color: var(--primary-navy);
   color: var(--white) !important;
@@ -162,11 +165,6 @@ body {
   color: var(--white) !important;
 }
 
-.navbar.scrolled .btn-primary:hover {
-  background-color: #e11d48;
-  box-shadow: 0 4px 15px rgba(244, 114, 182, 0.4);
-}
-
 .btn-secondary {
   border: 2px solid var(--primary-navy);
   color: var(--primary-navy);
@@ -174,7 +172,6 @@ body {
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  margin-left: 10px;
   transition: all 0.3s;
   display: inline-block;
   text-align: center;
@@ -185,20 +182,16 @@ body {
   color: var(--white);
 }
 
-/* Pembungkus Tombol Hero / CTA (Untuk Layar Lebar/Desktop) */
-.hero-buttons,
-.cta-buttons,
-.btn-group {
+.hero-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
   margin-top: 25px;
-  margin-bottom: 0;
 }
 
 /* ==========================================================================
-   HERO & SECTIONS
+   SECTIONS & FOOTER
    ========================================================================== */
 .hero-section {
   padding: 130px 0 35px;
@@ -252,7 +245,6 @@ body {
   color: var(--bright-navy);
 }
 
-/* Cards Grid */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -279,7 +271,6 @@ body {
   margin-bottom: 15px;
 }
 
-/* About Grid */
 .about-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -321,7 +312,6 @@ body {
   font-weight: 700;
 }
 
-/* Floating WhatsApp */
 .wa-float {
   position: fixed;
   bottom: 25px;
@@ -340,38 +330,28 @@ body {
   text-decoration: none;
 }
 
-/* ==========================================================================
-   FOOTER DENGAN BACKGROUND FOTO KEGIATAN ASRAMA
-   ========================================================================== */
 footer.footer-with-bg {
   position: relative;
-  /* Ganti URL gambar di bawah dengan path foto kegiatan asrama Anda */
   background-image: url('assets/images/kegiatan-asrama.jpg'); 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Efek parallax saat di-scroll */
+  background-attachment: fixed;
   color: var(--white);
   padding-top: 60px;
   overflow: hidden;
 }
 
-/* Overlay Navy Transparan di Atas Foto */
 .footer-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg, 
-    rgba(15, 23, 42, 0.88) 0%, 
-    rgba(30, 58, 138, 0.82) 100%
-  );
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 58, 138, 0.82) 100%);
   backdrop-filter: blur(2px);
   z-index: 1;
 }
 
-/* Memastikan Konten Footer Berada di Atas Overlay */
 .footer-container {
   position: relative;
   z-index: 2;
@@ -396,7 +376,7 @@ footer.footer-with-bg {
 .footer-contact h4 {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: #93c5fd; /* Soft Navy Light */
+  color: #93c5fd;
 }
 
 .footer-contact p {
@@ -417,27 +397,19 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   MOBILE NAVIGATION & RESPONSIVE (LAYAR HP <= 768px)
+   MOBILE SIDEBAR & ACCORDION DROPDOWN (RESPONSIVE ≤ 768px)
    ========================================================================== */
-.menu-toggle, .close-btn {
+.menu-toggle {
   display: none;
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--dark-navy);
   cursor: pointer;
-  transition: color 0.3s;
 }
 
 .navbar.scrolled .menu-toggle {
   color: var(--white);
-}
-
-.close-menu-item {
-  display: none;
-  width: 100%;
-  text-align: right;
-  margin-bottom: 10px;
 }
 
 .nav-overlay {
@@ -447,7 +419,7 @@ footer.footer-with-bg {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(4px);
   z-index: 1001;
   opacity: 0;
@@ -460,103 +432,399 @@ footer.footer-with-bg {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    top: 10px;
-    width: 92%;
-    border-radius: 30px;
-  }
-  .hero-section {
-    padding: 120px 0 40px; /* Lebih rapat lagi di HP */
-  }
-
-  .section-padding {
-    padding: 40px 0;
-  }
-  .menu-toggle, .close-menu-item {
+  .menu-toggle {
     display: block;
   }
 
+  /* Sidebar Mobile Drawer */
   .nav-links {
     position: fixed;
-    top: 20px;
-    right: -300px;
-    width: 260px;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(12px);
+    top: 0;
+    right: -320px;
+    width: 290px;
+    height: 100vh;
+    background-color: var(--sidebar-navy);
     flex-direction: column;
-    align-items: flex-start;
-    padding: 25px 20px;
-    gap: 18px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+    align-items: stretch;
+    padding: 0 0 30px 0;
+    gap: 0;
+    overflow-y: auto;
     z-index: 1002;
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-links.active {
-    right: 20px;
+    right: 0;
   }
 
+  /* Header Logo Lingkaran di Atas Sidebar */
+  .sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 25px 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 5px;
+  }
+
+  .sidebar-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--white);
+    padding: 5px;
+    object-fit: contain;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+
+  /* Items Menu Mobile */
   .nav-links li {
     width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .nav-links a {
-    display: block;
-    width: 100%;
-    padding: 8px 12px;
-    border-radius: 10px;
-    font-size: 1rem;
-    color: var(--dark-navy) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    color: #e2e8f0 !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
   }
 
   .nav-links a:hover {
-    background-color: #f1f5f9;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Icon Arrow Panah */
+  .icon-arrow, .arrow-sub {
+    display: inline-block;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* Dropdown Aktif (Memutihkan Bar seperti Gambar Acuan) */
+  .dropdown.active > .dropdown-toggle {
+    background-color: var(--white) !important;
     color: var(--bright-navy) !important;
+    font-weight: 600;
   }
 
-  /* MEMASTIKAN TOMBOL DAFTAR DI SIDEBAR HP TETAP HIJAU TERANG */
-  .nav-links .btn-primary,
-  .navbar.scrolled .nav-links .btn-primary {
-    background-color: #10b981 !important; /* Hijau Terang / Emerald */
-    color: #ffffff !important;
+  .dropdown.active > .dropdown-toggle .icon-arrow {
+    transform: rotate(180deg);
+    color: var(--bright-navy);
+  }
+
+  /* Submenu Accordion Container */
+  .submenu {
+    display: none;
+    list-style: none;
+    background-color: var(--submenu-bg);
+    padding: 0;
+  }
+
+  .dropdown.active .submenu {
+    display: block;
+  }
+
+  .submenu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .submenu a {
+    padding: 12px 20px 12px 35px;
+    color: #cbd5e1 !important;
+    font-size: 0.88rem;
+  }
+
+  .submenu a:hover {
+    color: var(--white) !important;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Tombol CTA di Bawah Sidebar */
+  .btn-sidebar-cta {
+    margin: 20px 20px 0;
+    width: calc(100% - 40px) !important;
+    background-color: #10b981 !important;
     text-align: center;
-    width: 100%;
-    margin-top: 10px;
+    border-radius: 25px;
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-    transition: all 0.3s ease;
   }
 
-  .nav-links .btn-primary:hover,
-  .navbar.scrolled .nav-links .btn-primary:hover {
-    background-color: #059669 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-  }
-
-  /* PERBAIKAN TOMBOL HERO DI HP (SUPAYA TIDAK MEPET / MENUMPUK RAPI VETIKAL) */
-  .hero-buttons,
-  .cta-buttons,
-  .btn-group {
+  /* Adjustments Mobile Hero */
+  .hero-buttons {
     flex-direction: column;
-    align-items: center;
     width: 100%;
-    gap: 15px;
   }
 
-  .btn-primary,
-  .btn-secondary {
+  .btn-primary, .btn-secondary {
     width: 100%;
     max-width: 280px;
-    margin-left: 0 !important; /* Menghapus offset margin kiri desktop */
   }
 
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .footer-content {
+  .about-grid, .footer-content {
     grid-template-columns: 1fr;
     gap: 25px;
   }
+}
+
+/* ==========================================================================
+   HALAMAN COMPANY PROFILE (SUBPAGE STYLES)
+   ========================================================================== */
+.page-header {
+  padding: 120px 0 40px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: var(--primary-pink);
+  font-weight: 500;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+}
+
+.content-card {
+  background: var(--white);
+  padding: 25px 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+}
+
+.content-card h2, .content-card h3 {
+  color: var(--dark-navy);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.content-card h2::after, .content-card h3::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--bright-navy);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.content-card p {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.visi-misi-box {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid var(--bright-navy);
+}
+
+.visi-misi-box h4 {
+  color: var(--primary-navy);
+  margin: 12px 0 6px;
+}
+
+.visi-misi-box ul {
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+.visi-misi-box li {
+  margin-bottom: 8px;
+}
+
+.content-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 15px 0;
+}
+
+.map-responsive {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map-responsive iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  display: block;
+}
+
+.submenu a.active-link {
+  color: #38bdf8 !important; /* Warna Cyan Terang untuk penanda halaman aktif */
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   STYLING CARD KONTAK LANDSCAPE (MENGHEMAT RUANG VERTIKAL)
+   ========================================================================== */
+.footer-contact-card.contact-landscape {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 24px; /* Padding dibuat ringkas */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 35px;
+  color: var(--text-color);
+}
+
+.contact-landscape .contact-header h3 {
+  font-size: 1.25rem;
+  color: var(--dark-navy);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.contact-landscape .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.contact-landscape .contact-card-item {
+  background: var(--navy-light-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px; /* Padding sangat ringkas vertikal */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Layout Horizontal (Kiri: Info, Kanan: Tombol) */
+  gap: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-landscape .contact-card-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--bright-navy);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.contact-landscape .contact-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.contact-landscape .contact-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: var(--soft-pink);
+  color: var(--bright-navy);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.contact-landscape .contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-landscape .contact-card-item h4 {
+  font-size: 0.95rem;
+  color: var(--dark-navy);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.contact-landscape .role-badge {
+  font-size: 0.75rem;
+  color: var(--bright-navy);
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.contact-landscape .btn-wa-card {
+  width: auto; /* Tombol menyesuaikan isi konten */
+  white-space: nowrap;
+  background-color: #25d366;
+  color: var(--white) !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 8px 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.contact-landscape .btn-wa-card:hover {
+  background-color: #128c7e;
+}
+
+/* Penyesuaian Responsif Layar Kecil (HP) */
+@media (max-width: 576px) {
+  .contact-landscape .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-landscape .contact-card-item {
+    padding: 10px 14px;
+  }
+}
+
+.contact-landscape .contact-header {
+  text-align: center;
+  width: 100%;
+}
+
+.contact-landscape .contact-header h3 {
+  font-size: 1.25rem;
+  color: var(--dark-navy);
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Canvas Sakura disesuaikan agar menempel di dokumen, bukan layar */
+#sakura-canvas {
+  position: absolute; /* Mengubah fixed menjadi absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 99;
 }
