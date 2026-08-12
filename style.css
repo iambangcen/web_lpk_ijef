@@ -87,7 +87,11 @@ body {
   height: 60px;
 }
 
+/* Styling Brand Logo (Dengan Logo Kecil di Depan Teks) */
 .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--dark-navy);
@@ -95,9 +99,20 @@ body {
   transition: color 0.3s;
 }
 
+.nav-logo-img {
+  height: 34px;
+  width: 34px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
 .brand-logo span {
   color: var(--bright-navy);
   transition: color 0.3s;
+  margin-left: 2px;
 }
 
 .navbar.scrolled .brand-logo {
@@ -136,7 +151,6 @@ body {
   color: var(--primary-pink);
 }
 
-/* Hide Submenu by Default on Desktop (Simple Hover Style) */
 .sidebar-header, .submenu, .icon-arrow, .arrow-sub {
   display: none;
 }
@@ -191,7 +205,7 @@ body {
 }
 
 /* ==========================================================================
-   SECTIONS & FOOTER
+   HERO SECTION BERANDA (SEMULA)
    ========================================================================== */
 .hero-section {
   padding: 130px 0 35px;
@@ -436,7 +450,6 @@ footer.footer-with-bg {
     display: block;
   }
 
-  /* Sidebar Mobile Drawer */
   .nav-links {
     position: fixed;
     top: 0;
@@ -457,7 +470,6 @@ footer.footer-with-bg {
     right: 0;
   }
 
-  /* Header Logo Lingkaran di Atas Sidebar */
   .sidebar-header {
     display: flex;
     justify-content: center;
@@ -489,7 +501,6 @@ footer.footer-with-bg {
     cursor: pointer;
   }
 
-  /* Items Menu Mobile */
   .nav-links li {
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -510,14 +521,12 @@ footer.footer-with-bg {
     background-color: rgba(255, 255, 255, 0.05);
   }
 
-  /* Icon Arrow Panah */
   .icon-arrow, .arrow-sub {
     display: inline-block;
     font-size: 0.8rem;
     transition: transform 0.3s ease;
   }
 
-  /* Dropdown Aktif (Memutihkan Bar seperti Gambar Acuan) */
   .dropdown.active > .dropdown-toggle {
     background-color: var(--white) !important;
     color: var(--bright-navy) !important;
@@ -529,7 +538,6 @@ footer.footer-with-bg {
     color: var(--bright-navy);
   }
 
-  /* Submenu Accordion Container */
   .submenu {
     display: none;
     list-style: none;
@@ -556,7 +564,6 @@ footer.footer-with-bg {
     background-color: rgba(255, 255, 255, 0.08);
   }
 
-  /* Tombol CTA di Bawah Sidebar */
   .btn-sidebar-cta {
     margin: 20px 20px 0;
     width: calc(100% - 40px) !important;
@@ -566,7 +573,6 @@ footer.footer-with-bg {
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
   }
 
-  /* Adjustments Mobile Hero */
   .hero-buttons {
     flex-direction: column;
     width: 100%;
@@ -584,7 +590,7 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   HALAMAN COMPANY PROFILE (SUBPAGE STYLES)
+   HALAMAN COMPANY PROFILE (SUBPAGE STYLES - KEMBALI SEMULA)
    ========================================================================== */
 .page-header {
   padding: 120px 0 40px;
@@ -684,21 +690,26 @@ footer.footer-with-bg {
 }
 
 .submenu a.active-link {
-  color: #38bdf8 !important; /* Warna Cyan Terang untuk penanda halaman aktif */
+  color: #38bdf8 !important;
   font-weight: 600;
 }
 
 /* ==========================================================================
-   STYLING CARD KONTAK LANDSCAPE (MENGHEMAT RUANG VERTIKAL)
+   STYLING CARD KONTAK LANDSCAPE
    ========================================================================== */
 .footer-contact-card.contact-landscape {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 20px 24px; /* Padding dibuat ringkas */
+  padding: 20px 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 35px;
   color: var(--text-color);
+}
+
+.contact-landscape .contact-header {
+  text-align: center;
+  width: 100%;
 }
 
 .contact-landscape .contact-header h3 {
@@ -706,6 +717,7 @@ footer.footer-with-bg {
   color: var(--dark-navy);
   margin-bottom: 15px;
   font-weight: 700;
+  text-align: center;
 }
 
 .contact-landscape .contact-grid {
@@ -718,10 +730,10 @@ footer.footer-with-bg {
   background: var(--navy-light-bg);
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 12px 16px; /* Padding sangat ringkas vertikal */
+  padding: 12px 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Layout Horizontal (Kiri: Info, Kanan: Tombol) */
+  justify-content: space-between;
   gap: 12px;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
@@ -775,7 +787,7 @@ footer.footer-with-bg {
 }
 
 .contact-landscape .btn-wa-card {
-  width: auto; /* Tombol menyesuaikan isi konten */
+  width: auto;
   white-space: nowrap;
   background-color: #25d366;
   color: var(--white) !important;
@@ -795,7 +807,6 @@ footer.footer-with-bg {
   background-color: #128c7e;
 }
 
-/* Penyesuaian Responsif Layar Kecil (HP) */
 @media (max-width: 576px) {
   .contact-landscape .contact-grid {
     grid-template-columns: 1fr;
@@ -805,17 +816,3 @@ footer.footer-with-bg {
     padding: 10px 14px;
   }
 }
-
-.contact-landscape .contact-header {
-  text-align: center;
-  width: 100%;
-}
-
-.contact-landscape .contact-header h3 {
-  font-size: 1.25rem;
-  color: var(--dark-navy);
-  margin-bottom: 15px;
-  font-weight: 700;
-  text-align: center;
-}
-
