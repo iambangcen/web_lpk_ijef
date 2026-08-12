@@ -819,12 +819,3 @@ footer.footer-with-bg {
   text-align: center;
 }
 
-/* Canvas Sakura disesuaikan agar menempel di dokumen, bukan layar */
-#sakura-canvas {
-  position: absolute; /* Mengubah fixed menjadi absolute */
-  top: 0;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 99;
-}

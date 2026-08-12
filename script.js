@@ -10,53 +10,57 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Fungsi Buka Menu Mobile
   const openMenu = () => {
-    navLinks.classList.add('active');
+    if (navLinks) navLinks.classList.add('active');
     if (navOverlay) navOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Kunci scroll layar saat sidebar terbuka
+    document.body.style.overflow = 'hidden';
   };
   
   // Fungsi Tutup Menu Mobile
   const closeMenu = () => {
-    navLinks.classList.remove('active');
+    if (navLinks) navLinks.classList.remove('active');
     if (navOverlay) navOverlay.classList.remove('active');
-    document.body.style.overflow = ''; // Kembalikan scroll layar
+    document.body.style.overflow = '';
   };
   
-  // Event Listener Tombol Hamburger & Overlay Tutup
   if (menuToggle) menuToggle.addEventListener('click', openMenu);
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
   if (navOverlay) navOverlay.addEventListener('click', closeMenu);
   
   // ==========================================================================
-  // 2. LOGIKA DROPDOWN ACCORDION SUBMENU (MOBILE SIDEBAR)
+  // 2. LOGIKA DROPDOWN ACCORDION SUBMENU (HANYA UNTUK MOBILE)
   // ==========================================================================
   const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
   
   dropdownToggles.forEach((toggle) => {
     toggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      const parentDropdown = toggle.parentElement;
-      
-      // Tutup menu dropdown lain yang sedang terbuka (Efek Accordion Tunggal)
-      document.querySelectorAll('.dropdown').forEach((item) => {
-        if (item !== parentDropdown) {
-          item.classList.remove('active');
-        }
-      });
-      
-      // Buka / Tutup item dropdown yang sedang diklik
-      parentDropdown.classList.toggle('active');
+      // Jalankan accordion klik hanya di layar mobile
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parentDropdown = toggle.parentElement;
+        
+        document.querySelectorAll('.dropdown').forEach((item) => {
+          if (item !== parentDropdown) {
+            item.classList.remove('active');
+          }
+        });
+        
+        parentDropdown.classList.toggle('active');
+      }
     });
   });
   
-  // Tutup menu sidebar otomatis hanya ketika link biasa ATAU link di dalam submenu diklik
+  // Tutup menu sidebar otomatis saat link submenu atau link navigasi diklik
   const directLinks = document.querySelectorAll('.nav-links a:not(.dropdown-toggle)');
   directLinks.forEach((link) => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        closeMenu();
+      }
+    });
   });
   
   // ==========================================================================
-  // 3. EFEK SMOOTH FLOATING HEADER SAAT SCROLL
+  // 3. EFEK FLOATING HEADER SAAT SCROLL
   // ==========================================================================
   window.addEventListener('scroll', () => {
     if (window.scrollY > 30) {
@@ -65,91 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar.classList.remove('scrolled');
     }
   });
-  
-  // ==========================================================================
-  // 4. CANVAS ANIMASI KELOPAK SAKURA GUGUR (REALISTIS)
-  // ==========================================================================
-  const canvas = document.getElementById('sakura-canvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-    
-    window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    });
-    
-    class Petal {
-      constructor() {
-        this.reset();
-      }
-      
-      reset() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * -height;
-        this.size = Math.random() * 10 + 8;
-        this.speedY = Math.random() * 1.2 + 0.6;
-        this.speedX = Math.random() * 0.8 - 0.4;
-        this.angle = Math.random() * Math.PI * 2;
-        this.spin = Math.random() * 0.03 - 0.015;
-        this.opacity = Math.random() * 0.4 + 0.5;
-        this.color = Math.random() > 0.3 ? '#f472b6' : '#fbcfe8';
-      }
-      
-      update() {
-        this.y += this.speedY;
-        this.x += this.speedX + Math.sin(this.y * 0.01) * 0.8;
-        this.angle += this.spin;
-        
-        if (this.y > height + 20) {
-          this.reset();
-        }
-      }
-      
-      draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
-        ctx.globalAlpha = this.opacity;
-        
-        const s = this.size;
-        
-        // Bentuk Kelopak Sakura Asli (dengan takik khas)
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.moveTo(0, s);
-        ctx.bezierCurveTo(-s * 0.7, s * 0.4, -s * 0.8, -s * 0.3, -s * 0.3, -s * 0.8);
-        ctx.lineTo(0, -s * 0.65);
-        ctx.lineTo(s * 0.3, -s * 0.8);
-        ctx.bezierCurveTo(s * 0.8, -s * 0.3, s * 0.7, s * 0.4, 0, s);
-        ctx.closePath();
-        ctx.fill();
-        
-        // Serat Tengah
-        ctx.beginPath();
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
-        ctx.lineWidth = 0.8;
-        ctx.moveTo(0, s * 0.8);
-        ctx.lineTo(0, -s * 0.3);
-        ctx.stroke();
-        
-        ctx.restore();
-      }
-    }
-    
-    const petals = Array.from({ length: 35 }, () => new Petal());
-    
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-      petals.forEach(petal => {
-        petal.update();
-        petal.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-    
-    animate();
-  }
 });
