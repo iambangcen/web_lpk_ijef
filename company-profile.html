@@ -15,52 +15,7 @@
 </head>
 <body>
 
-  <!-- Overlay Gelap Full Layar (Ditaruh paling luar) -->
-  <div class="nav-overlay" id="nav-overlay"></div>
-
-  <!-- Mobile Side Menu (Dipindahkan ke luar <nav> agar tidak tertutup overlay / terkena blur) -->
-  <ul class="nav-links" id="nav-links">
-    <li class="sidebar-header">
-      <div class="logo-wrapper">
-        <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
-      </div>
-      <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
-    </li>
-
-    <li><a href="index.html">Beranda</a></li>
-
-    <!-- Submenu Profile (Aktif) -->
-    <li class="dropdown active">
-      <a href="#" class="dropdown-toggle">
-        <span>Profile</span>
-        <i class="fa-solid fa-chevron-down icon-arrow"></i>
-      </a>
-      <ul class="submenu">
-        <li><a href="company-profile.html" class="active-link">Company Profile <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="index.html#izin">Izin S.O <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="index.html#team">Our Team <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="index.html#lokasi">Lokasi Pendidikan & Pelatihan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="index.html#kantor">Alamat Kantor Pusat <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-      </ul>
-    </li>
-
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">
-        <span>Informasi</span>
-        <i class="fa-solid fa-chevron-down icon-arrow"></i>
-      </a>
-      <ul class="submenu">
-        <li><a href="index.html#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="index.html#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-      </ul>
-    </li>
-
-    <li><a href="index.html#program">Program</a></li>
-    <li><a href="index.html#alur">Alur Pendaftaran</a></li>
-    <li><a href="index.html#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
-  </ul>
-
-  <!-- Navigation Bar Utama -->
+   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-container">
       <a href="#" class="brand-logo">
@@ -68,10 +23,53 @@
         LPK<span>IJEF Corp.</span>
       </a>
 
-      <!-- Tombol Hamburger Mobile -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
+
+      <div class="nav-overlay" id="nav-overlay"></div>
+
+      <!-- Sidebar Mobile Menu -->
+      <ul class="nav-links" id="nav-links">
+        <li class="sidebar-header">
+          <div class="logo-wrapper">
+            <img src="assets/ijefcorplogo-small.png" alt="Logo" class="sidebar-logo">
+          </div>
+          <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+
+        <li><a href="index.html">Beranda</a></li>
+
+        <!-- Submenu Profile (Aktif) -->
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle">
+            <span>Profile</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="company-profile.html" class="active-link">Company Profile <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="index.html#izin">Izin S.O <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="index.html#team">Our Team <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="index.html#lokasi">Lokasi Pendidikan & Pelatihan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="index.html#kantor">Alamat Kantor Pusat <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Informasi</span>
+            <i class="fa-solid fa-chevron-right icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="index.html#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="index.html#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+          </ul>
+        </li>
+
+        <li><a href="index.html#program">Program</a></li>
+        <li><a href="index.html#alur">Alur Pendaftaran</a></li>
+        <li><a href="index.html#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -79,7 +77,7 @@
   <section class="page-header">
     <div class="container">
       <h1>Tentang Kami</h1>
-      <p>Mengenal Lebih Dekat LPK IJEF</p>
+      <p1>Mengenal Lebih Dekat LPK IJEF</p1>
     </div>
   </section>
 
@@ -125,15 +123,15 @@
         <p>Asrama dan tempat pelatihan dirancang khusus untuk menciptakan lingkungan belajar yang kondusif, lengkap dengan ruang kelas ber-AC, modul pembelajaran terintegrasi, serta area latihan fisik.</p>
       </article>
         
-      <!-- Lokasi & Peta Asrama -->
-      <article class="content-card">
-        <h3>Alamat Asrama & Pusat Pelatihan</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua, Kabupaten Bandung Barat, Jawa Barat 40551</p>
-        
-        <div class="map-responsive">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.59645515178698!2d107.526162657037!3d-6.825264429407408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e344a4656409%3A0xad10456097c85b6f!2sLPK%20IJEF%20CORP%20-%20International%20Japan%20Eco%20Future%20Corp!5e0!3m2!1sid!2sid!4v1786505486392!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-      </article>
+<!-- Lokasi & Peta Asrama -->
+<article class="content-card">
+  <h3>Alamat Asrama & Pusat Pelatihan</h3>
+  <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua, Kabupaten Bandung Barat, Jawa Barat 40551</p>
+  
+<div class="map-responsive">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.59645515178698!2d107.526162657037!3d-6.825264429407408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e344a4656409%3A0xad10456097c85b6f!2sLPK%20IJEF%20CORP%20-%20International%20Japan%20Eco%20Future%20Corp!5e0!3m2!1sid!2sid!4v1786505486392!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</article>
     </div>
   </section>
 
@@ -142,7 +140,7 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Footer -->
+<!-- Footer -->
   <footer class="footer-with-bg">
     <div class="footer-overlay"></div>
     <div class="container footer-container">
@@ -224,7 +222,6 @@
 
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

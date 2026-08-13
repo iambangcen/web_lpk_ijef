@@ -15,55 +15,8 @@
 </head>
 <body>
 
-  <!-- Overlay Gelap Full Layar (Ditaruh paling luar) -->
-  <div class="nav-overlay" id="nav-overlay"></div>
-
-  <!-- Mobile Side Menu (Ditaruh luar <nav> agar tidak tertutup overlay / terkena blur) -->
-  <ul class="nav-links" id="nav-links">
-    
-    <!-- Header Sidebar (Logo Lingkaran di HP) -->
-    <li class="sidebar-header">
-      <div class="logo-wrapper">
-        <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
-      </div>
-      <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
-    </li>
-
-    <li><a href="#hero">Beranda</a></li>
-
-    <!-- Dropdown Menu: Profile -->
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">
-        <span>Profile</span>
-        <i class="fa-solid fa-chevron-down icon-arrow"></i>
-      </a>
-      <ul class="submenu">
-        <li><a href="company-profile.html">Company Profile <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="#izin">Izin S.O <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="#team">Our Team <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="#lokasi">Lokasi Pendidikan & Pelatihan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="#kantor">Alamat Kantor Pusat <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-      </ul>
-    </li>
-
-    <!-- Dropdown Menu: Informasi -->
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle">
-        <span>Informasi</span>
-        <i class="fa-solid fa-chevron-down icon-arrow"></i>
-      </a>
-      <ul class="submenu">
-        <li><a href="#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-        <li><a href="#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-      </ul>
-    </li>
-
-    <li><a href="#program">Program</a></li>
-    <li><a href="#alur">Alur Pendaftaran</a></li>
-    <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
-  </ul>
-
-  <!-- Navigation Bar Utama -->
+ 
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-container">
       <a href="#" class="brand-logo">
@@ -75,6 +28,54 @@
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
+
+      <!-- Overlay Gelap saat Sidebar Buka -->
+      <div class="nav-overlay" id="nav-overlay"></div>
+
+      <!-- Menu Navigation / Floating Sidebar Mobile -->
+      <ul class="nav-links" id="nav-links">
+        
+        <!-- Header Sidebar (Logo Lingkaran di HP) -->
+        <li class="sidebar-header">
+          <div class="logo-wrapper">
+            <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
+          </div>
+          <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+
+        <li><a href="#hero">Beranda</a></li>
+
+        <!-- Dropdown Menu: Profile -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Profile</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="company-profile.html">Company Profile <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#izin">Izin S.O <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#team">Our Team <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#lokasi">Lokasi Pendidikan & Pelatihan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#kantor">Alamat Kantor Pusat <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Informasi -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Informasi</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+          </ul>
+        </li>
+
+        <li><a href="#program">Program</a></li>
+        <li><a href="#alur">Alur Pendaftaran</a></li>
+        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -230,7 +231,6 @@
 
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
