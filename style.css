@@ -641,14 +641,16 @@ footer.footer-with-bg {
     background-color: rgba(255, 255, 255, 0.08);
   }
 
-.btn-sidebar-cta {
-    margin: 20px auto 0 !important; /* Membuat posisi tombol ke tengah sidebar */
+/* Menargetkan class .btn-sidebar-cta sekaligus tag <a> bertombol di sidebar */
+  .btn-sidebar-cta,
+  .nav-links a.btn-sidebar-cta {
+    margin: 20px auto 0 !important;
     width: calc(100% - 40px) !important;
     background-color: #10b981 !important;
     border-radius: 25px;
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
     
-    /* Properti untuk meratakan teks persis di tengah tombol */
+    /* Memaksa konten dan teks tepat di tengah */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
