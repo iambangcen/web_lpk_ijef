@@ -1,4 +1,4 @@
-# Panduan Kontributor - web_lpk_ijef 🚀
+# Panduan Buat Kaka - web_lpk_ijef 🚀
 
 Selamat datang di proyek privat `web_lpk_ijef`. Dokumen ini berisi panduan untuk menyiapkan lingkungan pengembangan (*development environment*) di laptop Anda agar kode dapat berjalan dengan lancar.
 
