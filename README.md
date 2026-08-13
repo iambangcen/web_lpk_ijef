@@ -62,4 +62,4 @@ Agar cabang `main` tetap aman, mohon ikuti aturan berikut saat berkontribusi:
    ```bash
    git checkout -b namaAnda/fitur-yang-dibuat
    ```
-3. Jika sudah selesai, lakukan `push` ke *branch* Anda dan buat **Pull Request (PR)** di GitHub untuk ditinjau oleh pemilik proyek.
+3. Jika sudah selesai, lakukan `push` ke *branch* Anda dan buat **Pull Request (PR)** di GitHub untuk ditinjau oleh pemilik proyek yaitu Mang DODO.
