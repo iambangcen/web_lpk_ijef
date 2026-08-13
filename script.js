@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   dropdownToggles.forEach((toggle) => {
     toggle.addEventListener('click', (e) => {
+      e.preventDefault();
       // Jalankan accordion klik hanya di layar mobile
       if (window.innerWidth <= 768) {
-        e.preventDefault();
         const parentDropdown = toggle.parentElement;
         
         document.querySelectorAll('.dropdown').forEach((item) => {
