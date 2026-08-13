@@ -438,6 +438,90 @@ footer.footer-with-bg {
   opacity: 1;
 }
 
+/* ==========================================================================
+   DESKTOP DROPDOWN HOVER (Profile & Informasi) — disinkronin sama mobile
+   ========================================================================== */
+@media (min-width: 769px) {
+  .nav-links .dropdown {
+    position: relative;
+  }
+
+  .dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .nav-links .dropdown .icon-arrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-links .dropdown:hover .icon-arrow {
+    transform: rotate(180deg);
+  }
+
+  .nav-links .dropdown > .submenu {
+    display: block;
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+    min-width: 240px;
+    padding: 6px;
+    background-color: var(--submenu-bg);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 1100;
+  }
+
+  .nav-links .dropdown:hover > .submenu,
+  .nav-links .dropdown:focus-within > .submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-links .dropdown .submenu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-links .dropdown .submenu li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links .dropdown .submenu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    color: #cbd5e1 !important;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-links .dropdown .submenu a:hover {
+    color: var(--white) !important;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-links .dropdown .submenu .arrow-sub {
+    display: inline-block;
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
