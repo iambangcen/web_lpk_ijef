@@ -641,13 +641,18 @@ footer.footer-with-bg {
     background-color: rgba(255, 255, 255, 0.08);
   }
 
-  .btn-sidebar-cta {
-    margin: 20px 20px 0;
+.btn-sidebar-cta {
+    margin: 20px auto 0 !important; /* Membuat posisi tombol ke tengah sidebar */
     width: calc(100% - 40px) !important;
     background-color: #10b981 !important;
-    text-align: center;
     border-radius: 25px;
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    
+    /* Properti untuk meratakan teks persis di tengah tombol */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 
   .hero-buttons {
