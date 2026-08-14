@@ -1011,7 +1011,7 @@ footer.footer-with-bg {
     transform: translateY(0);
   }
   25%, 45% {
-    transform: translateY(-1.3em);
+    transform: translateY(-2.3em);
   }
   50%, 70% {
     transform: translateY(-2.6em);
