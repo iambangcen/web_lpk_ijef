@@ -1923,42 +1923,88 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   FORCE ALIGNMENT KHUSUS TAMPILAN HP / MOBILE PORTRAIT
+   TEXT FLIP ANIMATION - SEJAJAR TOTAL (DESKTOP & MOBILE)
    ========================================================================== */
 
+/* 1. H1 Flex alignment */
+.hero-content h1 {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;  /* Mengunci semua elemen tepat di sumbu tengah vertikal */
+  gap: 0.3em;
+  font-size: 2.5rem;
+  color: var(--dark-navy);
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+/* 2. Pembungkus animasi teks */
+.text-flip-wrapper {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 1.2em;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+
+/* 3. Container slide */
+.text-flip {
+  display: flex;
+  flex-direction: column;
+  animation: slideUpMultiText 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+/* 4. Item kata animasi */
+.text-flip span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.2em;
+  line-height: 1.2em;
+  color: var(--bright-navy) !important;
+  white-space: nowrap;
+  padding: 0 4px;
+}
+
+/* Keyframe Animasi */
+@keyframes slideUpMultiText {
+  0%, 20% {
+    transform: translateY(0);
+  }
+  25%, 45% {
+    transform: translateY(-1.2em);
+  }
+  50%, 70% {
+    transform: translateY(-2.4em);
+  }
+  75%, 95% {
+    transform: translateY(-3.6em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   PENYESUAIAN TAMPILAN MOBILE (≤ 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-  /* 1. Kunci H1 menggunakan inline-block agar tidak memaksa baris baru */
   .hero-content h1 {
-    display: block !important;
-    font-size: 1.75rem !important; /* Ukuran font diperkecil agar muat di HP */
-    line-height: 1.4 !important;
-    text-align: center !important;
-    margin: 10px 0 !important;
+    font-size: 1.75rem !important; /* Ukuran pas agar kata tidak meluap ke luar layar */
+    gap: 0.25em;
+    line-height: 1.3 !important;
   }
 
-  /* 2. Wrapper diatur inline-block dengan penyesuaian posisi vertikal */
   .text-flip-wrapper {
-    display: inline-block !important;
-    vertical-align: middle !important; /* Posisi tengah presisi */
     height: 1.25em !important;
-    overflow: hidden !important;
-    position: relative !important;
-    top: -2px !important; /* Tarik tipis ke atas khusus tampilan mobile */
+    transform: translateY(1px); /* Mikro penyesuaian khusus font Android Chrome */
   }
 
-  /* 3. Container animasi */
-  .text-flip {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  /* 4. Teks Kata Animasi */
   .text-flip span {
-    display: block !important;
     height: 1.25em !important;
     line-height: 1.25em !important;
-    color: #60a5fa !important;
-    white-space: nowrap !important;
-    padding: 0 4px !important;
   }
 }
