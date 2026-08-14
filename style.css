@@ -939,22 +939,22 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   PENYESUAIAN MARGIN DENGAN SUBTEKS (LEBIH RAPAT)
+   PERBAIKAN HERO SECTION & ANIMASI TEXT FLIP
    ========================================================================== */
 
 /* Container Utama Judul */
 .hero-content h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff !important;
-  margin: 15px 0 10px; /* Diperkecil dari 20px ke 10px */
-  line-height: 1.2; /* Diperketat dari 1.3 ke 1.2 */
+  color: #ffffff !important; /* Memaksa seluruh teks h1 menjadi putih */
+  margin: 15px 0 20px;
+  line-height: 1.3;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px; /* Diperkecil dari 6px ke 2px agar antarbaris h1 sangat rapat */
+  gap: 6px;
 }
 
 /* Baris Pertama: "Wujudkan [Text Flip]" */
@@ -974,16 +974,7 @@ footer.footer-with-bg {
 }
 
 .hero-title-bottom span {
-  color: #38bdf8 !important;
-}
-
-/* Subteks Paragraf di bawah Judul */
-.hero-content p {
-  max-width: 600px;
-  margin: 0 auto 20px; /* Pastikan margin top diset 0 */
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.9) !important;
-  line-height: 1.5;
+  color: #38bdf8 !important; /* Warna highlight biru terang untuk nama LPK */
 }
 
 /* Pembungkus Animasi Flip */
@@ -1009,33 +1000,38 @@ footer.footer-with-bg {
   justify-content: center;
   height: 1.3em;
   line-height: 1.3em;
-  color: #60a5fa !important;
+  color: #60a5fa !important; /* Warna highlight kata berganti */
   white-space: nowrap;
   font-weight: 700;
 }
 
 /* Keyframes Pergerakan Vertikal */
 @keyframes slideUpMultiText {
-  0%, 20% { transform: translateY(0); }
-  25%, 45% { transform: translateY(-1.3em); }
-  50%, 70% { transform: translateY(-2.6em); }
-  75%, 95% { transform: translateY(-3.9em); }
-  100% { transform: translateY(0); }
+  0%, 20% {
+    transform: translateY(0);
+  }
+  25%, 45% {
+    transform: translateY(-1.3em);
+  }
+  50%, 70% {
+    transform: translateY(-2.6em);
+  }
+  75%, 95% {
+    transform: translateY(-3.9em);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Responsif Mobile (HP) */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 1.75rem;
-    line-height: 1.25;
-    margin-bottom: 8px; /* Dibuat makin presisi di HP */
+    line-height: 1.35;
   }
   
   .hero-title-top {
     gap: 6px;
-  }
-
-  .hero-content p {
-    font-size: 0.95rem;
   }
 }
