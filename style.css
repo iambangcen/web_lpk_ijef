@@ -1008,7 +1008,7 @@ footer.footer-with-bg {
 /* Keyframes Pergerakan Vertikal */
 @keyframes slideUpMultiText {
   0%, 20% {
-    transform: translateY(0);
+    transform: translateY(-1.3em);
   }
   25%, 45% {
     transform: translateY(-1.3em);
