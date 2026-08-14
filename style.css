@@ -217,6 +217,7 @@ body {
 
 .badge-tag { background-color: rgba(255, 255, 255, 0.95); color: var(--primary-navy); padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin: 0 auto 15px auto; /* Auto margin kiri-kanan membuat posisi rata tengah */ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
 
+
 .hero-content p {
   max-width: 600px;
   margin: 0 auto 20px;
@@ -938,59 +939,97 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   PERBAIKAN KERAPIAN ANIMASI TEXT FLIP
+   HERO SECTION FIX (WARNA PUTIH MUTLAK & ANIMASI SEJAJAR PRESISI)
    ========================================================================== */
 
-/* Pastikan judul h1 diset flex/inline-block rapi di mobile */
+/* 1. Paksa Hero H1 Berwarna Putih & Menggunakan Flexbox */
 .hero-content h1 {
-  font-size: 2.2rem; /* Ukuran pas untuk HP agar tidak patah kata berlebihan */
-  color: #ffffff !important;
-  margin: 15px 0;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35em;
+  font-size: 2.2rem;
+  color: #ffffff !important; /* Memaksa warna teks menjadi PUTIH */
+  margin: 20px 0;
   font-weight: 700;
-  line-height: 1;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  text-align: center;
 }
 
-/* Pembungkus luar */
-.text-flip-wrapper { 
-display: inline-block; 
-vertical-align: bottom; /* Ubah ke bottom agar menempel rapat dengan teks sejajar */ 
-height: 1em; /* Samakan presisi dengan line-height h1 */ overflow: hidden; 
-position: relative; 
-margin-bottom: -2px; /* Trik mikro untuk merapatkan ke baris bawahnya */ } 
+/* Memastikan span biasa di h1 juga berwarna terang */
+.hero-content h1 > span:not(.text-flip-wrapper) {
+  color: #60a5fa !important; /* Warna biru muda terang agar kontras */
+}
 
-/* Container kata yang bergeser */
+/* 2. Pembungkus Animasi Berbasis Grid */
+.text-flip-wrapper {
+  display: inline-grid !important;
+  grid-template-areas: "overlap";
+  height: 1.2em;
+  overflow: hidden;
+  position: relative;
+  align-self: center;
+}
+
+/* 3. Container Kata Animasi */
 .text-flip {
-  display: flex;
-  flex-direction: column;
-  /* Durasi diperpanjang jadi 8 detik agar tiap kata sempat terbaca */
-  animation: slideUpMultiText 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  grid-area: overlap;
+  display: flex !important;
+  flex-direction: column !important;
+  animation: slideUpGridFix 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
 }
 
-/* Item kata */
-.text-flip span { display: block; height: 1.3em; line-height: 1.3em; color: #60a5fa !important; /* Warna kata highlight */ white-space: nowrap; text-align: center; }
+/* 4. Teks Kata Animasi */
+.text-flip span {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 1.2em !important;
+  line-height: 1.2em !important;
+  color: #60a5fa !important; /* Warna biru muda terang */
+  white-space: nowrap;
+  padding: 0 4px;
+}
+
 /* ==========================================================================
-   KEYFRAMES ANIMASI 4 KATA
+   ANIMASI SLIDE GRID (PERGESERAN MULTI-TEXT)
    ========================================================================== */
-@keyframes slideUpMultiText {
-  /* Kata 1: Impian */
+@keyframes slideUpGridFix {
   0%, 20% {
     transform: translateY(0);
   }
-  /* Kata 2: Harapan */
   25%, 45% {
-    transform: translateY(-1.3em);
+    transform: translateY(-1.2em);
   }
-  /* Kata 3: Cita-cita */
   50%, 70% {
-    transform: translateY(-2.6em);
+    transform: translateY(-2.4em);
   }
-  /* Kata 4: Masa Depan */
   75%, 95% {
-    transform: translateY(-3.9em);
+    transform: translateY(-3.6em);
   }
-  /* Kembali ke kata 1 secara mulus */
   100% {
     transform: translateY(0);
   }
 }
+
+/* ==========================================================================
+   PENYESUAIAN MOBILE PORTRAIT (≤ 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.6rem !important; /* Ukuran fleksibel agar tidak pecah di HP */
+    gap: 0.25em;
+    line-height: 1.35 !important;
+  }
+
+  .text-flip-wrapper {
+    height: 1.25em !important;
+  }
+
+  .text-flip span {
+    height: 1.25em !important;
+    line-height: 1.25em !important;
+  }
+  }
