@@ -77,7 +77,7 @@ body {
   height: 60px;
 }
 
-/* Styling Brand Logo (Dengan Logo Kecil di Depan Teks) */
+/* Styling Brand Logo */
 .brand-logo {
   display: flex;
   align-items: center;
@@ -87,19 +87,19 @@ body {
   color: var(--dark-navy);
   text-decoration: none;
   transition: color 0.3s;
-  max-height: 100%; /* Menjaga agar elemen tidak melebihi tinggi container navbar */
+  max-height: 100%;
 }
 
 .nav-logo-img {
   height: 34px;
   width: 34px;
-  max-width: 100%;    /* Mencegah gambar meluap melampaui ukuran pembungkusnya */
-  max-height: 100%;   /* Memastikan tinggi gambar tidak melebihi batas */
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   border-radius: 50%;
   background-color: #ffffff;
   padding: 2px;
-  flex-shrink: 0;     /* Mencegah gambar terdistorsi saat layar menyempit */
+  flex-shrink: 0;
 }
 
 .brand-logo span {
@@ -172,7 +172,24 @@ body {
   color: var(--white) !important;
 }
 
-.btn-secondary { border: 2px solid #ffffff !important; color: #ffffff !important; background-color: rgba(255, 255, 255, 0.12); padding: 10px 22px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block; text-align: center; backdrop-filter: blur(4px); } .btn-secondary:hover { background-color: #ffffff !important; color: var(--dark-navy) !important; }
+.btn-secondary { 
+  border: 2px solid #ffffff !important; 
+  color: #ffffff !important; 
+  background-color: rgba(255, 255, 255, 0.12); 
+  padding: 10px 22px; 
+  border-radius: 25px; 
+  text-decoration: none; 
+  font-weight: 600; 
+  transition: all 0.3s ease; 
+  display: inline-block; 
+  text-align: center; 
+  backdrop-filter: blur(4px); 
+} 
+
+.btn-secondary:hover { 
+  background-color: #ffffff !important; 
+  color: var(--dark-navy) !important; 
+}
 
 .hero-buttons {
   display: flex;
@@ -183,32 +200,24 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION BERANDA (SEMULA)
-   ========================================================================== */
-/* ==========================================================================
    HERO SECTION WITH BACKGROUND LANDSCAPE & OVERLAY
    ========================================================================== */
 .hero-section {
   position: relative;
-  /* Masukkan path gambar lanskap Anda di url() */
-  
   padding: 120px 0 80px 0;
-  color: #ffffff; /* Mengubah teks hero menjadi putih agar kontras */
+  color: #ffffff;
   overflow: hidden;
 }
-/* ==========================================================================
-   2. CLASS KHUSUS MEMPROSES BACKGROUND (bg-hero-full)
-   ========================================================================== */
+
 .bg-hero-full {
-  /* Pengaturan Gambar Background */
   background: url('assets/cover.jpeg') no-repeat center center/cover;
-  background-size: cover;       /* Memastikan gambar penuh tanpa terdistorsi */
-  background-position: center;  /* Titik tengah fokus gambar */
-  background-repeat: no-repeat; /* Mencegah gambar berulang/ulangan */
-  background-attachment: scroll;/* Opsi: Ubah ke 'fixed' jika ingin efek parallax */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   min-height: 100vh;
 }
-/* Layer Overlay Gelap/Opacity di Atas Gambar */
+
 .hero-section::before {
   content: "";
   position: absolute;
@@ -216,23 +225,40 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  /* linear-gradient memberikan efek opacity (0.65 = tingkat kegelapan overlay) */
   background: rgba(0, 0, 0, 0.65); 
   z-index: 1;
 }
 
-.hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; /* Memastikan semua elemen (termasuk badge) pas di tengah */ justify-content: center; text-align: center; }
+.hero-content { 
+  position: relative; 
+  z-index: 2; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+}
 
-/* Menyesuaikan warna subteks/paragraf agar makin terbaca jelas */
-.hero-content p { max-width: 650px; margin: 0 auto 25px; font-size: 1.05rem; color: rgba(255, 255, 255, 0.9) !important; line-height: 1.6; }
-
-.badge-tag { background-color: rgba(255, 255, 255, 0.95); color: var(--primary-navy); padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin: 0 auto 15px auto; /* Auto margin kiri-kanan membuat posisi rata tengah */ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
-
+.badge-tag { 
+  background-color: rgba(255, 255, 255, 0.95); 
+  color: var(--primary-navy); 
+  padding: 8px 18px; 
+  border-radius: 20px; 
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  margin: 0 auto 15px auto; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
 
 .hero-content p {
   max-width: 600px;
-  margin: 0 auto 20px;
-  font-size: 1.1rem;
+  margin: 0 auto 25px;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.6;
 }
 
 .section-padding {
@@ -423,12 +449,6 @@ footer.footer-with-bg {
   color: var(--white);
 }
 
-/* ==========================================================================
-   FULLSCREEN MOBILE NAV OVERLAY
-   ========================================================================== */
-/* ==========================================================================
-   FULLSCREEN OVERLAY GELAP UNTUK SIDEBAR
-   ========================================================================== */
 .nav-overlay {
   position: fixed;
   top: 0;
@@ -437,35 +457,33 @@ footer.footer-with-bg {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  /* Menggunakan warna gelap solid transparan (gelap 75%) */
   background: rgba(15, 23, 42, 0.75) !important; 
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  z-index: 999;               /* Tepat di bawah sidebar menu */
+  z-index: 999;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Ketika Sidebar Dibuka */
 .nav-overlay.active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-/* Pastikan Sidebar Menu Posisinya Lebih Tinggi dari Overlay */
 .nav-links {
-  z-index: 1000 !important;   /* Di atas overlay (999) */
+  z-index: 1000 !important;
 }
 
 /* ==========================================================================
-   DESKTOP DROPDOWN HOVER (Profile & Informasi) — disinkronin sama mobile
+   DESKTOP DROPDOWN HOVER (PERBAIKAN KURSOR LEAVING/DROPDOWN HILANG)
    ========================================================================== */
 @media (min-width: 769px) {
   .nav-links .dropdown {
     position: relative;
+    padding-top: 10px; /* Memberikan toleransi hover di atas */ padding-bottom: 15px; /* Memberikan toleransi hover di bawah tombol */ margin-top: -10px; margin-bottom: -15px;
   }
 
   .dropdown-toggle {
@@ -489,19 +507,30 @@ footer.footer-with-bg {
     display: block;
     list-style: none;
     position: absolute;
-    top: calc(100% + 18px);
+    top: 80%; /* Posisikan pas di batas bawah tombol Profile tanpa celah */
     left: 50%;
     min-width: 240px;
-    padding: 6px;
+    padding: 8px;
     background-color: var(--submenu-bg);
     border-radius: 12px;
     box-shadow: 0 15px 35px rgba(15, 23, 42, 0.25);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateX(-50%) translateY(-8px);
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    transform: translateX(-50%) translateY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     z-index: 1100;
+  }
+
+  /* Jembatan Transparan (Invisible Bridge) penutup celah kosong */
+  .nav-links .dropdown > .submenu::before {
+    content: '';
+    position: absolute;
+    top: -25px; 
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent;
   }
 
   .nav-links .dropdown:hover > .submenu,
@@ -509,7 +538,6 @@ footer.footer-with-bg {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
   }
 
   .nav-links .dropdown .submenu li {
@@ -663,7 +691,6 @@ footer.footer-with-bg {
     background-color: rgba(255, 255, 255, 0.08);
   }
 
-/* Menargetkan class .btn-sidebar-cta sekaligus tag <a> bertombol di sidebar */
   .btn-sidebar-cta,
   .nav-links a.btn-sidebar-cta {
     margin: 20px auto 0 !important;
@@ -671,8 +698,6 @@ footer.footer-with-bg {
     background-color: #10b981 !important;
     border-radius: 25px;
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-    
-    /* Memaksa konten dan teks tepat di tengah */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -696,7 +721,7 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   HALAMAN COMPANY PROFILE (SUBPAGE STYLES - KEMBALI SEMULA)
+   HALAMAN COMPANY PROFILE (SUBPAGE STYLES)
    ========================================================================== */
 .page-header {
   padding: 120px 0 40px;
@@ -934,13 +959,11 @@ footer.footer-with-bg {
   will-change: opacity, transform;
 }
 
-/* Keadaan setelah elemen masuk layar saat di-scroll */
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* (Opsional) Delay bertahap untuk elemen kartu yang berjejer */
 .cards-grid .card:nth-child(2) {
   transition-delay: 0.35s;
 }
@@ -950,14 +973,12 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   PERBAIKAN HERO SECTION & ANIMASI TEXT FLIP
+   HERO SECTION & ANIMASI TEXT FLIP
    ========================================================================== */
-
-/* Container Utama Judul */
 .hero-content h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff !important; /* Memaksa seluruh teks h1 menjadi putih */
+  color: #ffffff !important;
   margin: 15px 0 20px;
   line-height: 1.3;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
@@ -965,35 +986,13 @@ footer.footer-with-bg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
 }
 
-/* ==========================================================================
-   PERBAIKAN HERO SECTION & ANIMASI TEXT FLIP
-   ========================================================================== */
-
-/* Container Utama Judul */
-.hero-content h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff !important; /* Memaksa seluruh teks h1 menjadi putih */
-  margin: 15px 0 20px;
-  line-height: 1.3;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-}
-
-/* Menargetkan span terakhir (LPK IJEF Corp.) */
 .hero-content h1 > span:last-child {
   color: #38bdf8 !important;
   display: inline-block;
 }
 
-/* Baris Pertama: "Wujudkan [Text Flip]" */
 .hero-title-top {
   display: inline-flex;
   align-items: center;
@@ -1003,17 +1002,15 @@ footer.footer-with-bg {
   white-space: nowrap;
 }
 
-/* Baris Kedua: "Berkarier di Jepang Bersama LPK IJEF" */
 .hero-title-bottom {
   display: block;
   color: #ffffff !important;
 }
 
 .hero-title-bottom span {
-  color: #38bdf8 !important; /* Warna highlight biru terang untuk nama LPK */
+  color: #38bdf8 !important;
 }
 
-/* Pembungkus Animasi Flip */
 .text-flip-wrapper {
   display: inline-block;
   height: 1.3em;
@@ -1022,28 +1019,30 @@ footer.footer-with-bg {
   vertical-align: middle;
 }
 
-/* Container Kata Bergeser */
 .text-flip {
   display: flex;
   flex-direction: column;
   animation: slideUpMultiText 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
 }
 
-/* Item Teks Flip */
 .text-flip span {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 1.3em;
   line-height: 1.3em;
-  color: #fbbf24 !important; /* Warna Amber/Gold terang */
+  color: #fbbf24 !important;
   white-space: nowrap;
   font-weight: 700;
 }
 
-/* Keyframes Pergerakan Vertikal (3 Kata) */ @keyframes slideUpMultiText { 0%, 28% { transform: translateY(0%); /* Kata 1: "Harapan" */ } 33%, 61% { transform: translateY(-33.33%); /* Kata 2: "Cita-Cita" */ } 66%, 94% { transform: translateY(-66.66%); /* Kata 3: "Potensi" */ } 100% { transform: translateY(0%); /* Kembali ke awal secara mulus */ } }
+@keyframes slideUpMultiText { 
+  0%, 28% { transform: translateY(0%); } 
+  33%, 61% { transform: translateY(-33.33%); } 
+  66%, 94% { transform: translateY(-66.66%); } 
+  100% { transform: translateY(0%); } 
+}
 
-/* Responsif Mobile (HP) */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 1.75rem;
