@@ -14,20 +14,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <!-- Overlay Gelap saat Sidebar Buka -->
-      <div class="nav-overlay" id="nav-overlay"></div>
+
+ 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="container nav-container reveal">
+    <div class="container nav-container">
       <a href="#" class="brand-logo">
         <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
-        LPK IJEF Corp.
+        LPK<span>IJEF Corp</span>
       </a>
 
       <!-- Tombol Hamburger untuk HP -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
+
+      <!-- Overlay Gelap saat Sidebar Buka -->
+      <div class="nav-overlay" id="nav-overlay"></div>
 
       <!-- Menu Navigation / Floating Sidebar Mobile -->
       <ul class="nav-links" id="nav-links">
@@ -76,25 +79,11 @@
     </div>
   </nav>
 
-<!-- Hero Section -->
+  <!-- Hero Section -->
   <section id="hero" class="hero-section">
     <div class="container hero-content">
       <span class="badge-tag"><i class="fa-solid fa-flower"></i> Lembaga Pelatihan Kerja Jepang</span>
-      
-      <!-- H1 Dengan Wrapper Text Flip -->
-      <h1>
-        Wujudkan 
-        <span class="text-flip-wrapper">
-          <span class="text-flip">
-            <span>Harapan</span>
-            <span>Cita-Cita</span>
-            <span>Potensi</span>
-            <span>Prestasi</span>
-          </span>
-        </span>
-        Berkarier di Jepang Bersama <span>LPK IJEF</span>
-      </h1>
-
+      <h1>Wujudkan Impian Berkarier di Jepang Bersama <span>LPK IJEF</span></h1>
       <p>Pusat pelatihan bahasa dan keterampilan kerja profesional dengan standar kurikulum Jepang terintegrasi.</p>
       <div class="hero-buttons">
         <a href="#program" class="btn-primary">Lihat Program</a>
@@ -102,22 +91,20 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Tentang Kami -->
   <section id="tentang" class="section-padding">
     <div class="container about-grid">
-      <!-- Teks Tentang Kami Diberi class reveal -->
-      <div class="about-text reveal">
-        <h2>Mengapa Memilih Kami ?</h2>
-        <p>LPK Ijef Corp. berkomitmen mencetak tenaga kerja terampil, berkarakter, dan siap bersaing di dunia industri Jepang melalui program pelatihan Bahasa Jepang serta pembentukan fisik dan mental.</p>
+      <div class="about-text">
+        <h2>Mengapa Memilih <span>LPK IJEF</span>?</h2>
+        <p>LPK IJEF berkomitmen mencetak tenaga kerja terampil, berkarakter, dan siap bersaing di dunia industri Jepang melalui program pelatihan Bahasa Jepang serta pembentukan fisik dan mental.</p>
         <ul class="feature-list">
           <li><i class="fa-solid fa-circle-check"></i> Pengajar berpengalaman sertifikasi Jepang</li>
           <li><i class="fa-solid fa-circle-check"></i> Kurikulum terpadu (N5 hingga N3 + Keterampilan Teknis)</li>
           <li><i class="fa-solid fa-circle-check"></i> Pendampingan resmi hingga proses keberangkatan</li>
         </ul>
       </div>
-      <!-- Statistik Diberi class reveal -->
-      <div class="about-stats reveal">
+      <div class="about-stats">
         <div class="stat-card">
           <h3>500+</h3>
           <p>Siswa Terlatih</p>
@@ -133,23 +120,22 @@
   <!-- Program Section -->
   <section id="program" class="section-padding bg-light">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header">
         <h2>Program <span>Pelatihan</span></h2>
         <p>Pilih jalur karir yang sesuai dengan minat dan kualifikasi Anda</p>
       </div>
-      <!-- Kartu-kartu program diberi class reveal secara individual -->
       <div class="cards-grid">
-        <div class="card reveal">
+        <div class="card">
           <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
           <h3>Tokutei Ginou (SSW)</h3>
           <p>Program pekerja berkeahlian spesifik untuk tenaga kerja siap pakai di sektor manufaktur, perawat, dan pengolahan makanan.</p>
         </div>
-        <div class="card reveal">
+        <div class="card">
           <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
           <h3>Ginou Jisshusei (Magang)</h3>
           <p>Program pemagangan kerja untuk mempelajari teknologi dan budaya kerja industri Jepang secara langsung.</p>
         </div>
-        <div class="card reveal">
+        <div class="card">
           <div class="card-icon"><i class="fa-solid fa-language"></i></div>
           <h3>Intensif Bahasa Jepang</h3>
           <p>Kelas kursus persiapan ujian JLPT (N5 - N3) dan JFT-Basic dengan metode belajar cepat dan efektif.</p>
@@ -168,8 +154,8 @@
     <div class="footer-overlay"></div>
     <div class="container footer-container">
 
-      <!-- Card Kontak WhatsApp Variant Landscape (Diberi class reveal) -->
-      <div class="footer-contact-card contact-landscape reveal">
+      <!-- Card Kontak WhatsApp Variant Landscape -->
+      <div class="footer-contact-card contact-landscape">
         <div class="contact-header text-center">
           <h3>Layanan Kontak & Pendaftaran</h3>
         </div>
@@ -225,8 +211,8 @@
         </div>
       </div>
 
-      <!-- Konten Utama Footer (Diberi class reveal) -->
-      <div class="footer-content reveal">
+      <!-- Konten Utama Footer -->
+      <div class="footer-content">
         <div class="footer-brand">
           <h3>LPK <span>IJEF</span></h3>
           <p>Lembaga Pelatihan Kerja Terpercaya untuk Persiapan Karir di Jepang.</p>
