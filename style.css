@@ -1024,7 +1024,7 @@ footer.footer-with-bg {
   font-weight: 700;
 }
 
-/* Keyframes Pergerakan Vertikal */
+/* Keyframes Pergerakan Vertikal
 @keyframes slideUpMultiText {
   0%, 20% {
     transform: translateY(0);
@@ -1037,6 +1037,19 @@ footer.footer-with-bg {
   }
   75%, 95% {
     transform: translateY(-3.9em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}   */
+
+/* Keyframes Pergerakan Vertikal (2 Kata) */
+@keyframes slideUpMultiText {
+  0%, 45% {
+    transform: translateY(0);
+  }
+  50%, 95% {
+    transform: translateY(-1.3em);
   }
   100% {
     transform: translateY(0);
