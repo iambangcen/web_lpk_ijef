@@ -957,6 +957,25 @@ footer.footer-with-bg {
   gap: 6px;
 }
 
+/* ==========================================================================
+   PERBAIKAN HERO SECTION & ANIMASI TEXT FLIP
+   ========================================================================== */
+
+/* Container Utama Judul */
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff !important; /* Memaksa seluruh teks h1 menjadi putih */
+  margin: 15px 0 20px;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
 /* Baris Pertama: "Wujudkan [Text Flip]" */
 .hero-title-top {
   display: inline-flex;
