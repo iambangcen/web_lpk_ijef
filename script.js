@@ -63,38 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. EFEK FLOATING HEADER SAAT SCROLL
   // ==========================================================================
   window.addEventListener('scroll', () => {
-    if (navbar) {
-      if (window.scrollY > 30) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+    if (window.scrollY > 30) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
   });
-
-  // ==========================================================================
-  // 4. SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
-  // ==========================================================================
-  const revealElements = document.querySelectorAll('.reveal');
-
-  if (revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Hentikan pemantauan setelah muncul
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0.15, // Aktif saat 15% elemen masuk viewport
-      }
-    );
-
-    revealElements.forEach((element) => {
-      revealObserver.observe(element);
-    });
-  }
 });
