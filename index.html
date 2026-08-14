@@ -14,20 +14,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <!-- Overlay Gelap saat Sidebar Buka -->
-      <div class="nav-overlay" id="nav-overlay"></div>
+
+ 
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-container">
       <a href="#" class="brand-logo">
         <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
-        LPK IJEF Corp.
+        LPK<span>IJEF Corp</span>
       </a>
 
       <!-- Tombol Hamburger untuk HP -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
+
+      <!-- Overlay Gelap saat Sidebar Buka -->
+      <div class="nav-overlay" id="nav-overlay"></div>
 
       <!-- Menu Navigation / Floating Sidebar Mobile -->
       <ul class="nav-links" id="nav-links">
@@ -57,194 +60,6 @@
           </ul>
         </li>
 
-        <!-- Dropdown Menu: Informasi -->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">
-            <span>Informasi</span>
-            <i class="fa-solid fa-chevron-down icon-arrow"></i>
-          </a>
-          <ul class="submenu">
-            <li><a href="#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-            <li><a href="#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-          </ul>
-        </li>
-
-        <li><a href="#program">Program</a></li>
-        <li><a href="#alur">Alur Pendaftaran</a></li>
-        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section (Diberi class reveal) -->
-  <section id="hero" class="hero-section reveal">
-    <div class="container hero-content">
-      <span class="badge-tag"><i class="fa-solid fa-flower"></i> Lembaga Pelatihan Kerja Jepang</span>
-      <h1>
-  Wujudkan 
-  <span class="text-flip-wrapper">
-    <span class="text-flip">
-      <span>Harapan</span>
-      <span>Cita-Cita</span>
-      <span>Prestasi</span>
-      <span>Peluang</span>
-    </span>
-  </span> 
-  Berkarier di Jepang Bersama Kami
-</h1>
-      <p>Pusat pelatihan bahasa dan keterampilan kerja profesional dengan standar kurikulum Jepang terintegrasi.</p>
-      <div class="hero-buttons">
-        <a href="#program" class="btn-primary">Lihat Program</a>
-        <a href="#kontak" class="btn-secondary">Konsultasi Gratis</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tentang Kami -->
-  <section id="tentang" class="section-padding">
-    <div class="container about-grid">
-      <!-- Teks Tentang Kami Diberi class reveal -->
-      <div class="about-text reveal">
-        <h2>Mengapa Memilih Kami ?</h2>
-        <p>LPK Ijef Corp. berkomitmen mencetak tenaga kerja terampil, berkarakter, dan siap bersaing di dunia industri Jepang melalui program pelatihan Bahasa Jepang serta pembentukan fisik dan mental.</p>
-        <ul class="feature-list">
-          <li><i class="fa-solid fa-circle-check"></i> Pengajar berpengalaman sertifikasi Jepang</li>
-          <li><i class="fa-solid fa-circle-check"></i> Kurikulum terpadu (N5 hingga N3 + Keterampilan Teknis)</li>
-          <li><i class="fa-solid fa-circle-check"></i> Pendampingan resmi hingga proses keberangkatan</li>
-        </ul>
-      </div>
-      <!-- Statistik Diberi class reveal -->
-      <div class="about-stats reveal">
-        <div class="stat-card">
-          <h3>500+</h3>
-          <p>Siswa Terlatih</p>
-        </div>
-        <div class="stat-card">
-          <h3>98%</h3>
-          <p>Kelulusan Ujian</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Program Section -->
-  <section id="program" class="section-padding bg-light">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2>Program <span>Pelatihan</span></h2>
-        <p>Pilih jalur karir yang sesuai dengan minat dan kualifikasi Anda</p>
-      </div>
-      <!-- Kartu-kartu program diberi class reveal secara individual -->
-      <div class="cards-grid">
-        <div class="card reveal">
-          <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
-          <h3>Tokutei Ginou (SSW)</h3>
-          <p>Program pekerja berkeahlian spesifik untuk tenaga kerja siap pakai di sektor manufaktur, perawat, dan pengolahan makanan.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
-          <h3>Ginou Jisshusei (Magang)</h3>
-          <p>Program pemagangan kerja untuk mempelajari teknologi dan budaya kerja industri Jepang secara langsung.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon"><i class="fa-solid fa-language"></i></div>
-          <h3>Intensif Bahasa Jepang</h3>
-          <p>Kelas kursus persiapan ujian JLPT (N5 - N3) dan JFT-Basic dengan metode belajar cepat dan efektif.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/6281234567890" class="wa-float" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- Footer -->
-  <footer class="footer-with-bg">
-    <div class="footer-overlay"></div>
-    <div class="container footer-container">
-
-      <!-- Card Kontak WhatsApp Variant Landscape (Diberi class reveal) -->
-      <div class="footer-contact-card contact-landscape reveal">
-        <div class="contact-header text-center">
-          <h3>Layanan Kontak & Pendaftaran</h3>
-        </div>
-
-        <div class="contact-grid">
-          <!-- Admin Matching Job -->
-          <div class="contact-card-item">
-            <div class="contact-info">
-              <div class="contact-icon-wrapper">
-                <i class="fa-solid fa-briefcase"></i>
-              </div>
-              <div class="contact-details">
-                <h4>Salma</h4>
-                <span class="role-badge">Admin Matching Job</span>
-              </div>
-            </div>
-            <a href="https://wa.me/6282130826893" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
-              <i class="fa-brands fa-whatsapp"></i> Chat
-            </a>
-          </div>
-
-          <!-- Admin Penerimaan Siswa -->
-          <div class="contact-card-item">
-            <div class="contact-info">
-              <div class="contact-icon-wrapper">
-                <i class="fa-solid fa-user-graduate"></i>
-              </div>
-              <div class="contact-details">
-                <h4>Mira Tania</h4>
-                <span class="role-badge">Admin Penerimaan Siswa</span>
-              </div>
-            </div>
-            <a href="https://wa.me/6285722355853" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
-              <i class="fa-brands fa-whatsapp"></i> Chat
-            </a>
-          </div>
-
-          <!-- Sales -->
-          <div class="contact-card-item">
-            <div class="contact-info">
-              <div class="contact-icon-wrapper">
-                <i class="fa-solid fa-headset"></i>
-              </div>
-              <div class="contact-details">
-                <h4>Agus Herlan</h4>
-                <span class="role-badge">Kontak Sales</span>
-              </div>
-            </div>
-            <a href="https://wa.me/6283842849749" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
-              <i class="fa-brands fa-whatsapp"></i> Chat
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Konten Utama Footer (Diberi class reveal) -->
-      <div class="footer-content reveal">
-        <div class="footer-brand">
-          <h3>LPK <span>IJEF</span></h3>
-          <p>Lembaga Pelatihan Kerja Terpercaya untuk Persiapan Karir di Jepang.</p>
-        </div>
-        <div class="footer-contact">
-          <h4>Alamat Kantor</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua Kabupaten Bandung Barat, Jawa Barat 40551</p>
-          <p><i class="fas fa-phone"></i> +62 belom ada nomor office</p>
-        </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="footer-bottom">
-        <p>&copy; 2026 LPK IJEF Corp. All Rights Reserved.</p>
-      </div>
-
-    </div>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
         <!-- Dropdown Menu: Informasi -->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle">
