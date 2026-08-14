@@ -191,12 +191,23 @@ body {
 .hero-section {
   position: relative;
   /* Masukkan path gambar lanskap Anda di url() */
-  background: url('assets/cover.jpeg') no-repeat center center/cover;
+  
   padding: 120px 0 80px 0;
   color: #ffffff; /* Mengubah teks hero menjadi putih agar kontras */
   overflow: hidden;
 }
-
+/* ==========================================================================
+   2. CLASS KHUSUS MEMPROSES BACKGROUND (bg-hero-full)
+   ========================================================================== */
+.bg-hero-full {
+  /* Pengaturan Gambar Background */
+  background: url('assets/cover.jpeg') no-repeat center center/cover;
+                    url('path/ke/gambar-anda.jpg'); /* Overlay gelap + gambar */
+  background-size: cover;       /* Memastikan gambar penuh tanpa terdistorsi */
+  background-position: center;  /* Titik tengah fokus gambar */
+  background-repeat: no-repeat; /* Mencegah gambar berulang/ulangan */
+  background-attachment: scroll;/* Opsi: Ubah ke 'fixed' jika ingin efek parallax */
+}
 /* Layer Overlay Gelap/Opacity di Atas Gambar */
 .hero-section::before {
   content: "";
