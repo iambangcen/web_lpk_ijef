@@ -207,6 +207,7 @@ body {
   background-position: center;  /* Titik tengah fokus gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang/ulangan */
   background-attachment: scroll;/* Opsi: Ubah ke 'fixed' jika ingin efek parallax */
+  min-height: 100vh;
 }
 /* Layer Overlay Gelap/Opacity di Atas Gambar */
 .hero-section::before {
