@@ -1923,33 +1923,34 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   SOLUSI FINAL SEJAJAR PRESISI (INLINE-FLEX ALIGNMENT)
+   SOLUSI PASTI RATA BASELINE (MOBILE & DESKTOP)
    ========================================================================== */
 
 .hero-content h1 {
-  display: block;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline; /* Mengunci SEMUA kata tepat pada garis dasar teks */
+  gap: 0.3em;
   font-size: 2.2rem;
   color: #ffffff !important;
   margin: 15px 0;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
-/* Pembungkus luar: menggunakan inline-flex agar dapat mengunci align-items */
+/* Pembungkus luar */
 .text-flip-wrapper {
   display: inline-flex !important;
-  align-items: center;      /* Kunci posisi vertikal tepat di tengah huruf */
-  justify-content: center;
-  height: 1.9em; /*ATUR BARIS KATA2 NYA KALAU NGACO*/
+  align-self: baseline;  /* Ikut garis dasar kata "Wujudkan" */
+  height: 1.3em !important; /* Menambah ruang vertikal agar tidak terdorong */
   overflow: hidden;
   position: relative;
-  vertical-align: middle;   /* Mengunci kesejajaran dengan kata "Wujudkan" */
-  margin-top: -0.15em;      /* Menarik kata animasi turun agar rata baseline */
 }
 
-/* Container kata yang bergeser */
+/* Container animasi */
 .text-flip {
   display: flex;
   flex-direction: column;
@@ -1961,28 +1962,28 @@ footer.footer-with-bg {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1.15em;
-  line-height: 1;
+  height: 1.3em !important;
+  line-height: 1.3em !important;
   color: #60a5fa !important;
   white-space: nowrap;
-  padding: 0 6px;
+  padding: 0 2px;
 }
 
 /* ==========================================================================
-   ANIMASI SLIDE (DENGAN HEIGHT 1.15em)
+   ANIMASI SLIDE (DENGAN HEIGHT 1.3em)
    ========================================================================== */
 @keyframes slideUpMultiText {
   0%, 20% {
     transform: translateY(0);
   }
   25%, 45% {
-    transform: translateY(-1.15em);
+    transform: translateY(-1.3em);
   }
   50%, 70% {
-    transform: translateY(-2.30em);
+    transform: translateY(-2.6em);
   }
   75%, 95% {
-    transform: translateY(-3.45em);
+    transform: translateY(-3.9em);
   }
   100% {
     transform: translateY(0);
