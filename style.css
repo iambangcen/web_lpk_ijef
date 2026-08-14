@@ -980,7 +980,7 @@ footer.footer-with-bg {
 /* Pembungkus Animasi Flip */
 .text-flip-wrapper {
   display: inline-block;
-  height: 1em;
+  height: 1.3em;
   overflow: hidden;
   position: relative;
   vertical-align: middle;
@@ -998,8 +998,8 @@ footer.footer-with-bg {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1em;
-  line-height: 1em;
+  height: 1.3em;
+  line-height: 1.3em;
   color: #60a5fa !important; /* Warna highlight kata berganti */
   white-space: nowrap;
   font-weight: 700;
@@ -1011,7 +1011,7 @@ footer.footer-with-bg {
     transform: translateY(0);
   }
   25%, 45% {
-    transform: translateY(-2.3em);
+    transform: translateY(-1.3em);
   }
   50%, 70% {
     transform: translateY(-2.6em);
