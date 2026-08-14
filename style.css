@@ -1923,15 +1923,16 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   SOLUSI PASTI RATA BASELINE (MOBILE & DESKTOP)
+   SOLUSI PERMANEN: GRID STACKING ALIGNMENT
    ========================================================================== */
 
+/* 1. Header h1 dibuat Flex Inline Rata Baseline */
 .hero-content h1 {
   display: flex !important;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: baseline; /* Mengunci SEMUA kata tepat pada garis dasar teks */
-  gap: 0.3em;
+  align-items: baseline !important; /* Kunci semua kata pada garis huruf dasar */
+  gap: 0.35em;
   font-size: 2.2rem;
   color: #ffffff !important;
   margin: 15px 0;
@@ -1941,49 +1942,48 @@ footer.footer-with-bg {
   text-align: center;
 }
 
-/* Pembungkus luar */
+/* 2. Wrapper menggunakan CSS Grid untuk menumpuk teks animasi */
 .text-flip-wrapper {
-  display: inline-flex !important;
-  align-self: baseline;  /* Ikut garis dasar kata "Wujudkan" */
-  height: 1.3em !important; /* Menambah ruang vertikal agar tidak terdorong */
+  display: inline-grid !important;
+  grid-template-areas: "overlap";
+  align-self: baseline;
   overflow: hidden;
-  position: relative;
+  height: 1.2em; /* Mengunci tinggi 1 baris */
 }
 
-/* Container animasi */
+/* 3. Container animasi bergeser di dalam grid */
 .text-flip {
+  grid-area: overlap;
   display: flex;
   flex-direction: column;
-  animation: slideUpMultiText 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  animation: slideUpGrid 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
 }
 
-/* Item kata animasi */
+/* 4. Teks Kata Animasi */
 .text-flip span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1.3em !important;
-  line-height: 1.3em !important;
+  display: block;
+  height: 1.2em;
+  line-height: 1.2em;
   color: #60a5fa !important;
   white-space: nowrap;
   padding: 0 2px;
 }
 
 /* ==========================================================================
-   ANIMASI SLIDE (DENGAN HEIGHT 1.3em)
+   ANIMASI SLIDE GRID
    ========================================================================== */
-@keyframes slideUpMultiText {
+@keyframes slideUpGrid {
   0%, 20% {
     transform: translateY(0);
   }
   25%, 45% {
-    transform: translateY(-1.3em);
+    transform: translateY(-1.2em);
   }
   50%, 70% {
-    transform: translateY(-2.6em);
+    transform: translateY(-2.4em);
   }
   75%, 95% {
-    transform: translateY(-3.9em);
+    transform: translateY(-3.6em);
   }
   100% {
     transform: translateY(0);
