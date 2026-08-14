@@ -202,7 +202,7 @@ body {
 .bg-hero-full {
   /* Pengaturan Gambar Background */
   background: url('assets/cover.jpeg') no-repeat center center/cover;
-                    url('path/ke/gambar-anda.jpg'); /* Overlay gelap + gambar */
+                    url('assets/cover.jpeg'); /* Overlay gelap + gambar */
   background-size: cover;       /* Memastikan gambar penuh tanpa terdistorsi */
   background-position: center;  /* Titik tengah fokus gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang/ulangan */
