@@ -202,7 +202,6 @@ body {
 .bg-hero-full {
   /* Pengaturan Gambar Background */
   background: url('assets/cover.jpeg') no-repeat center center/cover;
-                    url('assets/cover.jpeg'); /* Overlay gelap + gambar */
   background-size: cover;       /* Memastikan gambar penuh tanpa terdistorsi */
   background-position: center;  /* Titik tengah fokus gambar */
   background-repeat: no-repeat; /* Mencegah gambar berulang/ulangan */
@@ -1036,37 +1035,7 @@ footer.footer-with-bg {
   font-weight: 700;
 }
 
-/* Keyframes Pergerakan Vertikal
-@keyframes slideUpMultiText {
-  0%, 20% {
-    transform: translateY(0);
-  }
-  25%, 45% {
-    transform: translateY(-1.3em);
-  }
-  50%, 70% {
-    transform: translateY(-2.6em);
-  }
-  75%, 95% {
-    transform: translateY(-3.9em);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}   */
-
-/* Keyframes Pergerakan Vertikal (2 Kata) */
-@keyframes slideUpMultiText {
-  0%, 45% {
-    transform: translateY(0);
-  }
-  50%, 95% {
-    transform: translateY(-1.3em);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+/* Keyframes Pergerakan Vertikal (3 Kata) */ @keyframes slideUpMultiText { 0%, 28% { transform: translateY(0%); /* Kata 1: "Harapan" */ } 33%, 61% { transform: translateY(-33.33%); /* Kata 2: "Cita-Cita" */ } 66%, 94% { transform: translateY(-66.66%); /* Kata 3: "Potensi" */ } 100% { transform: translateY(0%); /* Kembali ke awal secara mulus */ } }
 
 /* Responsif Mobile (HP) */
 @media (max-width: 768px) {
