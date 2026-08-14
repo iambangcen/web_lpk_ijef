@@ -951,12 +951,11 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   PERBAIKAN KERAPIAN TEKS FLIP (DESKTOP & MOBILE SEJAJAR TOTAL)
+   SOLUSI FINAL SEJAJAR PRESISI (INLINE-FLEX ALIGNMENT)
    ========================================================================== */
 
-/* Pastikan h1 kembali ke display block normal */
 .hero-content h1 {
-  display: block !important;
+  display: block;
   font-size: 2.2rem;
   color: #ffffff !important;
   margin: 15px 0;
@@ -966,18 +965,19 @@ footer.footer-with-bg {
   text-align: center;
 }
 
-/* Pembungkus luar */
+/* Pembungkus luar: menggunakan inline-flex agar dapat mengunci align-items */
 .text-flip-wrapper {
-  display: inline-block !important;
-  vertical-align: baseline; /* Sejajarkan persis pada garis tulisan */
-  height: 1.2em;
+  display: inline-flex !important;
+  align-items: center;      /* Kunci posisi vertikal tepat di tengah huruf */
+  justify-content: center;
+  height: 1.15em;
   overflow: hidden;
   position: relative;
-  /* KUNCI: Menurunkan posisi kata animasi 3-4px agar sejajar sempurna */
-  transform: translateY(3px); 
+  vertical-align: middle;   /* Mengunci kesejajaran dengan kata "Wujudkan" */
+  margin-top: -0.15em;      /* Menarik kata animasi turun agar rata baseline */
 }
 
-/* Container animasi */
+/* Container kata yang bergeser */
 .text-flip {
   display: flex;
   flex-direction: column;
@@ -986,35 +986,31 @@ footer.footer-with-bg {
 
 /* Item kata animasi */
 .text-flip span {
-  display: block;
-  height: 1.2em;
-  line-height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.15em;
+  line-height: 1;
   color: #60a5fa !important;
   white-space: nowrap;
-  padding: 0 4px;
+  padding: 0 6px;
 }
 
 /* ==========================================================================
-   KEYFRAMES ANIMASI
+   ANIMASI SLIDE (DENGAN HEIGHT 1.15em)
    ========================================================================== */
 @keyframes slideUpMultiText {
   0%, 20% {
     transform: translateY(0);
   }
   25%, 45% {
-    transform: translateY(-1.2em);
+    transform: translateY(-1.15em);
   }
   50%, 70% {
-    transform: translateY(-2.4em);
+    transform: translateY(-2.30em);
   }
   75%, 95% {
-    transform: translateY(-3.6em);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-    transform: translateY(-3.6em);
+    transform: translateY(-3.45em);
   }
   100% {
     transform: translateY(0);
