@@ -970,7 +970,7 @@ footer.footer-with-bg {
   display: inline-flex !important;
   align-items: center;      /* Kunci posisi vertikal tepat di tengah huruf */
   justify-content: center;
-  height: 1.0em; /*ATUR BARIS KATA2 NYA KALAU NGACO*/
+  height: 1.9em; /*ATUR BARIS KATA2 NYA KALAU NGACO*/
   overflow: hidden;
   position: relative;
   vertical-align: middle;   /* Mengunci kesejajaran dengan kata "Wujudkan" */
