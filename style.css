@@ -703,6 +703,19 @@ footer.footer-with-bg {
     align-items: center !important;
     text-align: center !important;
   }
+  
+  /* ==========================================================================
+   GARIS BIRU MEMANJANG KHUSUS CARD CTA (TIDAK MEMPENGARUHI CARD LAIN)
+   ========================================================================== */
+.content-card.style-cta h3 { display: inline-block; /* Membatasi lebar elemen sesuai panjang teksnya */ position: relative; padding-bottom: 12px; margin-bottom: 20px !important; /* Jarak pas 20px ke teks paragraf di bawahnya */ }
+
+.content-card.style-cta h3 {
+  position: relative;
+  padding-bottom: 16px;
+  margin-bottom: 20px !important; /* Jarak pas 20px ke teks di bawahnya */
+}
+
+.content-card.style-cta h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; /* Mengunci panjang garis mengikuti lebar teks judul */ height: 3px; /* Ketebalan garis */ background: var(--bright-navy); /* Warna garis biru */ border-radius: 2px; }
 
   .hero-buttons {
     flex-direction: column;
@@ -1052,4 +1065,9 @@ footer.footer-with-bg {
   .hero-title-top {
     gap: 6px;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Menjaga agar judul kontak tidak tertutup floating navbar */
 }
