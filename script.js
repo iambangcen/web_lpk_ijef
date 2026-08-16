@@ -1,3 +1,20 @@
+// ==========================================================================
+// PRELOADER HANDLER (DENGAN TIMEOUT SAFETY FALLBACK)
+// ==========================================================================
+function hidePreloader() {
+  const preloader = document.getElementById('preloader');
+  if (preloader && !preloader.classList.contains('fade-out')) {
+    preloader.classList.add('fade-out');
+  }
+}
+
+// 1. Sembunyikan otomatis jika seluruh aset selesai dimuat
+window.addEventListener('load', hidePreloader);
+
+// 2. SAFETY FALLBACK: Paksa sembunyikan preloader maksimal setelah 2.5 detik
+//    (Mencegah preloader macet jika ada gambar/aset yang error 404)
+setTimeout(hidePreloader, 2500);
+
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // 1. ELEMEN NAVIGASI & MOBILE SIDEBAR MENU
