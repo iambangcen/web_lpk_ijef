@@ -1,5 +1,5 @@
 // ==========================================================================
-// PRELOADER HANDLER (DENGAN DUAL TIMER: LOAD + FALLBACK)
+// PRELOADER HANDLER (PRESERVED DELAY + SAFETY FALLBACK)
 // ==========================================================================
 function hidePreloader() {
   const preloader = document.getElementById('preloader');
@@ -8,13 +8,24 @@ function hidePreloader() {
   }
 }
 
-// 1. JIKA SEMUA ASET BERHASIL DIMUAT: TUNGGU 'LOAD' + JEDA 5 DETIK
+// Variable flag untuk memastikan preloader hanya di-trigger sekali
+let isLoaded = false;
+
+// 1. KONDISI NORMAL (Aset Berhasil Dimuat):
+// Menunggu halaman & semua aset selesai dimuat, LALU beri jeda tepat 5 detik.
 window.addEventListener('load', () => {
-  setTimeout(hidePreloader, 5000);
+  isLoaded = true;
+  setTimeout(hidePreloader, 5000); // Tepat 5000ms setelah window load
 });
 
-// 2. FALLBACK JIKA ASET GAGAL/ERROR: PAKSA HILANG TEPAT DI DETIK KE-5
-setTimeout(hidePreloader, 5000);
+// 2. KONDISI ASET ERROR / GAGAL:
+// Jika dalam 10 detik halaman belum mentrigger 'load' (karena ada aset broken/404),
+// paksa sembunyikan preloader agar pengunjung tidak tertahan selamanya.
+setTimeout(() => {
+  if (!isLoaded) {
+    hidePreloader();
+  }
+}, 10000); // Batas toleransi maksimal 10 detik
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
