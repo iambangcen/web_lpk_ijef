@@ -15,7 +15,7 @@ let isLoaded = false;
 // Menunggu halaman & semua aset selesai dimuat, LALU beri jeda tepat 5 detik.
 window.addEventListener('load', () => {
   isLoaded = true;
-  setTimeout(hidePreloader, 5000); // Tepat 5000ms setelah window load
+  setTimeout(hidePreloader, 2500); // Tepat 5000ms setelah window load
 });
 
 // 2. KONDISI ASET ERROR / GAGAL:
@@ -25,7 +25,7 @@ setTimeout(() => {
   if (!isLoaded) {
     hidePreloader();
   }
-}, 10000); // Batas toleransi maksimal 10 detik
+}, 5000); // Batas toleransi maksimal 10 detik
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
