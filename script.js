@@ -9,12 +9,12 @@ function hidePreloader() {
 }
 
 // OPSI A: Menggunakan setTimeout langsung 5000 ms (5 detik)
-setTimeout(hidePreloader, 5000);
+// setTimeout(hidePreloader, 5000);
 
 // OPSI B: Jika ingin menunggu 'load' SELESAI DULU, BARU jeda 5 detik baru hilang:
-// window.addEventListener('load', () => {
-//   setTimeout(hidePreloader, 5000);
-// });
+window.addEventListener('load', () => {
+   setTimeout(hidePreloader, 5000);
+ });
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
