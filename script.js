@@ -1,5 +1,5 @@
 // ==========================================================================
-// PRELOADER HANDLER (DENGAN TIMEOUT SAFETY FALLBACK)
+// PRELOADER HANDLER (DENGAN DELAY / TIMEOUT 5 DETIK)
 // ==========================================================================
 function hidePreloader() {
   const preloader = document.getElementById('preloader');
@@ -8,12 +8,13 @@ function hidePreloader() {
   }
 }
 
-// 1. Sembunyikan otomatis jika seluruh aset selesai dimuat
-window.addEventListener('load', hidePreloader,5000);
+// OPSI A: Menggunakan setTimeout langsung 5000 ms (5 detik)
+setTimeout(hidePreloader, 5000);
 
-// 2. SAFETY FALLBACK: Paksa sembunyikan preloader maksimal setelah 2.5 detik
-//    (Mencegah preloader macet jika ada gambar/aset yang error 404)
-setTimeout(hidePreloader, 2500);
+// OPSI B: Jika ingin menunggu 'load' SELESAI DULU, BARU jeda 5 detik baru hilang:
+// window.addEventListener('load', () => {
+//   setTimeout(hidePreloader, 5000);
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
