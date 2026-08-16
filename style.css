@@ -810,10 +810,14 @@ footer.footer-with-bg {
   margin-bottom: 8px;
 }
 
+/* ==========================================================================
+   PERBAIKAN .CONTENT-IMG AGAR TIDAK TERPOTONG
+   ========================================================================== */
 .content-img {
   width: 100%;
-  max-height: 450px;
-  object-fit: contain;        /* Gambar mengecil utuh agar muat di dalam 450px */
+  height: auto;               /* Mengikuti proporsi asli gambar */
+  max-height: none;           /* Hapus batasan tinggi 380px */
+  object-fit: contain;        /* Tampilkan seluruh isi gambar tanpa di-crop */
   border-radius: 12px;
   margin: 15px 0;
   display: block;
