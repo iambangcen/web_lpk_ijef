@@ -9,7 +9,7 @@ function hidePreloader() {
 }
 
 // 1. Sembunyikan otomatis jika seluruh aset selesai dimuat
-window.addEventListener('load', hidePreloader);
+window.addEventListener('load', hidePreloader,5000);
 
 // 2. SAFETY FALLBACK: Paksa sembunyikan preloader maksimal setelah 2.5 detik
 //    (Mencegah preloader macet jika ada gambar/aset yang error 404)
