@@ -1,5 +1,5 @@
 // ==========================================================================
-// PRELOADER HANDLER (DENGAN DELAY / TIMEOUT 5 DETIK)
+// PRELOADER HANDLER (DENGAN DUAL TIMER: LOAD + FALLBACK)
 // ==========================================================================
 function hidePreloader() {
   const preloader = document.getElementById('preloader');
@@ -8,13 +8,13 @@ function hidePreloader() {
   }
 }
 
-// OPSI A: Menggunakan setTimeout langsung 5000 ms (5 detik)
-// setTimeout(hidePreloader, 5000);
-
-// OPSI B: Jika ingin menunggu 'load' SELESAI DULU, BARU jeda 5 detik baru hilang:
+// 1. JIKA SEMUA ASET BERHASIL DIMUAT: TUNGGU 'LOAD' + JEDA 5 DETIK
 window.addEventListener('load', () => {
-   setTimeout(hidePreloader, 5000);
- });
+  setTimeout(hidePreloader, 5000);
+});
+
+// 2. FALLBACK JIKA ASET GAGAL/ERROR: PAKSA HILANG TEPAT DI DETIK KE-5
+setTimeout(hidePreloader, 5000);
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
