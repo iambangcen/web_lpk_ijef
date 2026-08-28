@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alur Pendaftaran - LPK IJEF Corp</title>
+  <title>LPK IJEF - LPK Pelatihan Kerja ke Jepang</title>
   
   <!-- Font Google & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,38 +14,48 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- PRELOADER EFEK LOADING -->
-<div id="preloader">
-  <div class="spinner-container">
-    <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
-    <div class="spinner"></div>
-    <p class="preloader-text">Memuat halaman...</p>
+  <!-- PRELOADER EFEK LOADING -->
+  <div id="preloader">
+    <div class="spinner-container">
+      <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
+      <div class="spinner"></div>
+      <p class="preloader-text">Memuat halaman...</p>
+    </div>
   </div>
-</div>
 
-  <!-- ==========================================================================
-     FLOATING NAVBAR
-     ========================================================================== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo">
-        <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="nav-logo-img">
-        <span class="notranslate" translate="no">LPK IJEF Corp.</span>
+  <!-- Overlay Gelap saat Sidebar Buka -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container reveal">
+      <a href="#" class="brand-logo">
+        <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
+        LPK IJEF Corp.
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-        <i class="fas fa-bars"></i>
+      <!-- Tombol Hamburger untuk HP -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
       </button>
 
-      <ul class="nav-links" id="navLinks">
-        <div class="sidebar-header">
-          <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
-          <button class="close-btn" id="closeBtn" aria-label="Close Menu">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
+      <!-- Menu Navigation / Floating Sidebar Mobile -->
+      <ul class="nav-links" id="nav-links">
+        
+        <!-- Header Sidebar (Logo Lingkaran di HP) -->
+        <li class="sidebar-header">
+          <div class="logo-wrapper">
+            <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
+          </div>
+          <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </li>
 
-        <li><a href="index.html">Beranda</a></li>
+        <!-- Dropdown Menu: Beranda -->
+        <li class="dropdown">
+          <a href="index.html#tentang-kami" class="dropdown-toggle">
+            <span>Beranda</span>
+          </a>
+        </li>
 
         <!-- Dropdown Menu: Profile -->
         <li class="dropdown">
@@ -54,7 +64,10 @@
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="company-profile.html">Company Profile <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="company-profile.html">Company Profile</a></li>
+            <li><a href="company-profile.html#legalitas">Perizinan & Legalitas</a></li>
+            <li><a href="company-profile.html#tim-kami">Tim Kami / SOP</a></li>
+            <li><a href="lokasi-pelatihan.html">Lokasi Pendidikan & Pelatihan</a></li>
           </ul>
         </li>
 
@@ -65,24 +78,116 @@
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-            <li><a href="#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#">Bidang Kerja</a></li>
+            
+            <!-- Biaya -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Biaya</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Biaya Pelatihan</a></li>
+                
+                <li class="dropdown-sub dropdown-sub-right">
+                  <a href="#" class="dropdown-toggle-sub">
+                    <span>Biaya Keberangkatan</span>
+                    <i class="fa-solid fa-chevron-right arrow-sub"></i>
+                  </a>
+                  <ul class="submenu-sub submenu-right">
+                    <li><a href="#">Mandiri</a></li>
+                    <li><a href="#">Dana Talang</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Fasilitas -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Fasilitas</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Kelas</a></li>
+                <li><a href="#">Gedung</a></li>
+              </ul>
+            </li>
+
+            <!-- Dokumen & Sertifikat -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Dokumen & Sertifikat</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">COE</a></li>
+                <li><a href="#">E-KTLN</a></li>
+                <li><a href="#">JFT Basic</a></li>
+                <li><a href="#">JLPT</a></li>
+                <li><a href="#">SSW</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
 
-        <li><a href="#program">Program</a></li>
-        <li><a href="alur-pendaftaran.html"">Alur Pendaftaran</a></li>
-        <li><a href="index.html#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
+        <!-- Dropdown Menu: Program -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Program</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="#">Tokutei Ginou</a></li>
+            <li><a href="#">Nihongo Gakkou</a></li>
+            <li><a href="#">Engineering</a></li>
+            <li><a href="#">Internship</a></li>
+            
+            <li class="dropdown-sub dropdown-sub-right">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Kelas Pemantapan</span>
+                <i class="fa-solid fa-chevron-right arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-right">
+                <li><a href="#">Kelas SSW</a></li>
+                <li><a href="#">Kelas Mensetsu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">Matching Job</a></li>
+            <li><a href="#">Kelas Online</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Alur Pendaftaran -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Alur Pendaftaran</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="alur-pendaftaran.html">Kelas Reguler</a></li>
+            <li><a href="#">Kelas Online</a></li>
+            <li><a href="#">Matching Job</a></li>
+            
+            <li class="dropdown-sub dropdown-sub-right">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Kelas Pemantapan</span>
+                <i class="fa-solid fa-chevron-right arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-right">
+                <li><a href="#">SSW</a></li>
+                <li><a href="#">Mensetsu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Overlay untuk Sidebar Mobile -->
-  <div class="nav-overlay" id="navOverlay"></div>
-
-  <!-- ==========================================================================
-     PAGE HEADER
-     ========================================================================== -->
   <header class="page-header">
     <div class="container">
       <h1>Alur Pendaftaran</h1>
@@ -90,22 +195,16 @@
     </div>
   </header>
 
-  <!-- ==========================================================================
-     PAGE CONTENT: INFOGRAFIK & LANGKAH-LANGKAH
-     ========================================================================== -->
   <main class="section-padding bg-light">
     <div class="container page-content">
 
-      <!-- Card Infografik Utama -->
       <section class="content-card reveal active">
-        <h2>Infografik Alur Pendaftaran</h2>
+        <h2>Infografik</h2>
         <p>Silakan pelajari skema dan alur proses seleksi hingga pemberangkatan program ke Jepang di bawah ini:</p>
         
-        <!-- Gambar Alur Pendaftaran -->
-        <img src="assets/alurpendaftaran.jpeg" alt="Infografik Alur Pendaftaran LPK IJEF Corp" class="content-img" loadng="lazy">
+        <img src="assets/alurpendaftaran.jpeg" alt="Infografik Alur Pendaftaran LPK IJEF Corp" class="content-img" loading="lazy">
       </section>
 
-      <!-- Card Tahapan Detail -->
       <section class="content-card reveal">
         <h3>Detail Tahapan Seleksi & Pelatihan</h3>
         <p>Proses pendaftaran hingga pemberangkatan dirancang secara transparan dan terstruktur melalui tahapan berikut:</p>
@@ -140,18 +239,15 @@
       </section>
 
       <!-- CTA pendaftaran -->
-      <section class="content-card reveal style-cta" style="text-align: center; background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: #ffffff;">
-        <h3 style="color: #ffffff;">Siap Memulai Karir Impian di Jepang?</h3>
-        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 20px;">Konsultasikan kualifikasi dan persyaratan pendaftaran Anda dengan tim kami sekarang secara gratis.</p>
-        <a href="index.html#kontak" class="btn-primary" style="background-color: var(--primary-pink);">Hubungi Tim Admisi <i class="fab fa-whatsapp"></i></a>
+      <section class="content-card reveal style-cta" style="text-align: center; background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: #ffffff; margin-top: 40px; margin-bottom: 20px; padding: 45px 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+        <h3 style="color: #ffffff; margin-bottom: 15px;">Siap Memulai Karir Impian di Jepang?</h3>
+        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 25px;">Konsultasikan kualifikasi dan persyaratan pendaftaran Anda dengan tim kami sekarang secara gratis.</p>
+        <a href="index.html#kontak" class="btn-primary" style="background-color: var(--primary-pink); display: inline-block; padding: 12px 30px; border-radius: 50px; color: #fff; text-decoration: none;">Hubungi Tim Admisi <i class="fab fa-whatsapp"></i></a>
       </section>
 
     </div>
   </main>
 
-  <!-- ==========================================================================
-     FOOTER
-     ========================================================================== -->
   <footer class="footer-with-bg">
     <div class="footer-overlay"></div>
     <div class="container footer-container">
@@ -172,12 +268,10 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
   <a href="index.html#kontak" class="wa-float" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

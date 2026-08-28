@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company Profile - LPK IJEF</title>
+  <title>LPK IJEF - LPK Pelatihan Kerja ke Jepang</title>
   
   <!-- Font Google & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,74 +14,185 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- PRELOADER EFEK LOADING -->
-<div id="preloader">
-  <div class="spinner-container">
-    <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
-    <div class="spinner"></div>
-    <p class="preloader-text">Memuat halaman...</p>
+  <!-- PRELOADER EFEK LOADING -->
+  <div id="preloader">
+    <div class="spinner-container">
+      <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
+      <div class="spinner"></div>
+      <p class="preloader-text">Memuat halaman...</p>
+    </div>
   </div>
-</div>
-<div class="nav-overlay" id="nav-overlay"></div>
-   <!-- Navigation Bar -->
+
+  <!-- Overlay Gelap saat Sidebar Buka -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="container nav-container">
+    <div class="container nav-container reveal">
       <a href="#" class="brand-logo">
         <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
-        LPK<span>IJEF Corp.</span>
+        LPK IJEF Corp.
       </a>
 
+      <!-- Tombol Hamburger untuk HP -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      
-
-      <!-- Sidebar Mobile Menu -->
+      <!-- Menu Navigation / Floating Sidebar Mobile -->
       <ul class="nav-links" id="nav-links">
+        
+        <!-- Header Sidebar (Logo Lingkaran di HP) -->
         <li class="sidebar-header">
           <div class="logo-wrapper">
-            <img src="assets/ijefcorplogo-small.png" alt="Logo" class="sidebar-logo">
+            <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
           </div>
           <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
         </li>
 
-        <li><a href="index.html">Beranda</a></li>
+        <!-- Dropdown Menu: Beranda -->
+        <li class="dropdown">
+          <a href="index.html#tentang-kami" class="dropdown-toggle">
+            <span>Beranda</span>
+          </a>
+        </li>
 
-        <!-- Submenu Profile (Aktif) -->
-        <li class="dropdown active">
+        <!-- Dropdown Menu: Profile -->
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle">
             <span>Profile</span>
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="company-profile.html" class="active-link">Company Profile <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="company-profile.html">Company Profile</a></li>
+            <li><a href="company-profile.html#legalitas">Perizinan & Legalitas</a></li>
+            <li><a href="company-profile.html#tim-kami">Tim Kami / SOP</a></li>
+            <li><a href="lokasi-pelatihan.html">Lokasi Pendidikan & Pelatihan</a></li>
           </ul>
         </li>
 
-        <li class="dropdown active">
+        <!-- Dropdown Menu: Informasi -->
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle">
             <span>Informasi</span>
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="index.html#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-            <li><a href="index.html#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#">Bidang Kerja</a></li>
+            
+            <!-- Biaya -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Biaya</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Biaya Pelatihan</a></li>
+                
+                <li class="dropdown-sub dropdown-sub-right">
+                  <a href="#" class="dropdown-toggle-sub">
+                    <span>Biaya Keberangkatan</span>
+                    <i class="fa-solid fa-chevron-right arrow-sub"></i>
+                  </a>
+                  <ul class="submenu-sub submenu-right">
+                    <li><a href="#">Mandiri</a></li>
+                    <li><a href="#">Dana Talang</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Fasilitas -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Fasilitas</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Kelas</a></li>
+                <li><a href="#">Gedung</a></li>
+              </ul>
+            </li>
+
+            <!-- Dokumen & Sertifikat -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Dokumen & Sertifikat</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">COE</a></li>
+                <li><a href="#">E-KTLN</a></li>
+                <li><a href="#">JFT Basic</a></li>
+                <li><a href="#">JLPT</a></li>
+                <li><a href="#">SSW</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
 
-        <li><a href="index.html#program">Program</a></li>
-        <li><a href="alur-pendaftaran.html">Alur Pendaftaran</a></li>
-        <li><a href="index.html#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
+        <!-- Dropdown Menu: Program -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Program</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="#">Tokutei Ginou</a></li>
+            <li><a href="#">Nihongo Gakkou</a></li>
+            <li><a href="#">Engineering</a></li>
+            <li><a href="#">Internship</a></li>
+            
+            <li class="dropdown-sub dropdown-sub-right">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Kelas Pemantapan</span>
+                <i class="fa-solid fa-chevron-right arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-right">
+                <li><a href="#">Kelas SSW</a></li>
+                <li><a href="#">Kelas Mensetsu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">Matching Job</a></li>
+            <li><a href="#">Kelas Online</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Alur Pendaftaran -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Alur Pendaftaran</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="alur-pendaftaran.html">Kelas Reguler</a></li>
+            <li><a href="#">Kelas Online</a></li>
+            <li><a href="#">Matching Job</a></li>
+            
+            <li class="dropdown-sub dropdown-sub-right">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Kelas Pemantapan</span>
+                <i class="fa-solid fa-chevron-right arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-right">
+                <li><a href="#">SSW</a></li>
+                <li><a href="#">Mensetsu</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Header Banner Subpage (Diberi class reveal) -->
+  <!-- Header Banner Subpage -->
   <section class="page-header reveal">
     <div class="container">
       <h1>Tentang Kami</h1>
-      <p1>Mengenal Lebih Dekat LPK IJEF</p1>
+      <p>Mengenal Lebih Dekat LPK IJEF</p>
     </div>
   </section>
 
@@ -89,51 +200,33 @@
   <section class="section-padding">
     <div class="container page-content">
       
-      <!-- Profil Perusahaan (Diberi class reveal) -->
+      <!-- Gabungan Profil Perusahaan & Visi Misi dalam Satu Card Utama -->
       <article class="content-card reveal">
-        <h2>International Japan Economy Future Corp</h2>
-        <p>LPK IJEF Corp adalah lembaga pelatihan kerja yang didirikan untuk mencetak tenaga kerja terampil, profesional, dan berkarakter siap kerja di Jepang. Kami menyediakan program pelatihan bahasa Jepang serta pembekalan fisik dan mental sesuai standar kualifikasi industri Jepang.</p>
-        <p>Dengan bimbingan langsung dari pengajar berpengalaman, kami siap mengantarkan para peserta didik meraih impian karier masa depan di Negeri Sakura.</p>
-      </article>
-
-      <!-- Visi & Misi (Diberi class reveal) -->
-      <article class="content-card reveal">
-        <h3>Visi & Misi</h3>
-        <div class="visi-misi-box">
-          <h4>Visi</h4>
-          <p>Menjadi lembaga pelatihan kerja unggulan di Indonesia yang terpercaya dalam mencetak SDM berkualitas tinggi, berintegritas, dan kompetitif untuk pasar kerja Jepang.</p>
-          
-          <h4>Misi</h4>
-          <ul>
-            <li>Menyelenggarakan pendidikan Bahasa Jepang berkualitas tinggi dari tingkat N5 hingga N3.</li>
-            <li>Membentuk kedisiplinan, etika kerja, dan mentalitas peserta sesuai budaya industri Jepang.</li>
-            <li>Memberikan fasilitas pendampingan proses seleksi, dokumen, hingga keberangkatan secara resmi dan transparan.</li>
-          </ul>
+        <div class="full-text">
+          <h2>International Japan Economy Future Corp</h2>
+          <p>LPK IJEF Corp adalah lembaga pelatihan kerja yang didirikan untuk mencetak tenaga kerja terampil, profesional, dan berkarakter siap kerja di Jepang. Kami menyediakan program pelatihan bahasa Jepang serta pembekalan fisik dan mental sesuai standar kualifikasi industri Jepang.</p>
+          <p>Dengan bimbingan langsung dari pengajar berpengalaman, kami siap mengantarkan para peserta didik meraih impian karier masa depan di Negeri Sakura.</p>
         </div>
-      </article>
 
-      <!-- Struktur Manajemen / Our Team Preview (Diberi class reveal) -->
-      <article class="content-card reveal">
-        <h3>Our Management</h3>
-        <p>Tim manajemen kami terdiri dari profesional dan pengajar yang berpengalaman di bidangnya, berdedikasi penuh dalam memfasilitasi kebutuhan peserta didik dari tahap pelatihan awal hingga pemberangkatan.</p>
-      </article>
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #e2e8f0;">
 
-      <!-- Program & Sarana Pelatihan (Diberi class reveal) -->
-      <article class="content-card reveal">
-        <h3>Program & Fasilitas Pelatihan</h3>
-        <div class="image-preview-container">
-          <img src="assets/ruangpelatihan.jpg" alt="Fasilitas Pelatihan LPK IJEF" class="content-img" loading="lazy">
-        </div>
-        <p>Tempat pelatihan dirancang khusus untuk menciptakan lingkungan belajar yang kondusif, lengkap dengan ruang kelas ber-AC, modul pembelajaran terintegrasi, serta area latihan fisik.</p>
-      </article>
-        
-      <!-- Lokasi & Peta Asrama (Diberi class reveal) -->
-      <article class="content-card reveal">
-        <h3>Alamat Kantor & Pusat Pelatihan</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua, Kabupaten Bandung Barat, Jawa Barat 40551</p>
-        
-        <div class="map-responsive">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.59645515178698!2d107.526162657037!3d-6.825264429407408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e344a4656409%3A0xad10456097c85b6f!2sLPK%20IJEF%20CORP%20-%20International%20Japan%20Eco%20Future%20Corp!5e0!3m2!1sid!2sid!4v1786505486392!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div class="visi-misi-section full-text">
+          <h2>Visi & Misi</h2>
+          <div class="visi-misi-grid">
+            <div class="visi-box">
+              <h4>Visi</h4>
+              <p>Menjadi lembaga pelatihan kerja unggulan di Indonesia yang terpercaya dalam mencetak SDM berkualitas tinggi, berintegritas, dan kompetitif untuk pasar kerja Jepang.</p>
+            </div>
+            
+            <div class="misi-box">
+              <h4>Misi</h4>
+              <ul>
+                <li>Menyelenggarakan pendidikan Bahasa Jepang berkualitas tinggi dari tingkat N5 hingga N3.</li>
+                <li>Membentuk kedisiplinan, etika kerja, dan mentalitas peserta sesuai budaya industri Jepang.</li>
+                <li>Memberikan fasilitas pendampingan proses seleksi, dokumen, hingga keberangkatan secara resmi dan transparan.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </article>
 
@@ -149,7 +242,6 @@
   <footer class="footer-with-bg">
     <div class="footer-overlay"></div>
     <div class="container footer-container">
-      <!-- Konten Utama Footer (Diberi class reveal) -->
       <div class="footer-content reveal">
         <div class="footer-brand">
           <h3>LPK <span>IJEF</span></h3>
@@ -162,11 +254,9 @@
         </div>
       </div>
 
-      <!-- Copyright -->
       <div class="footer-bottom">
         <p>&copy; 2026 LPK IJEF Corp. All Rights Reserved.</p>
       </div>
-
     </div>
   </footer>
   <script src="script.js"></script>
