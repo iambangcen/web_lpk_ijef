@@ -1374,3 +1374,140 @@ footer.footer-with-bg {
         gap: 20px !important;
       }
     }
+
+/* ==========================================================================
+   FINAL CSS TIMELINE ALUR PENDAFTARAN (DISINKRONKAN)
+   ========================================================================== */
+
+/* Kontainer utama timeline, beri jarak kiri yang cukup */
+.timeline-container {
+  position: relative;
+  padding-left: 60px; /* Jarak untuk menempatkan bulatan nomor di luar card */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Garis latar belakang abu-abu */
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 40px;  /* Mulai pas di tengah bulatan angka 1 */
+  width: 4px;
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  
+  /* KUNCI: Batasi tinggi garis abu-abu agar berhenti tepat di tengah bulatan terakhir */
+  /* Kita gunakan calc dari jarak total item dikurangi tinggi setengah lingkaran */
+  bottom: auto;
+  height: calc(100% - [jarak_penyesuaian]); /* Atau gunakan tinggi absolut dinamis */
+}
+
+/* Garis progress bar biru */
+.timeline-progress-bar {
+  position: absolute;
+  left: 20px;
+  top: 40px;  /* Harus sama persis dengan .timeline-line */
+  bottom: 100px;
+  width: 4px;
+  background-color: #1e3a8a;
+  height: 0px; 
+  border-radius: 2px;
+  transition: height 0.05s ease-out;
+  z-index: 1;
+}
+
+/* Setiap item timeline */
+.timeline-item {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+/* Bulatan nomor angka */
+.timeline-number {
+  position: absolute;
+  left: -57px; /* Posisi angka di luar card sebelah kiri */
+  top: 10%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  background: #1e3a8a; /* Warna Navy ala Navbar IJEF */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  
+  /* KUNCI UTAMA: Z-index dibuat lebih tinggi dari timeline-line dan progress-bar */
+  z-index: 10; 
+  
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3); /* Efek bayangan navy */
+}
+
+/* Card Timeline */
+.timeline-card {
+  background-color: #ffffff; /* Warna putih bersih */
+  border-radius: 12px;
+  padding: 24px;
+  
+  /* KUNCI: Buat batas card lebih kelihatan dengan border tipis dan bayangan lembut */
+  border: 1px solid #cbd5e1; /* Garis tepi abu-abu sedikit lebih gelap agar tegas */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08); /* Bayangan depth */
+  
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efek opsional saat kursor diarahkan ke card (hover) */
+.timeline-card:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.12);
+}
+
+/* Kontainer Tab Program */
+.program-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 25px;
+  justify-content: center;
+  flex-wrap: wrap; /* Membungkus tombol jika layar sempit */
+}
+
+/* Styling Tombol Tab Responsif */
+.tab-btn {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Mencegah teks terpotong ke bawah */
+}
+
+.tab-btn.active, 
+.tab-btn:hover {
+  background-color: #1e3a8a; /* Warna Navy IJEF */
+  color: white;
+  border-color: #1e3a8a;
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
+}
+
+/* Pengaturan khusus untuk layar HP (Mobile View) */
+@media (max-width: 768px) {
+  .program-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membuat tombol berjejer 2 kolom rapi di HP */
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .tab-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+}
