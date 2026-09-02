@@ -1646,13 +1646,90 @@ footer.footer-with-bg {
       border-radius: 8px;
       border: 1px solid #cbd5e1;
     }
-    @media (max-width: 768px) {
-      .legal-grid-2 {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 100%;
-      }
-      .legal-item img {
-        height: 260px;
-      }
-    }
+
+
+
+  @media (max-width: 768px) {
+  /* Mengatur container baris agar menjadi flexbox yang terpusat */
+  .team-hierarchy-section .team-row,
+  .team-hierarchy-section .tier-3-cols, 
+  .team-hierarchy-section .tier-4-cols, 
+  .team-hierarchy-section .tier-2-cols,
+  .team-hierarchy-section .tier-1-col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 4px;
+  }
+
+  /* Mengatur kartu anggota tim menjadi 3 kolom per baris */
+  .team-hierarchy-section .team-card-compact {
+    flex: 0 0 31.3%;
+    width: 31.3%;
+    max-width: 31.3%;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    padding: 6px 2px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Foto profil */
+  .team-hierarchy-section .team-card-compact img {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #f1f5f9;
+    margin-bottom: 2px;
+  }
+
+  .team-hierarchy-section .team-info-compact {
+    width: 100%;
+  }
+
+  /* Nama / Heading */
+  .team-hierarchy-section .team-info-compact h4 {
+    font-size: 0.52rem;
+    line-height: 1.1;
+    color: #1e3a8a;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1px;
+    width: 100%;
+  }
+
+  /* Jabatan / Label */
+  .team-hierarchy-section .team-info-compact span {
+    font-size: 0.42rem;
+    color: #64748b;
+    background-color: #f8fafc;
+    padding: 1px 2px;
+    border-radius: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  /* Judul Kategori Tier */
+  .team-hierarchy-section .tier-title {
+    font-size: 0.8rem;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
