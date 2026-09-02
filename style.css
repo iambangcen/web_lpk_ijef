@@ -1604,47 +1604,54 @@ footer.footer-with-bg {
 }
 
 @media (max-width: 768px) {
-  /* Gunakan Flexbox atau Grid dengan auto-fit yang terpusat */
+  /* Pastikan kontainer tim menggunakan flexbox dengan pusat perataan */
   .tier-3-cols, 
   .tier-4-cols, 
   .tier-2-cols {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* KUNCI UTAMA: Agar baris yang sisa sedikit otomatis ke tengah */
-    gap: 8px;
+    justify-content: center; /* Mengatur sisa card di baris terakhir agar otomatis ke tengah */
+    gap: 6px; /* Jarak antar card diperkecil agar muat 3 jejer */
+    padding: 0 5px;
   }
 
-  /* Atur lebar card agar pas memuat 3 buah dalam satu baris */
+  /* Mengunci lebar card agar persis 3 kolom di layar HP kecil */
   .tier-3-cols .team-card-compact,
   .tier-4-cols .team-card-compact,
   .tier-2-cols .team-card-compact {
-    flex: 0 0 calc(33.333% - 6px); /* Membagi lebar container menjadi 3 bagian rata */
-    max-width: calc(33.333% - 6px);
-    padding: 10px 4px;
+    flex: 0 0 calc(31.5% - 4px); /* Mengambil sekitar 31.5% lebar per card agar aman dari overflow */
+    max-width: calc(31.5% - 4px);
+    padding: 8px 4px;
   }
 
-  /* Perkecil ukuran foto bulat agar muat 3 jejer dengan rapi */
+  /* Ukuran foto bulat disesuaikan agar tidak saling mendesak */
   .team-card-compact img {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-width: 2px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
 
-  /* Sesuaikan ukuran font teks */
+  /* Penyesuaian ukuran teks agar rapi di 3 kolom */
   .team-info-compact h4 {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     margin-bottom: 2px;
-    line-height: 1.2;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Menghindari teks nama yang terlalu panjang merusak layout */
   }
 
   .team-info-compact span {
-    font-size: 0.55rem;
-    padding: 1px 4px;
+    font-size: 0.5rem;
+    padding: 1px 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .tier-title {
-    font-size: 0.95rem;
-    margin-bottom: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
   }
 }
