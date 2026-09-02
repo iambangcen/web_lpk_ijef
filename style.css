@@ -1603,9 +1603,48 @@ footer.footer-with-bg {
   display: inline-block;
 }
 
-/* Responsif HP */
 @media (max-width: 768px) {
-  .tier-3-cols, .tier-4-cols {
-    grid-template-columns: repeat(2, 1fr);
+  /* Gunakan Flexbox atau Grid dengan auto-fit yang terpusat */
+  .tier-3-cols, 
+  .tier-4-cols, 
+  .tier-2-cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* KUNCI UTAMA: Agar baris yang sisa sedikit otomatis ke tengah */
+    gap: 8px;
+  }
+
+  /* Atur lebar card agar pas memuat 3 buah dalam satu baris */
+  .tier-3-cols .team-card-compact,
+  .tier-4-cols .team-card-compact,
+  .tier-2-cols .team-card-compact {
+    flex: 0 0 calc(33.333% - 6px); /* Membagi lebar container menjadi 3 bagian rata */
+    max-width: calc(33.333% - 6px);
+    padding: 10px 4px;
+  }
+
+  /* Perkecil ukuran foto bulat agar muat 3 jejer dengan rapi */
+  .team-card-compact img {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+    margin-bottom: 6px;
+  }
+
+  /* Sesuaikan ukuran font teks */
+  .team-info-compact h4 {
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+    line-height: 1.2;
+  }
+
+  .team-info-compact span {
+    font-size: 0.55rem;
+    padding: 1px 4px;
+  }
+
+  .tier-title {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
   }
 }
