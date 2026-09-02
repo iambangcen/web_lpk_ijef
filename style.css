@@ -1603,50 +1603,58 @@ footer.footer-with-bg {
   display: inline-block;
 }
 
+/* ==========================================================================
+   PAKSA SEMUA TIER MENJADI 3 KOLOM DI SEMUA HP (MAX 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-  /* Paksa semua baris tim menggunakan Grid persis 3 kolom */
+  /* Hapus semua perbedaan kelas, paksa semua kontainer row menjadi grid 3 kolom */
+  .team-hierarchy-section .team-row,
   .tier-3-cols, 
   .tier-4-cols, 
-  .tier-2-cols {
+  .tier-2-cols,
+  .tier-1-col {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* Wajib pas 3 kolom sejajar */
+    grid-template-columns: repeat(3, 1fr) !important;
     justify-content: center !important;
-    gap: 5px !important;
-    padding: 0 4px !important;
+    gap: 4px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 2px !important;
   }
 
-  /* Buat card memenuhi masing-masing kotak grid 3 kolom */
-  .tier-3-cols .team-card-compact,
-  .tier-4-cols .team-card-compact,
-  .tier-2-cols .team-card-compact {
+  /* Pastikan seluruh card di dalam tier apa pun mengikuti lebar grid 3 kolom */
+  .team-hierarchy-section .team-card-compact {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 8px 2px !important;
+    padding: 6px 2px !important;
+    box-sizing: border-box !important;
   }
 
-  /* Sembunyikan atau sesuaikan elemen agar muat */
+  /* Perkecil ukuran foto agar tidak saling dorong di layar kecil */
   .team-card-compact img {
-    width: 44px !important;
-    height: 44px !important;
-    border-width: 2px !important;
-    margin-bottom: 4px !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-width: 1.5px !important;
+    margin-bottom: 3px !important;
   }
 
+  /* Perkecil teks nama & jabatan agar pas 3 jejer */
   .team-info-compact h4 {
-    font-size: 0.6rem !important;
+    font-size: 0.55rem !important;
     line-height: 1.1 !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    margin-bottom: 1px !important;
   }
 
   .team-info-compact span {
-    font-size: 0.48rem !important;
+    font-size: 0.45rem !important;
     padding: 1px 2px !important;
   }
 
   .tier-title {
-    font-size: 0.85rem !important;
-    margin-bottom: 10px !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 8px !important;
   }
 }
