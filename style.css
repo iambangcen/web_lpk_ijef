@@ -1604,54 +1604,49 @@ footer.footer-with-bg {
 }
 
 @media (max-width: 768px) {
-  /* Pastikan kontainer tim menggunakan flexbox dengan pusat perataan */
+  /* Paksa semua baris tim menggunakan Grid persis 3 kolom */
   .tier-3-cols, 
   .tier-4-cols, 
   .tier-2-cols {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Mengatur sisa card di baris terakhir agar otomatis ke tengah */
-    gap: 6px; /* Jarak antar card diperkecil agar muat 3 jejer */
-    padding: 0 5px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Wajib pas 3 kolom sejajar */
+    justify-content: center !important;
+    gap: 5px !important;
+    padding: 0 4px !important;
   }
 
-  /* Mengunci lebar card agar persis 3 kolom di layar HP kecil */
+  /* Buat card memenuhi masing-masing kotak grid 3 kolom */
   .tier-3-cols .team-card-compact,
   .tier-4-cols .team-card-compact,
   .tier-2-cols .team-card-compact {
-    flex: 0 0 calc(31.5% - 4px); /* Mengambil sekitar 31.5% lebar per card agar aman dari overflow */
-    max-width: calc(31.5% - 4px);
-    padding: 8px 4px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 8px 2px !important;
   }
 
-  /* Ukuran foto bulat disesuaikan agar tidak saling mendesak */
+  /* Sembunyikan atau sesuaikan elemen agar muat */
   .team-card-compact img {
-    width: 48px;
-    height: 48px;
-    border-width: 2px;
-    margin-bottom: 5px;
+    width: 44px !important;
+    height: 44px !important;
+    border-width: 2px !important;
+    margin-bottom: 4px !important;
   }
 
-  /* Penyesuaian ukuran teks agar rapi di 3 kolom */
   .team-info-compact h4 {
-    font-size: 0.65rem;
-    margin-bottom: 2px;
-    line-height: 1.1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Menghindari teks nama yang terlalu panjang merusak layout */
+    font-size: 0.6rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
   .team-info-compact span {
-    font-size: 0.5rem;
-    padding: 1px 3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 0.48rem !important;
+    padding: 1px 2px !important;
   }
 
   .tier-title {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    font-size: 0.85rem !important;
+    margin-bottom: 10px !important;
   }
 }
