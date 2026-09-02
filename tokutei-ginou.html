@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPK IJEF - LPK Pelatihan Kerja ke Jepang</title>
+  
+  <!-- Font Google & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- PRELOADER EFEK LOADING -->
+  <div id="preloader">
+    <div class="spinner-container">
+      <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
+      <div class="spinner"></div>
+      <p class="preloader-text">Memuat halaman...</p>
+    </div>
+  </div>
+
+  <!-- Overlay Gelap saat Sidebar Buka -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container reveal">
+      <a href="#" class="brand-logo">
+        <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
+        LPK IJEF Corp.
+      </a>
+
+      <!-- Tombol Hamburger untuk HP -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Menu Navigation / Floating Sidebar Mobile -->
+      <ul class="nav-links" id="nav-links">
+        
+        <!-- Header Sidebar (Logo Lingkaran di HP) -->
+        <li class="sidebar-header">
+          <div class="logo-wrapper">
+            <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
+          </div>
+          <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+
+        <!-- Dropdown Menu: Beranda -->
+        <li class="dropdown">
+          <a href="index.html#tentang-kami" class="dropdown-toggle">
+            <span>Beranda</span>
+          </a>
+        </li>
+
+        <!-- Dropdown Menu: Profile -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Profile</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="company-profile.html">Company Profile</a></li>
+            <li><a href="legalitas.html">Perizinan & Legalitas</a></li>
+            <li><a href="our-team.html">Tim Kami / SOP</a></li>
+            <li><a href="lokasi-pelatihan.html">Lokasi Pendidikan & Pelatihan</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Informasi -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Informasi</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="#">Bidang Kerja</a></li>
+            
+            <!-- Biaya -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Biaya</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Biaya Pelatihan</a></li>
+                
+                <li class="dropdown-sub dropdown-sub-right">
+                  <a href="#" class="dropdown-toggle-sub">
+                    <span>Biaya Keberangkatan</span>
+                    <i class="fa-solid fa-chevron-right arrow-sub"></i>
+                  </a>
+                  <ul class="submenu-sub submenu-right">
+                    <li><a href="#">Mandiri</a></li>
+                    <li><a href="#">Dana Talang</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Fasilitas -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Fasilitas</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Kelas</a></li>
+                <li><a href="#">Gedung</a></li>
+              </ul>
+            </li>
+
+            <!-- Dokumen & Sertifikat -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Dokumen & Sertifikat</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">COE</a></li>
+                <li><a href="#">E-KTLN</a></li>
+                <li><a href="#">JFT Basic</a></li>
+                <li><a href="#">JLPT</a></li>
+                <li><a href="#">SSW</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Program -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Program</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="tokutei-ginou.html">Tokutei Ginou</a></li>
+            <li><a href="nihongo-gakkou.html">Nihongo Gakkou</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="internship.html">Internship</a></li>
+
+            <li class="dropdown-sub dropdown-sub-right">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Kelas Pemantapan</span>
+                <i class="fa-solid fa-chevron-right arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-right">
+                <li><a href="kelas-ssw.html">Kelas SSW</a></li>
+                <li><a href="kelas-mensetsu.html">Kelas Mensetsu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="matching-job.html">Matching Job</a></li>
+            <li><a href="kelas-online.html">Kelas Online</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Alur Pendaftaran -->
+        <li class="dropdown">
+          <a href="alur-pendaftaran.html" class="dropdown-toggle">
+            <span>Alur Pendaftaran</span>
+          </a>
+        </li>
+        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content: Tokutei Ginou -->
+  <main class="page-main-content" style="padding: 120px 0 60px 0; background-color: #f8fafc;">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+      
+      <!-- Header Judul Halaman -->
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span style="color: #1e3a8a; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Program Unggulan LPK IJEF</span>
+        <h1 style="color: #0f172a; font-size: 2.2rem; margin-top: 10px; font-weight: 700;">Tokutei Ginou (Specified Skilled Worker)</h1>
+        <div style="width: 60px; height: 4px; background-color: #1e3a8a; margin: 15px auto 0 auto; border-radius: 2px;"></div>
+      </div>
+
+      <!-- Kartu Konten Utama -->
+      <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+        
+        <!-- Deskripsi -->
+        <p style="color: #334155; font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">
+          Tokutei Ginou adalah program bagi tenaga kerja asing yang sudah memiliki keterampilan kerja spesifik. Peserta Tokutei Ginou berstatus sebagai pekerja penuh dengan standar gaji dan hak yang setara dengan warga negara Jepang.
+        </p>
+
+        <!-- Bagian Persyaratan -->
+        <h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Persyaratan Utama:
+        </h3>
+
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px;">
+          <li style="display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 14px 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-top: 4px;"></i>
+            <span style="color: #334155; font-size: 1rem;">Usia minimal 18 Tahun</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 14px 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-top: 4px;"></i>
+            <span style="color: #334155; font-size: 1rem;">Minimal lulusan SMA/SMK atau sederajat</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 14px 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-top: 4px;"></i>
+            <span style="color: #334155; font-size: 1rem;">Wajib memiliki sertifikat kemampuan bahasa Jepang minimal JLPT level 4 atau JFT-Basic A2</span>
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 14px 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-top: 4px;"></i>
+            <span style="color: #334155; font-size: 1rem;">Wajib lulus Ujian Keterampilan Bidang (Specified Skill Worker) sesuai dengan bidang pekerjaan yang dibutuhkan</span>
+          </li>
+        </ul>
+
+        <!-- Tombol Aksi / Pendaftaran -->
+        <div style="margin-top: 35px; text-align: center;">
+          <a href="index.html#kontak" class="btn-primary" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: background 0.3s;">Daftar Program Sekarang</a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="index.html#kontak" class="wa-float" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer-with-bg">
+    <div class="footer-overlay"></div>
+    <div class="container footer-container">
+      <div class="footer-content reveal">
+        <div class="footer-brand">
+          <h3>LPK <span>IJEF</span></h3>
+          <p>Lembaga Pelatihan Kerja Terpercaya untuk Persiapan Karir di Jepang.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Alamat Kantor</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua Kabupaten Bandung Barat, Jawa Barat 40551</p>
+          <p><i class="fas fa-phone"></i> +62 belom ada nomor office</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 LPK IJEF Corp. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
