@@ -1604,62 +1604,83 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   FINAL FIX: PAKSA 3 KOLOM & CENTER UNTUK SISA ITEM DI HP (MAX 768px)
+   PAKSA GLOBAL: SEMUA LAYAR HP MENJADI 3 KOLOM & CENTER
    ========================================================================== */
-@media (max-width: 768px) {
-  
-  /* 1. Ubah semua wadah baris tim menjadi Flexbox agar bisa rata tengah */
-  .team-hierarchy-section .team-row,
-  .tier-3-cols, 
-  .tier-4-cols, 
-  .tier-2-cols,
-  .tier-1-col {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important; /* KUNCI UTAMA: Otomatis ke tengah untuk sisa 1 atau 2 item */
-    gap: 5px !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 4px !important;
-  }
 
-  /* 2. Paksa setiap card mengambil tepat 31% dari lebar layar (pas 3 jajar) */
-  .team-hierarchy-section .team-card-compact,
-  .tier-3-cols .team-card-compact,
-  .tier-4-cols .team-card-compact,
-  .tier-2-cols .team-card-compact,
-  .tier-1-col .team-card-compact {
-    flex: 0 0 31.5% !important;   /* Lebar pas untuk 3 kolom */
-    max-width: 31.5% !important;
-    width: 31.5% !important;
-    padding: 6px 2px !important;
-    box-sizing: border-box !important;
-  }
+/* Ubah total struktur baris tim menjadi Flexbox rata tengah secara global */
+.team-hierarchy-section .team-row,
+.tier-3-cols, 
+.tier-4-cols, 
+.tier-2-cols,
+.tier-1-col {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important; /* Otomatis ke tengah untuk sisa item */
+  gap: 6px !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 4px !important;
+}
 
-  /* 3. Perkecil ukuran komponen di dalam card agar muat rapi */
-  .team-card-compact img {
-    width: 40px !important;
-    height: 40px !important;
-    border-width: 1.5px !important;
-    margin-bottom: 3px !important;
-  }
+/* Paksa setiap card mengambil lebar ~31% agar selalu muat 3 kolom berdampingan */
+.team-hierarchy-section .team-card-compact,
+.tier-3-cols .team-card-compact,
+.tier-4-cols .team-card-compact,
+.tier-2-cols .team-card-compact,
+.tier-1-col .team-card-compact {
+  flex: 0 0 31.5% !important;
+  max-width: 31.5% !important;
+  width: 31.5% !important;
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid #cbd5e1 !important;
+  padding: 6px 2px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
 
-  .team-info-compact h4 {
-    font-size: 0.55rem !important;
-    line-height: 1.1 !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    margin-bottom: 1px !important;
-  }
+/* Ukuran komponen dalam card dirampingkan agar pas 3 jejer */
+.team-card-compact img {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 1.5px solid #f1f5f9 !important;
+  margin-bottom: 3px !important;
+}
 
-  .team-info-compact span {
-    font-size: 0.45rem !important;
-    padding: 1px 2px !important;
-  }
+.team-info-compact h4 {
+  font-size: 0.55rem !important;
+  line-height: 1.1 !important;
+  color: #1e3a8a !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  margin-bottom: 1px !important;
+  width: 100% !important;
+}
 
-  .tier-title {
-    font-size: 0.8rem !important;
-    margin-bottom: 8px !important;
-  }
+.team-info-compact span {
+  font-size: 0.45rem !important;
+  color: #64748b !important;
+  background-color: #f8fafc !important;
+  padding: 1px 3px !important;
+  border-radius: 8px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: inline-block !important;
+  max-width: 100% !important;
+}
+
+.tier-title {
+  font-size: 0.85rem !important;
+  color: #1e3a8a !important;
+  margin-bottom: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
 }
