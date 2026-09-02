@@ -1603,3 +1603,56 @@ footer.footer-with-bg {
   display: inline-block;
 }
 
+.legal-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 800px;
+      margin: 30px auto 0 auto;
+    }
+    .legal-item {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .legal-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(30, 58, 138, 0.1);
+      border-color: #2563eb;
+    }
+    .legal-item h4 {
+      font-size: 1.1rem;
+      color: #0f172a;
+      margin-bottom: 4px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .legal-item p {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .legal-item img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+    }
+    @media (max-width: 768px) {
+      .legal-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 100%;
+      }
+      .legal-item img {
+        height: 260px;
+      }
+    }

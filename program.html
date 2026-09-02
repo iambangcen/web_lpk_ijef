@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company Profile - LPK IJEF</title>
+  <title>LPK IJEF - LPK Pelatihan Kerja ke Jepang</title>
   
   <!-- Font Google & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,65 +14,158 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- PRELOADER EFEK LOADING -->
-<div id="preloader">
-  <div class="spinner-container">
-    <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
-    <div class="spinner"></div>
-    <p class="preloader-text">Memuat halaman...</p>
+  <!-- PRELOADER EFEK LOADING -->
+  <div id="preloader">
+    <div class="spinner-container">
+      <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
+      <div class="spinner"></div>
+      <p class="preloader-text">Memuat halaman...</p>
+    </div>
   </div>
-</div>
-<div class="nav-overlay" id="nav-overlay"></div>
-   <!-- Navigation Bar -->
+
+  <!-- Overlay Gelap saat Sidebar Buka -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="container nav-container">
+    <div class="container nav-container reveal">
       <a href="#" class="brand-logo">
         <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
-        LPK<span>IJEF Corp.</span>
+        LPK IJEF Corp.
       </a>
 
+      <!-- Tombol Hamburger untuk HP -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      
-
-      <!-- Sidebar Mobile Menu -->
+      <!-- Menu Navigation / Floating Sidebar Mobile -->
       <ul class="nav-links" id="nav-links">
+        
+        <!-- Header Sidebar (Logo Lingkaran di HP) -->
         <li class="sidebar-header">
           <div class="logo-wrapper">
-            <img src="assets/ijefcorplogo-small.png" alt="Logo" class="sidebar-logo">
+            <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
           </div>
           <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
         </li>
 
-        <li><a href="index.html">Beranda</a></li>
+        <!-- Dropdown Menu: Beranda -->
+        <li class="dropdown">
+          <a href="index.html#tentang-kami" class="dropdown-toggle">
+            <span>Beranda</span>
+          </a>
+        </li>
 
-        <!-- Submenu Profile (Aktif) -->
-        <li class="dropdown active">
+        <!-- Dropdown Menu: Profile -->
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle">
             <span>Profile</span>
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="company-profile.html" class="active-link">Company Profile <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="company-profile.html">Company Profile</a></li>
+            <li><a href="legalitas.html">Perizinan & Legalitas</a></li>
+            <li><a href="our-team.html">Tim Kami / SOP</a></li>
+            <li><a href="lokasi-pelatihan.html">Lokasi Pendidikan & Pelatihan</a></li>
           </ul>
         </li>
 
-        <li class="dropdown active">
+        <!-- Dropdown Menu: Informasi -->
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle">
             <span>Informasi</span>
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="index.html#berita">Berita & Kegiatan <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
-            <li><a href="index.html#galeri">Galeri Foto <i class="fa-solid fa-chevron-right arrow-sub"></i></a></li>
+            <li><a href="#">Bidang Kerja</a></li>
+            
+            <!-- Biaya -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Biaya</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Biaya Pelatihan</a></li>
+                
+                <li class="dropdown-sub dropdown-sub-right">
+                  <a href="#" class="dropdown-toggle-sub">
+                    <span>Biaya Keberangkatan</span>
+                    <i class="fa-solid fa-chevron-right arrow-sub"></i>
+                  </a>
+                  <ul class="submenu-sub submenu-right">
+                    <li><a href="#">Mandiri</a></li>
+                    <li><a href="#">Dana Talang</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Fasilitas -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Fasilitas</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Kelas</a></li>
+                <li><a href="#">Gedung</a></li>
+              </ul>
+            </li>
+
+            <!-- Dokumen & Sertifikat -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Dokumen & Sertifikat</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">COE</a></li>
+                <li><a href="#">E-KTLN</a></li>
+                <li><a href="#">JFT Basic</a></li>
+                <li><a href="#">JLPT</a></li>
+                <li><a href="#">SSW</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
 
-        <li><a href="index.html#program">Program</a></li>
-        <li><a href="alur-pendaftaran.html">Alur Pendaftaran</a></li>
-        <li><a href="index.html#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
+        <!-- Dropdown Menu: Program -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Program</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="#">Tokutei Ginou</a></li>
+            <li><a href="#">Nihongo Gakkou</a></li>
+            <li><a href="#">Engineering</a></li>
+            <li><a href="#">Internship</a></li>
+            
+            <li class="dropdown-sub dropdown-sub-right">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Kelas Pemantapan</span>
+                <i class="fa-solid fa-chevron-right arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-right">
+                <li><a href="#">Kelas SSW</a></li>
+                <li><a href="#">Kelas Mensetsu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">Matching Job</a></li>
+            <li><a href="#">Kelas Online</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Alur Pendaftaran -->
+        <li class="dropdown">
+          <a href="alur-pendaftaran.html" class="dropdown-toggle">
+            <span>Alur Pendaftaran</span>
+          </a>
+        </li>
+        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
       </ul>
     </div>
   </nav>
