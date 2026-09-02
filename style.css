@@ -1608,34 +1608,32 @@ footer.footer-with-bg {
    ========================================================================== */
 @media (max-width: 768px) {
   
-  /* 1. Ubah wadah tim menjadi Flexbox dan pastikan rata tengah (center) */
+  /* 1. Matikan grid dan ubah total wadah tim menjadi Flexbox rata tengah */
   .team-hierarchy-section .team-row,
-  .tier-3-cols, 
-  .tier-4-cols, 
-  .tier-2-cols,
-  .tier-1-col {
+  .team-hierarchy-section .tier-3-cols, 
+  .team-hierarchy-section .tier-4-cols, 
+  .team-hierarchy-section .tier-2-cols,
+  .team-hierarchy-section .tier-1-col {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important; /* KUNCI: Sisa item ganjil/2 buah otomatis ke tengah */
-    gap: 8px !important;
+    gap: 6px !important;
     max-width: 100% !important;
+    width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 5px !important;
+    padding: 0 4px !important;
+    grid-template-columns: none !important; /* Mematikan sifat grid bawaan desktop */
   }
 
-  /* 2. Set lebar card pas 3 kolom (31%) */
-  .team-hierarchy-section .team-card-compact,
-  .tier-3-cols .team-card-compact,
-  .tier-4-cols .team-card-compact,
-  .tier-2-cols .team-card-compact,
-  .tier-1-col .team-card-compact {
-    flex: 0 0 31% !important;
-    max-width: 31% !important;
-    width: 31% !important;
+  /* 2. Set lebar card pas 3 kolom (31% agar ada sedikit jarak antar kolom) */
+  .team-hierarchy-section .team-card-compact {
+    flex: 0 0 31.3% !important;
+    max-width: 31.3% !important;
+    width: 31.3% !important;
     background-color: #ffffff !important;
-    border-radius: 8px !important;
+    border-radius: 6px !important;
     border: 1px solid #cbd5e1 !important;
-    padding: 6px 3px !important;
+    padding: 6px 2px !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1644,17 +1642,22 @@ footer.footer-with-bg {
   }
 
   /* 3. Sesuaikan ukuran foto & teks agar pas dan tidak meluber */
-  .team-card-compact img {
-    width: 42px !important;
-    height: 42px !important;
+  .team-hierarchy-section .team-card-compact img {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
     border-radius: 50% !important;
     object-fit: cover !important;
     border: 1.5px solid #f1f5f9 !important;
-    margin-bottom: 3px !important;
+    margin-bottom: 2px !important;
   }
 
-  .team-info-compact h4 {
-    font-size: 0.55rem !important;
+  .team-hierarchy-section .team-info-compact {
+    width: 100% !important;
+  }
+
+  .team-hierarchy-section .team-info-compact h4 {
+    font-size: 0.52rem !important;
     line-height: 1.1 !important;
     color: #1e3a8a !important;
     font-weight: 700 !important;
@@ -1665,12 +1668,12 @@ footer.footer-with-bg {
     width: 100% !important;
   }
 
-  .team-info-compact span {
-    font-size: 0.45rem !important;
+  .team-hierarchy-section .team-info-compact span {
+    font-size: 0.42rem !important;
     color: #64748b !important;
     background-color: #f8fafc !important;
-    padding: 1px 3px !important;
-    border-radius: 8px !important;
+    padding: 1px 2px !important;
+    border-radius: 6px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
@@ -1678,10 +1681,10 @@ footer.footer-with-bg {
     max-width: 100% !important;
   }
 
-  .tier-title {
-    font-size: 0.85rem !important;
+  .team-hierarchy-section .tier-title {
+    font-size: 0.8rem !important;
     color: #1e3a8a !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
   }
