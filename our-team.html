@@ -12,6 +12,81 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
+  <style>
+@media (max-width: 768px) {
+  .team-hierarchy-section .team-row,
+  .team-hierarchy-section .tier-3-cols, 
+  .team-hierarchy-section .tier-4-cols, 
+  .team-hierarchy-section .tier-2-cols,
+  .team-hierarchy-section .tier-1-col {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 4px !important;
+    grid-template-columns: none !important;
+  }
+  .team-hierarchy-section .team-card-compact {
+    flex: 0 0 31.3% !important;
+    max-width: 31.3% !important;
+    width: 31.3% !important;
+    background-color: #ffffff !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 6px 2px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .team-hierarchy-section .team-card-compact img {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 1.5px solid #f1f5f9 !important;
+    margin-bottom: 2px !important;
+  }
+  .team-hierarchy-section .team-info-compact {
+    width: 100% !important;
+  }
+  .team-hierarchy-section .team-info-compact h4 {
+    font-size: 0.52rem !important;
+    line-height: 1.1 !important;
+    color: #1e3a8a !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-bottom: 1px !important;
+    width: 100% !important;
+  }
+  .team-hierarchy-section .team-info-compact span {
+    font-size: 0.42rem !important;
+    color: #64748b !important;
+    background-color: #f8fafc !important;
+    padding: 1px 2px !important;
+    border-radius: 6px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+  }
+  .team-hierarchy-section .tier-title {
+    font-size: 0.8rem !important;
+    color: #1e3a8a !important;
+    margin-bottom: 8px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+  }
+}
+</style>
 </head>
 <body>
   <!-- PRELOADER EFEK LOADING -->
