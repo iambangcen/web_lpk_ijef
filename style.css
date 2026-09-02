@@ -1604,41 +1604,46 @@ footer.footer-with-bg {
 }
 
 /* ==========================================================================
-   PAKSA SEMUA TIER MENJADI 3 KOLOM DI SEMUA HP (MAX 768px)
+   FINAL FIX: PAKSA 3 KOLOM & CENTER UNTUK SISA ITEM DI HP (MAX 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Hapus semua perbedaan kelas, paksa semua kontainer row menjadi grid 3 kolom */
+  
+  /* 1. Ubah semua wadah baris tim menjadi Flexbox agar bisa rata tengah */
   .team-hierarchy-section .team-row,
   .tier-3-cols, 
   .tier-4-cols, 
   .tier-2-cols,
   .tier-1-col {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    justify-content: center !important;
-    gap: 4px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important; /* KUNCI UTAMA: Otomatis ke tengah untuk sisa 1 atau 2 item */
+    gap: 5px !important;
     max-width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 2px !important;
+    padding: 0 4px !important;
   }
 
-  /* Pastikan seluruh card di dalam tier apa pun mengikuti lebar grid 3 kolom */
-  .team-hierarchy-section .team-card-compact {
-    width: 100% !important;
-    max-width: 100% !important;
+  /* 2. Paksa setiap card mengambil tepat 31% dari lebar layar (pas 3 jajar) */
+  .team-hierarchy-section .team-card-compact,
+  .tier-3-cols .team-card-compact,
+  .tier-4-cols .team-card-compact,
+  .tier-2-cols .team-card-compact,
+  .tier-1-col .team-card-compact {
+    flex: 0 0 31.5% !important;   /* Lebar pas untuk 3 kolom */
+    max-width: 31.5% !important;
+    width: 31.5% !important;
     padding: 6px 2px !important;
     box-sizing: border-box !important;
   }
 
-  /* Perkecil ukuran foto agar tidak saling dorong di layar kecil */
+  /* 3. Perkecil ukuran komponen di dalam card agar muat rapi */
   .team-card-compact img {
-    width: 42px !important;
-    height: 42px !important;
+    width: 40px !important;
+    height: 40px !important;
     border-width: 1.5px !important;
     margin-bottom: 3px !important;
   }
 
-  /* Perkecil teks nama & jabatan agar pas 3 jejer */
   .team-info-compact h4 {
     font-size: 0.55rem !important;
     line-height: 1.1 !important;
