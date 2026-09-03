@@ -78,15 +78,15 @@
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="#">Bidang Kerja</a></li>
+            <li><a href="bidang-kerja.html">Bidang Kerja</a></li>
             
             <!-- Biaya -->
             <li class="dropdown-sub dropdown-sub-down">
-              <a href="#" class="dropdown-toggle-sub">
+              <a href="biaya-pelatihan.html">
                 <span>Biaya</span>
-                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+                <!-- <i class="fa-solid fa-chevron-down arrow-sub"></i> -->
               </a>
-              <ul class="submenu-sub submenu-down">
+              <!-- <ul class="submenu-sub submenu-down">
                 <li><a href="#">Biaya Pelatihan</a></li>
                 
                 <li class="dropdown-sub dropdown-sub-right">
@@ -99,7 +99,7 @@
                     <li><a href="#">Dana Talang</a></li>
                   </ul>
                 </li>
-              </ul>
+              </ul> -->
             </li>
 
             <!-- Fasilitas -->
@@ -121,11 +121,11 @@
                 <i class="fa-solid fa-chevron-down arrow-sub"></i>
               </a>
               <ul class="submenu-sub submenu-down">
-                <li><a href="#">COE</a></li>
-                <li><a href="#">E-KTLN</a></li>
-                <li><a href="#">JFT Basic</a></li>
-                <li><a href="#">JLPT</a></li>
-                <li><a href="#">SSW</a></li>
+                <li><a href="coe.html">COE</a></li>
+                <li><a href="e-ktln.html">E-KTLN</a></li>
+                <li><a href="jft-basic.html">JFT Basic</a></li>
+                <li><a href="jlpt.html">JLPT</a></li>
+                <li><a href="ssw.html">SSW</a></li>
               </ul>
             </li>
           </ul>
@@ -235,35 +235,73 @@
     </div>
   </section>
 
-  <!-- Testimoni Section -->
+  <!-- Testimoni Section (Card Background Lebih Gelap) -->
   <section id="testimoni" class="section-padding">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header reveal" style="text-align: center; margin-bottom: 40px;">
         <h2>Apa Kata <span>Mereka</span></h2>
-        <p>Testimoni alumni siswa LPK IJEF Corp. yang telah berhasil berangkat ke Jepang</p>
+        <p>Testimoni alumni siswa LPK IJEF Corp. yang telah bergabung dan merasakan langsung proses pelatihannya</p>
       </div>
-      <div class="cards-grid">
+
+      <!-- Container Grid 3 Kolom & Central -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; justify-content: center; justify-items: center; max-width: 1100px; margin: 0 auto;">
         
-        <!-- Testimoni 1 -->
-        <div class="card reveal">
-          <p>"Pelatihan di IJEF sangat disiplin dan materinya mudah dipahami. Sekarang saya sudah bekerja di Osaka!"</p>
-          <div class="testimonial-profile">
-            <img src="assets/foto-testimoni-pria.png" alt="Budi Santoso" class="testimonial-avatar">
+        <!-- Testimoni 1: Bachtiar Rosyadi -->
+        <div class="reveal" style="width: 100%; max-width: 340px; background: #e2e8f0; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #94a3b8; display: flex; flex-direction: column; justify-content: space-between;">
+          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"IPK terbaik, jangan ragu untuk daftar pelatihan bahasa di sini. Ragu rugi guyssss"</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/foto-testimoni-pria.png" alt="Bachtiar Rosyadi" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
             <div>
-              <h4>Budi Santoso</h4>
-              <span class="role-badge">Tokutei Ginou - Manufaktur</span>
+              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Bachtiar Rosyadi</h4>
+              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
             </div>
           </div>
         </div>
 
-        <!-- Testimoni 2 -->
-        <div class="card reveal">
-          <p>"Pengajar sangat sabar membantu persiapan Kaiwa dan interview. Pendampingan visa juga transparan."</p>
-          <div class="testimonial-profile">
-            <img src="assets/foto-testimoni-wanita.jpeg" alt="Annisa Rahma" class="testimonial-avatar">
+        <!-- Testimoni 2: Naufal -->
+        <div class="reveal" style="width: 100%; max-width: 340px; background: #e2e8f0; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #94a3b8; display: flex; flex-direction: column; justify-content: space-between;">
+          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"IPK nya adem sejuk senseinya baik rekomended buat kalian yang lagi cari LPK di bandung"</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/foto-testimoni-pria.png" alt="Naufal" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
             <div>
-              <h4>Annisa Rahma</h4>
-              <span class="role-badge">Kaigo</span>
+              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Naufal</h4>
+              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 3: Maya -->
+        <div class="reveal" style="width: 100%; max-width: 340px; background: #e2e8f0; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #94a3b8; display: flex; flex-direction: column; justify-content: space-between;">
+          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"LPK baguss, dibimbing dari gabisa bahasa Jepang sampe mahir bahasa Jepang, dan dibimbing sampe keberangkatan, rekomendasi IPK buat minnasan♥"</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/foto-testimoni-wanita.jpeg" alt="Maya" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+            <div>
+              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Maya</h4>
+              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 4: Asep -->
+        <div class="reveal" style="width: 100%; max-width: 340px; background: #e2e8f0; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #94a3b8; display: flex; flex-direction: column; justify-content: space-between;">
+          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"Alhamdulillah di IPK ijeff cepett berangkattt, dari belajar sampai berangkat di urusin semuanya🤲🏻"</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/foto-testimoni-pria.png" alt="Asep" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+            <div>
+              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Asep</h4>
+              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 5: Galang -->
+        <div class="reveal" style="width: 100%; max-width: 340px; background: #e2e8f0; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #94a3b8; display: flex; flex-direction: column; justify-content: space-between;">
+          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"Selama belajar di sini nyaman sih, senseinya baik-baik dan kalau ada yang belum ngerti juga dijelasin lagi sampai paham. Belajarnya memang lumayan padat tapi jadi lebih terbiasa sama bahasa Jepang"</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="assets/foto-testimoni-pria.png" alt="Galang" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+            <div>
+              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Galang</h4>
+              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
             </div>
           </div>
         </div>
@@ -271,8 +309,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Program Section (Isi program keahlian & penjelasan telah dihapus bersih sesuai permintaan) -->
 
   <!-- Floating WhatsApp Button -->
   <a href="#kontak" class="wa-float" rel="noopener noreferrer">
@@ -290,51 +326,56 @@
           <h3>Layanan Kontak & Pendaftaran</h3>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-card-item">
-            <div class="contact-info">
-              <div class="contact-icon-wrapper">
+        <div class="contact-grid" style="display: flex; flex-direction: column; gap: 15px;">
+          
+          <!-- Kontak 1: Salma -->
+          <div class="contact-card-item" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;">
+            <div class="contact-info" style="display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1;">
+              <div class="contact-icon-wrapper" style="flex-shrink: 0;">
                 <i class="fa-solid fa-briefcase"></i>
               </div>
-              <div class="contact-details">
-                <h4>Salma</h4>
-                <span class="role-badge">Admin Matching Job</span>
+              <div class="contact-details" style="min-width: 0; overflow: hidden;">
+                <h4 style="margin: 0; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Salma</h4>
+                <span class="role-badge" style="font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;">Admin Matching Job</span>
               </div>
             </div>
-            <a href="https://wa.me/6282130826893" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
+            <a href="https://wa.me/6282130826893" target="_blank" rel="noopener noreferrer" class="btn-wa-card" style="flex-shrink: 0; white-space: nowrap;">
               <i class="fa-brands fa-whatsapp"></i> Chat
             </a>
           </div>
 
-          <div class="contact-card-item">
-            <div class="contact-info">
-              <div class="contact-icon-wrapper">
+          <!-- Kontak 2: Mira Tania -->
+          <div class="contact-card-item" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;">
+            <div class="contact-info" style="display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1;">
+              <div class="contact-icon-wrapper" style="flex-shrink: 0;">
                 <i class="fa-solid fa-user-graduate"></i>
               </div>
-              <div class="contact-details">
-                <h4>Mira Tania</h4>
-                <span class="role-badge">Admin Penerimaan Siswa</span>
+              <div class="contact-details" style="min-width: 0; overflow: hidden;">
+                <h4 style="margin: 0; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Mira Tania</h4>
+                <span class="role-badge" style="font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;">Admin Penerimaan Siswa</span>
               </div>
             </div>
-            <a href="https://wa.me/6285722355853" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
+            <a href="https://wa.me/6285722355853" target="_blank" rel="noopener noreferrer" class="btn-wa-card" style="flex-shrink: 0; white-space: nowrap;">
               <i class="fa-brands fa-whatsapp"></i> Chat
             </a>
           </div>
 
-          <div class="contact-card-item">
-            <div class="contact-info">
-              <div class="contact-icon-wrapper">
+          <!-- Kontak 3: Agus Herlan -->
+          <div class="contact-card-item" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;">
+            <div class="contact-info" style="display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1;">
+              <div class="contact-icon-wrapper" style="flex-shrink: 0;">
                 <i class="fa-solid fa-headset"></i>
               </div>
-              <div class="contact-details">
-                <h4>Agus Herlan</h4>
-                <span class="role-badge">Kontak Sales</span>
+              <div class="contact-details" style="min-width: 0; overflow: hidden;">
+                <h4 style="margin: 0; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Agus Herlan</h4>
+                <span class="role-badge" style="font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;">Kontak Sales</span>
               </div>
             </div>
-            <a href="https://wa.me/6283842849749" target="_blank" rel="noopener noreferrer" class="btn-wa-card">
+            <a href="https://wa.me/6283842849749" target="_blank" rel="noopener noreferrer" class="btn-wa-card" style="flex-shrink: 0; white-space: nowrap;">
               <i class="fa-brands fa-whatsapp"></i> Chat
             </a>
           </div>
+
         </div>
       </div>
 

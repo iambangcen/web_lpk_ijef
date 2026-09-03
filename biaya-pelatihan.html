@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPK IJEF - LPK Pelatihan Kerja ke Jepang</title>
+  
+  <!-- Font Google & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- PRELOADER EFEK LOADING -->
+  <div id="preloader">
+    <div class="spinner-container">
+      <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
+      <div class="spinner"></div>
+      <p class="preloader-text">Memuat halaman...</p>
+    </div>
+  </div>
+
+  <!-- Overlay Gelap saat Sidebar Buka -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container reveal">
+      <a href="#" class="brand-logo">
+        <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
+        LPK IJEF Corp.
+      </a>
+
+      <!-- Tombol Hamburger untuk HP -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Menu Navigation / Floating Sidebar Mobile -->
+      <ul class="nav-links" id="nav-links">
+        
+        <!-- Header Sidebar (Logo Lingkaran di HP) -->
+        <li class="sidebar-header">
+          <div class="logo-wrapper">
+            <img src="assets/ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
+          </div>
+          <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+
+        <!-- Dropdown Menu: Beranda -->
+        <li class="dropdown">
+          <a href="index.html#tentang-kami" class="dropdown-toggle">
+            <span>Beranda</span>
+          </a>
+        </li>
+
+        <!-- Dropdown Menu: Profile -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Profile</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="company-profile.html">Company Profile</a></li>
+            <li><a href="legalitas.html">Perizinan & Legalitas</a></li>
+            <li><a href="our-team.html">Tim Kami / SOP</a></li>
+            <li><a href="lokasi-pelatihan.html">Lokasi Pendidikan & Pelatihan</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Informasi -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Informasi</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="bidang-kerja.html">Bidang Kerja</a></li>
+            
+            <!-- Biaya -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="biaya-pelatihan.html">
+                <span>Biaya</span>
+                <!-- <i class="fa-solid fa-chevron-down arrow-sub"></i> -->
+              </a>
+              <!-- <ul class="submenu-sub submenu-down">
+                <li><a href="#">Biaya Pelatihan</a></li>
+                
+                <li class="dropdown-sub dropdown-sub-right">
+                  <a href="#" class="dropdown-toggle-sub">
+                    <span>Biaya Keberangkatan</span>
+                    <i class="fa-solid fa-chevron-right arrow-sub"></i>
+                  </a>
+                  <ul class="submenu-sub submenu-right">
+                    <li><a href="#">Mandiri</a></li>
+                    <li><a href="#">Dana Talang</a></li>
+                  </ul>
+                </li>
+              </ul> -->
+            </li>
+
+            <!-- Fasilitas -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Fasilitas</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="#">Kelas</a></li>
+                <li><a href="#">Gedung</a></li>
+              </ul>
+            </li>
+
+            <!-- Dokumen & Sertifikat -->
+            <li class="dropdown-sub dropdown-sub-down">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Dokumen & Sertifikat</span>
+                <i class="fa-solid fa-chevron-down arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-down">
+                <li><a href="coe.html">COE</a></li>
+                <li><a href="e-ktln.html">E-KTLN</a></li>
+                <li><a href="jft-basic.html">JFT Basic</a></li>
+                <li><a href="jlpt.html">JLPT</a></li>
+                <li><a href="ssw.html">SSW</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Program -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            <span>Program</span>
+            <i class="fa-solid fa-chevron-down icon-arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="tokutei-ginou.html">Tokutei Ginou</a></li>
+            <li><a href="nihongo-gakkou.html">Nihongo Gakkou</a></li>
+            <li><a href="engineering.html">Engineering</a></li>
+            <li><a href="internship.html">Internship</a></li>
+
+            <li class="dropdown-sub dropdown-sub-right">
+              <a href="#" class="dropdown-toggle-sub">
+                <span>Kelas Pemantapan</span>
+                <i class="fa-solid fa-chevron-right arrow-sub"></i>
+              </a>
+              <ul class="submenu-sub submenu-right">
+                <li><a href="kelas-ssw.html">Kelas SSW</a></li>
+                <li><a href="kelas-mensetsu.html">Kelas Mensetsu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="matching-job.html">Matching Job</a></li>
+            <li><a href="kelas-online.html">Kelas Online</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown Menu: Alur Pendaftaran -->
+        <li class="dropdown">
+          <a href="alur-pendaftaran.html" class="dropdown-toggle">
+            <span>Alur Pendaftaran</span>
+          </a>
+        </li>
+        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-header reveal">
+    <div class="container">
+      <h1>Biaya Pelatihan & Program</h1>
+      <p>Informasi Rincian Biaya, Skema Pembayaran, serta Biaya Program Tambahan</p>
+    </div>
+  </section>
+
+  <section class="section-content container" style="padding: 60px 20px;">
+    <div class="biaya-card-container">
+      
+      <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);">
+        <h2 style="color: #1e293b; font-size: 26px; margin-bottom: 15px; font-weight: 700;">
+          <i class="fa-solid fa-wallet" style="color: #0056b3; margin-right: 10px;"></i> Biaya Pelatihan
+        </h2>
+        
+        <p style="font-size: 20px; color: #0f172a; font-weight: 600; margin-bottom: 20px;">
+          Nominal: <span style="color: #0284c7;">Rp 10.000.000</span>
+        </p>
+
+        <div style="background: #ffffff; padding: 20px; border-radius: 10px; border-left: 5px solid #0284c7; margin-bottom: 25px;">
+          <h4 style="color: #1e293b; font-size: 16px; margin-bottom: 8px; font-weight: 600;">Fasilitas yang Didapatkan:</h4>
+          <p style="color: #334155; font-size: 15px; line-height: 1.6;">
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-right: 6px;"></i> Asrama &nbsp;&nbsp;|&nbsp;&nbsp; 
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-right: 6px;"></i> Seragam &nbsp;&nbsp;|&nbsp;&nbsp; 
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-right: 6px;"></i> Alat &nbsp;&nbsp;|&nbsp;&nbsp; 
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-right: 6px;"></i> Makan &nbsp;&nbsp;|&nbsp;&nbsp; 
+            <i class="fa-solid fa-check" style="color: #16a34a; margin-right: 6px;"></i> Buku
+          </p>
+        </div>
+
+        <h3 style="color: #1e293b; font-size: 20px; margin-bottom: 10px; font-weight: 600;">Skema & Pola Pembayaran</h3>
+        <p style="color: #475569; font-size: 15px; margin-bottom: 15px;">Berikut adalah tabel pilihan program, pola bayar, plafon, DP, bunga, tenor, angsuran, hingga total pelunasan:</p>
+
+        <div class="table-container">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Program</th>
+                <th>Pola Bayar</th>
+                <th>Kriteria</th>
+                <th>Plafon</th>
+                <th>DP</th>
+                <th>Bunga</th>
+                <th>Tenor</th>
+                <th>Angsuran</th>
+                <th>Total Pelunasan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>DT 100%</strong></td>
+                <td>Cicilan 6 Bln dgn Aset / SK</td>
+                <td>-</td>
+                <td>Rp 10.000.000</td>
+                <td>-</td>
+                <td>16%</td>
+                <td>6 Bln</td>
+                <td>Rp 1.933.333</td>
+                <td><strong>Rp 11.600.000</strong></td>
+              </tr>
+              <tr>
+                <td><strong>DT 50%</strong></td>
+                <td>Cicilan 5 Bln dgn Aset / SK</td>
+                <td>-</td>
+                <td>Rp 5.000.000</td>
+                <td>50%</td>
+                <td>23%</td>
+                <td>5 Bln</td>
+                <td>Rp 1.230.000</td>
+                <td><strong>Rp 6.150.000</strong></td>
+              </tr>
+              <tr>
+                <td><strong>DP 50%</strong></td>
+                <td>Cicilan 3 Bln</td>
+                <td>-</td>
+                <td>Rp 5.000.000</td>
+                <td>50%</td>
+                <td>-</td>
+                <td>3 Bln</td>
+                <td>Rp 1.666.667</td>
+                <td><strong>Rp 5.000.000</strong></td>
+              </tr>
+              <tr>
+                <td><strong>DP 30%</strong></td>
+                <td>Cicilan 6 Bln</td>
+                <td>-</td>
+                <td>Rp 7.000.000</td>
+                <td>30%</td>
+                <td>30%</td>
+                <td>6 Bln</td>
+                <td>Rp 1.516.667</td>
+                <td><strong>Rp 9.100.000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);">
+        <h2 style="color: #1e293b; font-size: 24px; margin-bottom: 12px; font-weight: 700;">
+          <i class="fa-solid fa-plane-departure" style="color: #0056b3; margin-right: 10px;"></i> Biaya Keberangkatan
+        </h2>
+        <p style="font-size: 20px; color: #0f172a; font-weight: 600; margin-bottom: 8px;">
+          Nominal: <span style="color: #0284c7;">Rp 33.000.000</span>
+        </p>
+        <p style="color: #475569; font-size: 15px; line-height: 1.6;">
+          Biaya yang dipersiapkan untuk proses administrasi, visa, tiket pesawat, dan keperluan penunjang lainnya menuju Jepang.
+        </p>
+      </div>
+
+      <div class="grid-biaya-tambahan">
+        
+        <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);">
+          <h2 style="color: #1e293b; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
+            <i class="fa-solid fa-graduation-cap" style="color: #0056b3; margin-right: 10px;"></i> Biaya Kelas Pemantapan
+          </h2>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+            <li style="background: #ffffff; padding: 14px 18px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #cbd5e1;">
+              <span style="color: #334155; font-weight: 600;">Kelas SSW</span>
+              <span style="color: #0284c7; font-weight: 700;">Rp 2.500.000</span>
+            </li>
+            <li style="background: #ffffff; padding: 14px 18px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #cbd5e1;">
+              <span style="color: #334155; font-weight: 600;">Kelas Mensetsu</span>
+              <span style="color: #0284c7; font-weight: 700;">Rp 1.000.000</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);">
+          <h2 style="color: #1e293b; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
+            <i class="fa-solid fa-laptop" style="color: #0056b3; margin-right: 10px;"></i> Biaya Kelas Online
+          </h2>
+          <div style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1;">
+            <p style="font-size: 18px; color: #0284c7; font-weight: 700; margin-bottom: 8px;">Rp 3.000.000</p>
+            <p style="color: #334155; font-size: 15px; line-height: 1.5;">
+              <i class="fa-solid fa-clock" style="color: #64748b; margin-right: 6px;"></i> Durasi Pelatihan: <strong>Selama 2 Bulan</strong>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <a href="index.html#kontak" class="wa-float" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <footer class="footer-with-bg">
+    <div class="footer-overlay"></div>
+    <div class="container footer-container">
+      <div class="footer-content reveal">
+        <div class="footer-brand">
+          <h3>LPK <span>IJEF</span></h3>
+          <p>Lembaga Pelatihan Kerja Terpercaya untuk Persiapan Karir di Jepang.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Alamat Kantor</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Pasirhalang, Kec. Cisarua Kabupaten Bandung Barat, Jawa Barat 40551</p>
+          <p><i class="fas fa-phone"></i> +62 belom ada nomor office</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 LPK IJEF Corp. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const revealUpElements = document.querySelectorAll(".reveal-up");
+
+      function checkRevealUp() {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        revealUpElements.forEach((el) => {
+          const boxTop = el.getBoundingClientRect().top;
+          if (boxTop < triggerBottom) {
+            el.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", checkRevealUp);
+      checkRevealUp(); // Trigger saat pertama kali dimuat
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
