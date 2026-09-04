@@ -559,7 +559,7 @@ body {
 
 /* Background Hero / Header */
 .bg-hero-full {
-  background: linear-gradient(rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.4)), url('assets/header.jpeg') no-repeat center center;
+  background: linear-gradient(rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.1)), url('assets/header.jpeg') no-repeat center center;
   background-size: contain; /* Mengubah dari cover ke contain agar seluruh gambar aslinya terlihat utuh dan tidak terpotong */
   color: #ffffff;
   width: 100%;
@@ -1820,5 +1820,204 @@ body {
 @media (max-width: 768px) {
   .testimoni-card-frame {
     padding: 40px 25px 30px 25px;
+  }
+}
+
+/* Container section agar bisa memuat elemen melayang di background */
+.cloud-bg-section {
+  position: relative;
+  overflow: hidden; /* Agar awan yang keluar batas section tidak membuat scrollbar samping */
+}
+
+/* Styling dasar untuk ornamen awan melayang */
+.floating-cloud {
+  position: absolute;
+  pointer-events: none; /* Agar tidak sengaja terklik oleh pengguna */
+  z-index: 0; /* Berada di belakang teks/card */
+  opacity: 0.35; /* Transparansi agar tetap elegan dan tidak mengganggu bacaan */
+  animation: floatCloud linear infinite;
+}
+
+/* Keyframes untuk animasi melayang bebas (bergeser dan sedikit berotasi/naik-turun) */
+@keyframes floatCloud {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(30px, -20px) rotate(3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* --- CSS MODAL PILIH ADMIN (SWEETALERT STYLE) --- */
+.admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.admin-modal-box {
+  background: #ffffff;
+  width: 90%;
+  max-width: 480px;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+
+.admin-modal-overlay.active .admin-modal-box {
+  transform: scale(1);
+}
+
+.admin-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.admin-modal-close:hover {
+  color: #0f172a;
+}
+
+.admin-modal-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.admin-modal-icon {
+  font-size: 45px;
+  color: #25d366;
+  background: #dcfce7;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.admin-modal-header h3 {
+  font-size: 1.35rem;
+  color: #1e293b;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.admin-modal-header p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* List Kartu Admin */
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.admin-card:hover {
+  border-color: #cbd5e1;
+  background: #f1f5f9;
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-avatar {
+  width: 42px;
+  height: 42px;
+  background: #e0f2fe;
+  color: #0284c7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.admin-info h4 {
+  font-size: 0.95rem;
+  color: #1e293b;
+  font-weight: 600;
+  margin: 0;
+}
+
+.admin-info span {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Tombol Chat WA per Admin */
+.btn-wa-chat {
+  background-color: #25d366;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-wa-chat:hover {
+  background-color: #20ba5a;
+}
+
+/* Responsif untuk HP kecil */
+@media (max-width: 480px) {
+  .admin-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .btn-wa-chat {
+    width: 100%;
+    justify-content: center;
   }
 }
