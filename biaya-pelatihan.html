@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biaya Pelatihan & Program - LPK IJEF Corp</title>
+  <title>Biaya Pelatihan - LPK IJEF Corp</title>
   
-  <!-- Font Google & FontAwesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,8 +16,8 @@
 
   <section class="page-header reveal">
     <div class="container">
-      <h1>Biaya Pelatihan & Program</h1>
-      <p>Informasi Rincian Biaya, Skema Pembayaran, serta Biaya Program Tambahan</p>
+      <h1>Biaya Pelatihan</h1>
+      <p>Informasi Rincian Biaya, Fasilitas, serta Skema Pola Pembayaran</p>
     </div>
   </section>
 
@@ -111,66 +110,23 @@
             </tbody>
           </table>
         </div>
-      </div>
 
-      <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); margin-top: 30px;">
-        <h2 style="color: #1e293b; font-size: 24px; margin-bottom: 12px; font-weight: 700;">
-          <i class="fa-solid fa-plane-departure" style="color: #0056b3; margin-right: 10px;"></i> Biaya Keberangkatan
-        </h2>
-        <p style="font-size: 20px; color: #0f172a; font-weight: 600; margin-bottom: 8px;">
-          Nominal: <span style="color: #0284c7;">Rp 33.000.000</span>
-        </p>
-        <p style="color: #475569; font-size: 15px; line-height: 1.6;">
-          Biaya yang dipersiapkan untuk proses administrasi, visa, tiket pesawat, dan keperluan penunjang lainnya menuju Jepang.
-        </p>
-      </div>
-
-      <div class="grid-biaya-tambahan" style="margin-top: 30px;">
-        
-        <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);">
-          <h2 style="color: #1e293b; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
-            <i class="fa-solid fa-graduation-cap" style="color: #0056b3; margin-right: 10px;"></i> Biaya Kelas Pemantapan
-          </h2>
-          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="background: #ffffff; padding: 14px 18px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #cbd5e1;">
-              <span style="color: #334155; font-weight: 600;">Kelas SSW</span>
-              <span style="color: #0284c7; font-weight: 700;">Rp 2.500.000</span>
-            </li>
-            <li style="background: #ffffff; padding: 14px 18px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #cbd5e1;">
-              <span style="color: #334155; font-weight: 600;">Kelas Mensetsu</span>
-              <span style="color: #0284c7; font-weight: 700;">Rp 1.000.000</span>
-            </li>
-          </ul>
+        <!-- Tombol Daftar Pelatihan -->
+        <div style="margin-top: 30px; text-align: center;">
+          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none;">Daftar Pelatihan Sekarang</a>
         </div>
-
-        <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);">
-          <h2 style="color: #1e293b; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
-            <i class="fa-solid fa-laptop" style="color: #0056b3; margin-right: 10px;"></i> Biaya Kelas Online
-          </h2>
-          <div style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1;">
-            <p style="font-size: 18px; color: #0284c7; font-weight: 700; margin-bottom: 8px;">Rp 3.000.000</p>
-            <p style="color: #334155; font-size: 15px; line-height: 1.5;">
-              <i class="fa-solid fa-clock" style="color: #64748b; margin-right: 6px;"></i> Durasi Pelatihan: <strong>Selama 2 Bulan</strong>
-            </p>
-          </div>
-        </div>
-
       </div>
 
     </div>
   </section>
 
-  <!-- Placeholder Footer otomatis dari global-layout.js -->
   <div id="footer-placeholder"></div>
 
-  <!-- Skrip Animasi Lokal -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const revealUpElements = document.querySelectorAll(".reveal-up");
-
       function checkRevealUp() {
         const triggerBottom = window.innerHeight * 0.85;
-
         revealUpElements.forEach((el) => {
           const boxTop = el.getBoundingClientRect().top;
           if (boxTop < triggerBottom) {
@@ -178,13 +134,11 @@
           }
         });
       }
-
       window.addEventListener("scroll", checkRevealUp);
-      checkRevealUp(); // Trigger saat pertama kali dimuat
+      checkRevealUp();
     });
   </script>
 
-  <!-- JavaScript Utama & Layout Global -->
   <script src="global-layout.js"></script>
   <script src="script.js"></script>
 </body>

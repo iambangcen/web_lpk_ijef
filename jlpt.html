@@ -25,12 +25,37 @@
     <div class="content-card-container">
       
       <div class="reveal-up" style="background: #e2e8f0; padding: 35px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);">
-        <h2 style="color: #1e293b; font-size: 26px; margin-bottom: 20px; font-weight: 700;">
-          <i class="fa-solid fa-award" style="color: #0056b3; margin-right: 12px;"></i> Apa itu JLPT?
-        </h2>
         
-        <p style="color: #334155; line-height: 1.8; font-size: 16px; margin-bottom: 20px;">
-          <strong>JLPT (Japanese Language Proficiency Test)</strong> adalah tes kemampuan bahasa Jepang yang mengukur pemahaman bahasa Jepang seseorang. JLPT memiliki 5 tingkat kemampuan, yaitu:
+        <!-- Layout Grid: Kiri Teks Pengenalan, Kanan Foto/Ilustrasi Resmi JLPT -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; align-items: center; margin-bottom: 30px;">
+          
+          <!-- Kolom Teks -->
+          <div>
+            <h2 style="color: #1e293b; font-size: 26px; margin-bottom: 20px; font-weight: 700;">
+              <i class="fa-solid fa-award" style="color: #0056b3; margin-right: 12px;"></i> Apa itu JLPT?
+            </h2>
+            
+            <p style="color: #334155; line-height: 1.8; font-size: 16px; margin-bottom: 0;">
+              <strong>JLPT (Japanese Language Proficiency Test)</strong> adalah tes kemampuan bahasa Jepang yang mengukur dan mengakui tingkat pemahaman bahasa Jepang seseorang secara internasional. JLPT memiliki 5 tingkat kemampuan mulai dari N5 hingga N1.
+            </p>
+          </div>
+
+          <!-- Kolom Alokasi Foto / Ilustrasi JLPT -->
+          <div style="background: #ffffff; padding: 15px; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center;">
+            <div style="background: #f1f5f9; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; height: 260px;">
+              <!-- Ganti path src dengan lokasi file foto/ilustrasi JLPT Anda, contoh: assets/jlpt-info.jpg -->
+              <img src="assets/jlpt.png" alt="Ilustrasi Sertifikat / Ujian JLPT" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 6px;">
+            </div>
+            <span style="display: inline-block; margin-top: 12px; font-size: 13px; color: #64748b; font-weight: 500;">
+              <i class="fa-solid fa-circle-check" style="color: #16a34a; margin-right: 4px;"></i> Ilustrasi / Sertifikasi Ujian JLPT
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Tingkatan JLPT (N5 - N1) -->
+        <p style="color: #334155; font-size: 16px; font-weight: 600; margin-bottom: 15px;">
+          Berikut adalah 5 tingkat kemampuan dalam JLPT:
         </p>
 
         <div class="jlpt-container-wrapper">
@@ -79,6 +104,11 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- Tombol Aksi Konsultasi/Admin -->
+        <div style="margin-top: 30px; text-align: center;">
+          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none;">Konsultasi Kelas Persiapan JLPT</a>
         </div>
 
       </div>

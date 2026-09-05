@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </li>
 
         <li class="dropdown">
-          <a href="${pagePrefix}index.html#tentang-kami" class="dropdown-toggle">
+          <a href="${pagePrefix}index.html" class="dropdown-toggle">
             <span>Beranda</span>
           </a>
         </li>
@@ -127,20 +127,20 @@ document.addEventListener("DOMContentLoaded", function () {
             <li><a href="${pagePrefix}bidang-kerja.html">Bidang Kerja</a></li>
             
             <li class="dropdown-sub dropdown-sub-down">
-              <a href="${pagePrefix}biaya-pelatihan.html">
+              <a href="#" class="dropdown-toggle-sub">
                 <span>Biaya</span>
                 <i class="fa-solid fa-chevron-down arrow-sub"></i>
               </a>
               <ul class="submenu-sub submenu-down">
-                <li><a href="#">Biaya Pelatihan</a></li>
+                <li><a href="${pagePrefix}biaya-pelatihan.html">Biaya Pelatihan</a></li>
                 <li class="dropdown-sub dropdown-sub-right">
                   <a href="#" class="dropdown-toggle-sub">
                     <span>Biaya Keberangkatan</span>
                     <i class="fa-solid fa-chevron-right arrow-sub"></i>
                   </a>
                   <ul class="submenu-sub submenu-right">
-                    <li><a href="#">Mandiri</a></li>
-                    <li><a href="#">Dana Talang</a></li>
+                    <li><a href="${pagePrefix}mandiri.html">Mandiri</a></li>
+                    <li><a href="${pagePrefix}dana-talang.html">Dana Talang</a></li>
                   </ul>
                 </li>
               </ul>
@@ -152,8 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <i class="fa-solid fa-chevron-down arrow-sub"></i>
               </a>
               <ul class="submenu-sub submenu-down">
-                <li><a href="#">Kelas</a></li>
-                <li><a href="#">Gedung</a></li>
+                <li><a href="${pagePrefix}kelas.html">Kelas</a></li>
+                <li><a href="${pagePrefix}gedung.html">Gedung</a></li>
               </ul>
             </li>
 
