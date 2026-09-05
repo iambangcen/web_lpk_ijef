@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
       position: absolute;
       top: 16px;
       right: 16px;
-      background: #f1f5f9;
+      background: rgba(255, 255, 255, 0.8);
       border: none;
       width: 36px;
       height: 36px;
@@ -101,25 +101,41 @@ document.addEventListener("DOMContentLoaded", function () {
       color: #64748b;
       cursor: pointer;
       transition: all 0.2s ease;
-      z-index: 10;
+      z-index: 20;
     }
 
     .admin-modal-close:hover {
-      background: #e2e8f0;
+      background: #ffffff;
       color: #0f172a;
     }
 
     .admin-modal-header {
-      padding: 28px 24px 20px 24px;
+      padding: 32px 24px 24px 24px;
       text-align: center;
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      position: relative;
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
       border-bottom: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
+
+    /* Background Awan di dalam Header Popup */
+    .admin-modal-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('${assetPath}ornamen-awan.jpeg');
+      background-size: cover;
+      opacity: 0.15;
+      pointer-events: none;
     }
 
     .admin-modal-icon-wrapper {
       width: 56px;
       height: 56px;
-      background: #dcfce7;
+      background: #ffffff;
       color: #16a34a;
       border-radius: 50%;
       display: flex;
@@ -128,6 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
       font-size: 1.6rem;
       margin: 0 auto 14px auto;
       box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+      position: relative;
+      z-index: 2;
     }
 
     .admin-modal-header h3 {
@@ -135,13 +153,17 @@ document.addEventListener("DOMContentLoaded", function () {
       font-weight: 700;
       color: #0f172a;
       margin: 0 0 6px 0;
+      position: relative;
+      z-index: 2;
     }
 
     .admin-modal-header p {
       font-size: 0.875rem;
-      color: #64748b;
+      color: #475569;
       margin: 0;
       line-height: 1.5;
+      position: relative;
+      z-index: 2;
     }
 
     .admin-list {
@@ -465,7 +487,7 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasi
         <div class="admin-modal-icon-wrapper">
           <i class="fa-brands fa-whatsapp"></i>
         </div>
-        <h3>Hubungi Admin Pendaftaran</h3>
+        <h3>Kontak Kami</h3>
         <p>Silakan pilih salah satu admin di bawah ini untuk konsultasi dan pendaftaran program LPK IJEF Corp:</p>
       </div>
 
