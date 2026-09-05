@@ -30,18 +30,221 @@ document.addEventListener("DOMContentLoaded", function () {
     .floating-cloud {
       position: absolute;
       pointer-events: none;
-      opacity: 0.5; /* Opasitas diturunkan agar lebih lembut dan tidak mencolok */
+      opacity: 0.5;
       animation: floatCloud linear infinite;
     }
     @keyframes floatCloud {
-      0% {
-        transform: translate(0, 0) rotate(0deg);
+      0% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(35px, -25px) rotate(4deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    /* ==========================================
+       MODERN PROFESSIONAL ADMIN MODAL STYLING
+       ================================---------- */
+    .admin-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    .admin-modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .admin-modal-box {
+      background: #ffffff;
+      width: 100%;
+      max-width: 460px;
+      border-radius: 20px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transform: translateY(20px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
+    }
+
+    .admin-modal-overlay.active .admin-modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .admin-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #f1f5f9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .admin-modal-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .admin-modal-header {
+      padding: 28px 24px 20px 24px;
+      text-align: center;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .admin-modal-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      background: #dcfce7;
+      color: #16a34a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: 0 auto 14px auto;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+    }
+
+    .admin-modal-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+    }
+
+    .admin-modal-header p {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .admin-list {
+      padding: 20px 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .admin-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px 16px;
+      transition: all 0.2s ease;
+      gap: 12px;
+    }
+
+    .admin-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .admin-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .admin-avatar {
+      width: 44px;
+      height: 44px;
+      background: #eff6ff;
+      color: #0284c7;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .admin-details {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .admin-details h4 {
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 2px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .admin-details span {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .btn-wa-chat {
+      background: #25d366;
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(37, 211, 102, 0.2);
+    }
+
+    .btn-wa-chat:hover {
+      background: #20ba5a;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+      color: #ffffff;
+    }
+
+    @media (max-width: 480px) {
+      .admin-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px;
       }
-      50% {
-        transform: translate(35px, -25px) rotate(4deg);
-      }
-      100% {
-        transform: translate(0, 0) rotate(0deg);
+      .btn-wa-chat {
+        width: 100%;
+        justify-content: center;
+        margin-top: 4px;
       }
     }
   `;
@@ -251,7 +454,7 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasi
 
 
   // ==========================================
-  // 3. ADMIN WHATSAPP POPUP MODAL (SWEETALERT STYLE)
+  // 3. ADMIN WHATSAPP POPUP MODAL (PROFESSIONAL STYLE)
   // ==========================================
   const adminModalHTML = `
   <div class="admin-modal-overlay" id="adminModal">
@@ -259,57 +462,59 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasi
       <button class="admin-modal-close" id="closeAdminModal">&times;</button>
       
       <div class="admin-modal-header">
-        <i class="fa-brands fa-whatsapp admin-modal-icon"></i>
+        <div class="admin-modal-icon-wrapper">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
         <h3>Hubungi Admin Pendaftaran</h3>
         <p>Silakan pilih salah satu admin di bawah ini untuk konsultasi dan pendaftaran program LPK IJEF Corp:</p>
       </div>
 
       <div class="admin-list">
-        <!-- Admin 1 -->
+        <!-- Admin 1: Salma (Matching Job) -->
         <div class="admin-card">
           <div class="admin-info">
             <div class="admin-avatar">
-              <i class="fa-solid fa-user-tie"></i>
+              <i class="fa-solid fa-headset"></i>
             </div>
-            <div>
-              <h4>Admin 1 (Nama Admin)</h4>
-              <span>Layanan Pendaftaran & Informasi Umum</span>
+            <div class="admin-details">
+              <h4>Salma</h4>
+              <span>Admin Matching Job</span>
             </div>
           </div>
-          <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20tertarik%20untuk%20mendaftar%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
-            <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+          <a href="https://wa.me/6282130826893?text=Halo%20Salma,%20saya%20ingin%20konsultasi%20mengenai%20Matching%20Job%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
+            <i class="fa-brands fa-whatsapp"></i> Chat
           </a>
         </div>
 
-        <!-- Admin 2 -->
+        <!-- Admin 2: Mira Tania (Penerimaan Siswa) -->
         <div class="admin-card">
           <div class="admin-info">
             <div class="admin-avatar">
-              <i class="fa-solid fa-user-tie"></i>
+              <i class="fa-solid fa-user-graduate"></i>
             </div>
-            <div>
-              <h4>Admin 2 (Nama Admin)</h4>
-              <span>Konsultasi Program & Dokumen</span>
+            <div class="admin-details">
+              <h4>Mira Tania</h4>
+              <span>Admin Penerimaan Siswa</span>
             </div>
           </div>
-          <a href="https://wa.me/6289876543210?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20mengenai%20program%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
-            <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+          <a href="https://wa.me/6285722355853?text=Halo%20Mira%20Tania,%20saya%20tertarik%20untuk%20mendaftar%20sebagai%20siswa%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
+            <i class="fa-brands fa-whatsapp"></i> Chat
           </a>
         </div>
 
-        <!-- Admin 3 -->
+        <!-- Admin 3: Agus Herlan (Sales) -->
         <div class="admin-card">
           <div class="admin-info">
             <div class="admin-avatar">
-              <i class="fa-solid fa-user-tie"></i>
+              <i class="fa-solid fa-briefcase"></i>
             </div>
-            <div>
-              <h4>Admin 3 (Nama Admin)</h4>
-              <span>Informasi Biaya & Keberangkatan</span>
+            <div class="admin-details">
+              <h4>Agus Herlan</h4>
+              <span>Sales</span>
             </div>
           </div>
-          <a href="https://wa.me/6281122334455?text=Halo%20Admin,%20saya%20ingin%20bertanya%20tentang%20biaya%20dan%20keberangkatan%20ke%20Jepang." target="_blank" class="btn-wa-chat">
-            <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+          <a href="https://wa.me/6283842849749?text=Halo%20Agus%20Herlan,%20saya%20ingin%20bertanya%20informasi%20seputar%20program%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
+            <i class="fa-brands fa-whatsapp"></i> Chat
           </a>
         </div>
       </div>
