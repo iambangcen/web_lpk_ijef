@@ -1361,20 +1361,30 @@ body {
   box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3); /* Efek bayangan navy */
 }
 
-/* Card Timeline */
+/* Card Timeline Umum */
 .timeline-card {
-  background-color: #ffffff; /* Warna putih bersih */
   border-radius: 12px;
   padding: 24px;
-  
-  /* KUNCI: Buat batas card lebih kelihatan dengan border tipis dan bayangan lembut */
-  border: 1px solid #cbd5e1; /* Garis tepi abu-abu sedikit lebih gelap agar tegas */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08); /* Bayangan depth */
-  
+  text-align: center !important;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efek opsional saat kursor diarahkan ke card (hover) */
+/* Memastikan semua teks rata tengah */
+.timeline-card h4,
+.timeline-card p {
+  text-align: center !important;
+}
+
+/* PALET WARNA KONTRAS TINGGI UNTUK TIAP TAHAP */
+.timeline-item:nth-child(6n + 1) .timeline-card { background-color: #e0f2fe !important; } /* 1. Biru Cerah */
+.timeline-item:nth-child(6n + 2) .timeline-card { background-color: #fef08a !important; } /* 2. Kuning Jelas */
+.timeline-item:nth-child(6n + 3) .timeline-card { background-color: #bbf7d0 !important; } /* 3. Hijau Mint */
+.timeline-item:nth-child(6n + 4) .timeline-card { background-color: #fbcfe8 !important; } /* 4. Pink Soft */
+.timeline-item:nth-child(6n + 5) .timeline-card { background-color: #e9d5ff !important; } /* 5. Ungu Lavender */
+.timeline-item:nth-child(6n + 6) .timeline-card { background-color: #fed7aa !important; } /* 6. Oranye Peach */
+
 .timeline-card:hover {
   border-color: #94a3b8;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.12);
@@ -1797,23 +1807,27 @@ body {
 
 /* Styling Card Testimoni dengan Frame Gambar */
 .testimoni-card-frame {
-  position: relative;
+  /* Atur ukuran kotak agar konsisten dan presisi */
   width: 100%;
-  max-width: 360px;
-  /* Masukkan path gambar frame Anda di sini */
-  background: url('assets/testimoni-frame.jpg') no-repeat center center;
-  background-size: 100% 100%; /* Menyesuaikan ukuran card */
+  max-width: 650px;
+  min-height: 220px;
+  margin: 0 auto;
+  padding: 40px 50px; /* Beri jarak dalam agar teks tidak menabrak bingkai */
+  box-sizing: border-box;
   
-  /* Atur padding agar teks di dalam tidak menabrak garis tepi frame */
-  padding: 45px 35px 35px 35px; 
-  border-radius: 0; /* Karena bentuknya sudah dari gambar */
-  box-shadow: none; /* Hilangkan shadow kotak biasa jika ingin murni dari frame */
-  border: none;
+  /* Jika menggunakan gambar border (border-image) */
+  /* Sesuaikan 'path-ke-bingkai.png' dan angka slice-nya sesuai aset Anda */
+  border: 25px solid transparent;
+  border-image: url('assets/testimoni-frame.jpg') 30 round;
+  
+  /* ATAU jika menggunakan background-image dengan teknik 9-slice / fixed size */
+  /* background: url('assets/path-ke-bingkai-anda.png') no-repeat center center; */
+  /* background-size: 100% 100%; */
   
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
+  justify-content: center;
+  background-color: #ffffff; /* Warna dasar di dalam bingkai */
 }
 
 /* Responsif untuk ukuran layar HP */
@@ -2020,4 +2034,269 @@ body {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* Styling Carousel Testimoni */
+/* Container Utama Carousel Testimoni */
+.testimonial-carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 50px;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+}
+
+/* Setiap Slide / Halaman Carousel */
+.testimonial-slide-group {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default 3 card dalam 1 slide (Desktop) */
+  gap: 25px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* Bingkai Card Testimoni */
+.testimoni-card-frame {
+  background: #ffffff;
+  border-radius: 12px;
+  /* Atur padding agar teks berada pas di dalam area tengah bingkai */
+  padding: 35px 30px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 260px;
+}
+
+/* Responsif untuk Tablet & Mobile */
+@media (max-width: 992px) {
+  .testimonial-slide-group {
+    grid-template-columns: repeat(2, 1fr); /* 2 card untuk tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-slide-group {
+    grid-template-columns: 1fr; /* 1 card untuk mobile */
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .testimonial-carousel-container {
+    padding: 20px 30px;
+  }
+}
+
+/* =========================================
+   RUNNING TEXT TESTIMONIAL (INFINITE MARQUEE)
+   ========================================= */
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 20px 0;
+}
+
+/* Efek gradasi pudar di sisi kiri dan kanan (opsional, agar terlihat elegan) */
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #f8fafc, transparent);
+}
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #f8fafc, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scrollMarquee 30s linear infinite;
+}
+
+/* Berhenti bergerak saat kursor diarahkan ke card */
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 15px));
+  }
+}
+
+/* Frame Bingkai Testimoni Khas Jepang & Bergerak Seperti Air (Fluid Border) */
+.testimoni-card-frame {
+  position: relative;
+  /* Gradasi warna lembut khas nuansa Jepang (Sakura Pink, Soft Blue, & Mint Cream) */
+  background: linear-gradient(135deg, #ffffff 0%, #fff1f2 50%, #f0fdf4 100%);
+  
+  /* Membuat sudut melengkung organik ala bentuk awan/wabi-sabi */
+  border-radius: 25px 20px 30px 22px;
+  
+  width: 350px;       
+  height: auto;       
+  min-height: 290px;  
+  
+  padding: 45px 30px 35px 30px; 
+  box-sizing: border-box;
+  
+  /* Efek bayangan lembut berlapis warna pastel */
+  box-shadow: 0 10px 30px rgba(244, 63, 94, 0.08), 0 4px 12px rgba(16, 185, 129, 0.05);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  margin-top: 25px;
+  
+  /* Border transparan untuk wadah animasi garis air */
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+/* EFEK GARIS AIR BERGERAK (Fluid Animated Border) */
+.testimoni-card-frame::before {
+  content: "";
+  position: absolute;
+  top: -3px; left: -3px; right: -3px; bottom: -3px;
+  z-index: -1;
+  border-radius: 27px 22px 32px 24px;
+  /* Gradasi warna-warni yang berputar pelan menciptakan efek cair/air */
+  background: linear-gradient(60deg, #f43f5e, #0284c7, #10b981, #fbbf24, #f43f5e);
+  background-size: 300% 300%;
+  animation: liquidFlow 6s ease infinite;
+}
+
+@keyframes liquidFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Ikon Love di Atas Card */
+.testimoni-card-frame::after {
+  content: "🌸"; /* Mengganti love biasa dengan bunga sakura agar makin khas Jepang */
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  font-size: 1.1rem;
+  padding: 0 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 2;
+}
+
+/* Teks Testimoni */
+.testimoni-card-frame p {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  .testimoni-card-frame {
+    width: 300px;
+    min-height: 260px;
+    padding: 40px 25px 30px 25px;
+  }
+}
+
+/* Styling Utama Blok Statistik */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin: 40px 0;
+}
+
+.stat-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Pembungkus agar angka dan panah sejajar berdampingan */
+.stat-number-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.stat-card h3 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* Ikon Panah Hijau dengan Animasi Fade Out */
+.stat-arrow {
+  color: #16a34a !important;
+  font-size: 1.6rem !important;
+  animation: fadeOutArrow 3s ease-in-out forwards;
+  animation-delay: 4s;
+}
+
+@keyframes fadeOutArrow {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+  }
+}
+
+.stat-card p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
 }

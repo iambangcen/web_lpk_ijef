@@ -64,17 +64,22 @@
           <li><i class="fa-solid fa-circle-check"></i> Pendampingan resmi hingga proses keberangkatan</li>
         </ul>
       </div>
-      <div class="about-stats reveal">
-        <div class="stat-card">
-          <h3>500+</h3>
-          <p>Siswa Terlatih</p>
-        </div>
-        <div class="stat-card">
-          <h3>98%</h3>
-          <p>Kelulusan Ujian</p>
-        </div>
-      </div>
+      <div class="about-stats">
+  <div class="stat-card">
+    <div class="stat-number-wrapper">
+      <h3 class="odometer" data-target="200" data-suffix="+">0+</h3>
+      <i class="fa-solid fa-arrow-up stat-arrow"></i>
     </div>
+    <p>Telah berangkat ke Jepang</p>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number-wrapper">
+      <h3 class="odometer" data-target="98" data-suffix="%">0%</h3>
+      <i class="fa-solid fa-arrow-up stat-arrow"></i>
+    </div>
+    <p>Kelulusan Ujian</p>
+  </div>
+</div>
   </section>
 
   <!-- Section Baru: DI JEPANG JANGAN CUMA KERJA! -->
@@ -83,7 +88,11 @@
       <div class="section-header reveal" style="text-align: center; margin-bottom: 45px;">
         <span style="display: inline-block; background: #e0f2fe; color: #0284c7; padding: 6px 16px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Eksplorasi & Gaya Hidup</span>
         <h2 style="font-size: 2.2rem; color: #0f172a; font-weight: 700;">DI JEPANG <span style="color: #0284c7;">JANGAN CUMA KERJA!</span></h2>
-        <p style="color: #64748b; max-width: 600px; margin: 10px auto 0; font-size: 1rem;">Nikmati keindahan alam, tradisi, dan destinasi ikonik di Jepang di sela-sela kesuksesan kariermu.</p>
+        <p style="color: #64748b; max-width: 600px; margin: 10px auto 0; font-size: 1rem;">
+          Nikmati keindahan alam, tradisi, dan destinasi ikonik Jepang 
+          <br>
+          di sela-sela kesuksesan kariermu.
+        </p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto;">
@@ -164,76 +173,66 @@
     </div>
   </section>
 
-  <section id="testimoni" class="section-padding">
-    <div class="container">
-      <div class="section-header reveal" style="text-align: center; margin-bottom: 40px;">
+  <section id="testimoni" class="section-padding" style="overflow: hidden;">
+    <div class="container" style="max-width: 100%; padding: 0;">
+      <div class="section-header reveal" style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
         <h2>Apa Kata <span>Mereka</span></h2>
         <p>Testimoni alumni siswa LPK IJEF Corp. yang telah bergabung dan merasakan langsung proses pelatihannya</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; justify-content: center; justify-items: center; max-width: 1100px; margin: 0 auto;">
-        
-        <!-- Card 1 -->
-        <div class="reveal testimoni-card-frame">
-          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"IPK terbaik, jangan ragu untuk daftar pelatihan bahasa di sini. Ragu rugi guyssss"</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <img src="assets/foto-testimoni-pria.png" alt="Bachtiar Rosyadi" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-            <div>
-              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Bachtiar Rosyadi</h4>
-              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+      <!-- Container Running Text (Infinite Marquee) -->
+      <div class="marquee-container">
+        <div class="marquee-track">
+          
+          <!-- SET CARD 1 -->
+          <div class="testimoni-card-frame">
+            <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">"Alhamdulillah di Ipk ijeff cepett berangkattt, dari belajar sampai berangkat di urusin semuanya 🤲🏻"</p>
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: auto;">
+              <img src="assets/foto-testimoni/asep-hilman.jpeg" alt="Asep" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+              <div>
+                <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Asep Hilman</h4>
+                <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Card 2 -->
-        <div class="reveal testimoni-card-frame">
-          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"IPK nya adem sejuk senseinya baik rekomended buat kalian yang lagi cari LPK di bandung"</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <img src="assets/foto-testimoni-pria.png" alt="Naufal" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-            <div>
-              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Naufal</h4>
-              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+          <div class="testimoni-card-frame">
+            <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">"Selama belajar di sini nyaman sih, senseinya baik-baik dan kalau ada yang belum ngerti juga dijelasin lagi sampai paham. Belajarnya memang lumayan padat tapi jadi lebih terbiasa sama bahasa Jepang"</p>
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: auto;">
+              <img src="assets/foto-testimoni/galang.jpeg" alt="Galang" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+              <div>
+                <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Galang</h4>
+                <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Card 3 -->
-        <div class="reveal testimoni-card-frame">
-          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"LPK baguss, dibimbing dari gabisa bahasa Jepang sampe mahir bahasa Jepang, dan dibimbing sampe keberangkatan, rekomendasi IPK buat minnasan♥"</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <img src="assets/foto-testimoni-wanita.jpeg" alt="Maya" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-            <div>
-              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Maya</h4>
-              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+          <!-- DUPLIKASI SET CARD AGAR LOOPING INFINITE MULUS TANPA PUTUS -->
+          <div class="testimoni-card-frame">
+            <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">"Masuk lpk dari yang gatau apa apaa. boro boro kanji, katakana hiragana masii belum bisaa, budaya jepang jugaa bner bener ga pahamm. Tapii berkat belajar disinii sedikit sedikit budaya Jepang mulai paham apalagi bahasa jepanggnyaa karena senseii"nya gacor parahhh, dan sekarang Alhamdulillah sudaa dii negara impian"</p>
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: auto;">
+              <img src="assets/foto-testimoni/halim.jpeg" alt="Halim" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+              <div>
+                <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Halim</h4>
+                <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Card 4 -->
-        <div class="reveal testimoni-card-frame">
-          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"Alhamdulillah di IPK ijeff cepett berangkattt, dari belajar sampai berangkat di urusin semuanya🤲🏻"</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <img src="assets/foto-testimoni-pria.png" alt="Asep" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-            <div>
-              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Asep</h4>
-              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+          <div class="testimoni-card-frame">
+            <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">"LPK baguss, dibimbing dari gabisa bahasa Jepang sampe mahir bahasa Jepang, dan dibimbing sampe keberangkatan, rekomendasi Ipk buat minnasan♥️"</p>
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: auto;">
+              <img src="assets/foto-testimoni/maya-nurhikmah.jpeg" alt="maya" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+              <div>
+                <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Maya Nurhikmah</h4>
+                <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Card 5 -->
-        <div class="reveal testimoni-card-frame">
-          <p style="color: #1e293b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">"Selama belajar di sini nyaman sih, senseinya baik-baik dan kalau ada yang belum ngerti juga dijelasin lagi sampai paham. Belajarnya memang lumayan padat tapi jadi lebih terbiasa sama bahasa Jepang"</p>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <img src="assets/foto-testimoni-pria.png" alt="Galang" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-            <div>
-              <h4 style="font-size: 1rem; color: #0f172a; margin: 0;">Galang</h4>
-              <span style="font-size: 0.8rem; color: #1e3a8a; font-weight: 600;">Alumni LPK IJEF</span>
-            </div>
-          </div>
         </div>
-
       </div>
+
     </div>
   </section>
 

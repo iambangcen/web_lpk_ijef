@@ -118,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
       overflow: hidden;
     }
 
-    /* Background Awan di dalam Header Popup */
     .admin-modal-header::before {
       content: "";
       position: absolute;
@@ -272,19 +271,13 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   document.head.appendChild(cloudStyle);
 
-  // Sebaran awan diperluas ke kiri, tengah, dan kanan secara merata
   const cloudContainer = document.createElement('div');
   cloudContainer.className = 'global-cloud-container';
   cloudContainer.innerHTML = `
-    <!-- Sisi Kiri -->
     <img src="${assetPath}ornamen-awan.jpeg" class="floating-cloud" style="top: 8%; left: 2%; width: 220px; animation-duration: 7s;" alt="">
     <img src="${assetPath}ornamen-awan.jpeg" class="floating-cloud" style="top: 55%; left: 4%; width: 200px; animation-duration: 8s; animation-delay: 1s;" alt="">
-    
-    <!-- Area Tengah -->
     <img src="${assetPath}ornamen-awan.jpeg" class="floating-cloud" style="top: 25%; left: 38%; width: 240px; animation-duration: 7.5s; animation-delay: 0.5s;" alt="">
     <img src="${assetPath}ornamen-awan.jpeg" class="floating-cloud" style="top: 72%; left: 45%; width: 210px; animation-duration: 6.5s; animation-delay: 1.8s;" alt="">
-
-    <!-- Sisi Kanan (Disebarkan agar tidak menumpuk) -->
     <img src="${assetPath}ornamen-awan.jpeg" class="floating-cloud" style="top: 15%; right: 6%; width: 250px; animation-duration: 6.8s; animation-delay: 1.2s;" alt="">
     <img src="${assetPath}ornamen-awan.jpeg" class="floating-cloud" style="top: 82%; right: 8%; width: 230px; animation-duration: 7.2s; animation-delay: 0.8s;" alt="">
   `;
@@ -297,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarHTML = `
   <div id="preloader">
     <div class="spinner-container">
-      <img src="${assetPath}ijefcorplogo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
+      <img src="${assetPath}ijef-logo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
       <div class="spinner"></div>
       <p class="preloader-text">Memuat halaman...</p>
     </div>
@@ -308,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <nav class="navbar">
     <div class="container nav-container reveal">
       <a href="${pagePrefix}index.html" class="brand-logo">
-        <img src="${assetPath}ijefcorplogo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
+        <img src="${assetPath}ijef-logo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
         LPK IJEF Corp.
       </a>
 
@@ -319,7 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <ul class="nav-links" id="nav-links">
         <li class="sidebar-header">
           <div class="logo-wrapper">
-            <img src="${assetPath}ijefcorplogo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
+            <img src="${assetPath}ijef-logo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
           </div>
           <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
         </li>
@@ -428,6 +421,13 @@ document.addEventListener("DOMContentLoaded", function () {
             <span>Alur Pendaftaran</span>
           </a>
         </li>
+
+        <li class="dropdown">
+          <a href="${pagePrefix}our-partner.html" class="dropdown-toggle">
+            <span>Our Partner</span>
+          </a>
+        </li>
+
         <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
       </ul>
     </div>
@@ -476,7 +476,7 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasi
 
 
   // ==========================================
-  // 3. ADMIN WHATSAPP POPUP MODAL (PROFESSIONAL STYLE)
+  // 3. ADMIN WHATSAPP POPUP MODAL (SALMA SENSEI)
   // ==========================================
   const adminModalHTML = `
   <div class="admin-modal-overlay" id="adminModal">
@@ -488,11 +488,11 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasi
           <i class="fa-brands fa-whatsapp"></i>
         </div>
         <h3>Kontak Kami</h3>
-        <p>Silakan pilih salah satu admin di bawah ini untuk konsultasi dan pendaftaran program LPK IJEF Corp:</p>
+        <p>Silakan hubungi Salma Sensei di bawah ini untuk konsultasi, pendaftaran, maupun kerja sama mitra dengan LPK IJEF Corp:</p>
       </div>
 
       <div class="admin-list">
-        <!-- Admin 1: Salma (Matching Job) -->
+        <!-- Admin: Salma Sensei -->
         <div class="admin-card">
           <div class="admin-info">
             <div class="admin-avatar">
@@ -500,43 +500,11 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasi
             </div>
             <div class="admin-details">
               <h4>Salma</h4>
-              <span>Admin Matching Job</span>
+              <span>Admin Job</span>
             </div>
           </div>
-          <a href="https://wa.me/6282130826893?text=Halo%20Salma,%20saya%20ingin%20konsultasi%20mengenai%20Matching%20Job%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
-            <i class="fa-brands fa-whatsapp"></i> Chat
-          </a>
-        </div>
-
-        <!-- Admin 2: Mira Tania (Penerimaan Siswa) -->
-        <div class="admin-card">
-          <div class="admin-info">
-            <div class="admin-avatar">
-              <i class="fa-solid fa-user-graduate"></i>
-            </div>
-            <div class="admin-details">
-              <h4>Mira Tania</h4>
-              <span>Admin Penerimaan Siswa</span>
-            </div>
-          </div>
-          <a href="https://wa.me/6285722355853?text=Halo%20Mira%20Tania,%20saya%20tertarik%20untuk%20mendaftar%20sebagai%20siswa%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
-            <i class="fa-brands fa-whatsapp"></i> Chat
-          </a>
-        </div>
-
-        <!-- Admin 3: Agus Herlan (Sales) -->
-        <div class="admin-card">
-          <div class="admin-info">
-            <div class="admin-avatar">
-              <i class="fa-solid fa-briefcase"></i>
-            </div>
-            <div class="admin-details">
-              <h4>Agus Herlan</h4>
-              <span>Sales</span>
-            </div>
-          </div>
-          <a href="https://wa.me/6283842849749?text=Halo%20Agus%20Herlan,%20saya%20ingin%20bertanya%20informasi%20seputar%20program%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
-            <i class="fa-brands fa-whatsapp"></i> Chat
+          <a href="https://wa.me/6282130826893?text=Halo%20Salma%20Sensei,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20dan%20kerja%20sama%20mitra%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
+            <i class="fa-brands fa-whatsapp"></i>WhatsApp
           </a>
         </div>
       </div>
