@@ -559,7 +559,7 @@ body {
 
 /* Background Hero / Header */
 .bg-hero-full {
-  background: linear-gradient(rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.1)), url('assets/header.jpeg') no-repeat center center;
+  background: linear-gradient(rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.1)), url('assets/header.jpg') no-repeat center center;
   background-size: contain; /* Mengubah dari cover ke contain agar seluruh gambar aslinya terlihat utuh dan tidak terpotong */
   color: #ffffff;
   width: 100%;
@@ -2270,33 +2270,43 @@ body {
   margin: 0;
 }
 
-/* Ikon Panah Hijau dengan Animasi Fade Out */
+/* Sembunyikan panah secara default saat halaman dimuat */
 .stat-arrow {
   color: #16a34a !important;
   font-size: 1.6rem !important;
-  animation: fadeOutArrow 3s ease-in-out forwards;
-  animation-delay: 4s;
+  opacity: 0;
+  visibility: hidden;
 }
 
-@keyframes fadeOutArrow {
+/* Ketika class trigger aktif, jalankan animasi sekali jalan (forwards) */
+.stat-card.arrow-triggered .stat-arrow {
+  animation: showAndFadeOut 3.5s ease-in-out forwards;
+}
+
+@keyframes showAndFadeOut {
   0% {
+    opacity: 0;
+    transform: translateY(15px);
+    visibility: visible;
+  }
+  20% {
     opacity: 1;
     transform: translateY(0);
   }
-  70% {
-    opacity: 1;
+  /* Efek memantul (bouncing) di tengah durasi */
+  40%, 80% {
     transform: translateY(-8px);
+    opacity: 1;
   }
+  60% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  /* Masuk ke tahap fade out hingga hilang total */
   100% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-25px);
     visibility: hidden;
   }
 }
 
-.stat-card p {
-  font-size: 0.95rem;
-  color: #64748b;
-  margin: 0;
-  font-weight: 500;
-}

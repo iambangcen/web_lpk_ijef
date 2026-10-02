@@ -181,7 +181,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ==========================================================================
-// PROGRESS BAR DINAMIK UNTUK SEMUA SUB-BAGIAN TIMELINE
+// 4. TRIGGER ANIMASI FADE OUT ARROW PADA STATISTIK SAAT PERTAMA KALI SCROLL
+// ==========================================================================
+let hasScrolledArrow = false;
+
+window.addEventListener("scroll", () => {
+  // Jika user melakukan scroll lebih dari 20px dan animasi belum pernah dipicu
+  if (window.scrollY > 20 && !hasScrolledArrow) {
+    hasScrolledArrow = true;
+    const statCards = document.querySelectorAll(".stat-card");
+    
+    statCards.forEach(card => {
+      card.classList.add("arrow-triggered");
+    });
+  }
+});
+
+
+// ==========================================================================
+// 5. PROGRESS BAR DINAMIK UNTUK SEMUA SUB-BAGIAN TIMELINE
 // ==========================================================================
 window.addEventListener('scroll', () => {
   // Cari semua container timeline yang sedang aktif di tab terbuka

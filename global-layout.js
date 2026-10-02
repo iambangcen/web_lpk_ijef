@@ -351,16 +351,8 @@ document.addEventListener("DOMContentLoaded", function () {
               </a>
               <ul class="submenu-sub submenu-down">
                 <li><a href="${pagePrefix}biaya-pelatihan.html">Biaya Pelatihan</a></li>
-                <li class="dropdown-sub dropdown-sub-right">
-                  <a href="#" class="dropdown-toggle-sub">
-                    <span>Biaya Keberangkatan</span>
-                    <i class="fa-solid fa-chevron-right arrow-sub"></i>
-                  </a>
-                  <ul class="submenu-sub submenu-right">
-                    <li><a href="${pagePrefix}mandiri.html">Mandiri</a></li>
-                    <li><a href="${pagePrefix}dana-talang.html">Dana Talang</a></li>
-                  </ul>
-                </li>
+                <li><a href="${pagePrefix}biaya-kelas-pemantapan-online.html">Biaya Kelas Pemantapan & Online</a></li>
+                <li><a href="${pagePrefix}mandiri.html">Biaya Keberangkatan Mandiri</a></li>
               </ul>
             </li>
 
