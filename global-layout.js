@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <ul class="submenu">
             <li><a href="${pagePrefix}company-profile.html">Company Profile</a></li>
             <li><a href="${pagePrefix}legalitas.html">Perizinan & Legalitas</a></li>
-            <li><a href="${pagePrefix}our-team.html">Tim Kami / SOP</a></li>
+            <li><a href="${pagePrefix}our-team.html">Our Team</a></li>
             <li><a href="${pagePrefix}lokasi-pelatihan.html">Lokasi Pendidikan & Pelatihan</a></li>
           </ul>
         </li>
@@ -352,7 +352,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <ul class="submenu-sub submenu-down">
                 <li><a href="${pagePrefix}biaya-pelatihan.html">Biaya Pelatihan</a></li>
                 <li><a href="${pagePrefix}biaya-kelas-pemantapan-online.html">Biaya Kelas Pemantapan & Online</a></li>
-                <li><a href="${pagePrefix}mandiri.html">Biaya Keberangkatan Mandiri</a></li>
+                <li><a href="${pagePrefix}mandiri.html">Biaya Keberangkatan</a></li>
               </ul>
             </li>
 
@@ -441,15 +441,15 @@ document.addEventListener("DOMContentLoaded", function () {
                       <h3>LPK <span>IJEF Corp.</span></h3>
                       <p class="footer-slogan">
                           <span>Bridging Indonesia to Japan - Training, Study, and Career.</span>
-                          <span>日本語学校｜送り出し機関</span>
+                          <span>日本語学校</span>
                           <span>LPK INTERNATIONAL JAPAN ECONOMY FUTURE CORP.</span>
                       </p>
                   </div>
                   <div class="footer-contact">
                       <h4>Alamat Kantor</h4>
                       <p><i class="fas fa-map-marker-alt"></i> <span>
-Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasirhalang Cisarua, Bandung Barat 40551</span></p>
-                      <p><i class="fas fa-phone-alt"></i> <span>[Masukkan Nomor Telepon kantor nya ya]</span></p>
+Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasirhalang Cisarua, Bandung Barat 40551</span></p>
+                      <p><i class="fas fa-phone-alt"></i> <span>08981191774 (Admin Kantor)</span></p>
                   </div>
               </div>
               <div class="footer-bottom">
@@ -468,7 +468,7 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasi
 
 
   // ==========================================
-  // 3. ADMIN WHATSAPP POPUP MODAL (SALMA SENSEI)
+  // 3. ADMIN WHATSAPP POPUP MODAL (SALMA & TANIA)
   // ==========================================
   const adminModalHTML = `
   <div class="admin-modal-overlay" id="adminModal">
@@ -480,14 +480,30 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.002 RW.004 Pasi
           <i class="fa-brands fa-whatsapp"></i>
         </div>
         <h3>Kontak Kami</h3>
-        <p>Silakan hubungi Salma Sensei di bawah ini untuk konsultasi, pendaftaran, maupun kerja sama mitra dengan LPK IJEF Corp:</p>
+        <p>Silakan hubungi tim admin kami di bawah ini untuk konsultasi, pendaftaran pelatihan, maupun kerja sama mitra dengan LPK IJEF Corp:</p>
       </div>
 
       <div class="admin-list">
-        <!-- Admin: Salma Sensei -->
+        <!-- Admin 1: Tania (Admin Rekrutmen / Pendaftaran Pelatihan) -->
         <div class="admin-card">
           <div class="admin-info">
-            <div class="admin-avatar">
+            <div class="admin-avatar" style="background: #e0f2fe; color: #0284c7;">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <div class="admin-details">
+              <h4>Tania</h4>
+              <span>Admin Rekrutmen</span>
+            </div>
+          </div>
+          <a href="https://wa.me/6282130826893?text=Halo%20Tania,%20saya%20ingin%20berkonsultasi%20dan%20mendapatkan%20informasi%20terkait%20pendaftaran%20pelatihan%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
+            <i class="fa-brands fa-whatsapp"></i>WhatsApp
+          </a>
+        </div>
+
+        <!-- Admin 2: Salma (Admin Job) -->
+        <div class="admin-card">
+          <div class="admin-info">
+            <div class="admin-avatar" style="background: #fef3c7; color: #d97706;">
               <i class="fa-solid fa-headset"></i>
             </div>
             <div class="admin-details">

@@ -560,7 +560,7 @@ body {
 /* Background Hero / Header */
 .bg-hero-full {
   background: linear-gradient(rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.1)), url('assets/header.jpg') no-repeat center center;
-  background-size: contain; /* Mengubah dari cover ke contain agar seluruh gambar aslinya terlihat utuh dan tidak terpotong */
+  background-size: cover; /* Sesuaikan atau tetap contain */
   color: #ffffff;
   width: 100%;
   display: flex;
@@ -569,6 +569,9 @@ body {
   align-items: center;
   padding: 100px 20px 50px 20px;
   position: relative;
+  
+  /* Tambahkan baris ini agar gambar latar tetap memiliki tinggi yang pas meskipun teks di dalamnya dikomentari */
+  min-height: 700px; 
 }
 
 /* ==========================================================================
