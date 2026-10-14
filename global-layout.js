@@ -449,11 +449,11 @@ document.addEventListener("DOMContentLoaded", function () {
                       <h4>Alamat Kantor</h4>
                       <p><i class="fas fa-map-marker-alt"></i> <span>
 Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasirhalang Cisarua, Bandung Barat 40551</span></p>
-                      <p><i class="fas fa-phone-alt"></i> <span>08981191774 (Admin Kantor)</span></p>
+                      <p><i class="fas fa-phone-alt"></i> <span>08981191774 (Admin IJEF)</span></p>
                   </div>
               </div>
               <div class="footer-bottom">
-                  <p>&copy; 2026 LPK IJEF Corp. All rights reserved.</p>
+                  <p>&copy; 2026 v1.3 LPK IJEF Corp. All rights reserved.</p>
               </div>
           </div>
       </footer>
@@ -484,34 +484,34 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasi
       </div>
 
       <div class="admin-list">
-        <!-- Admin 1: Tania (Admin Rekrutmen / Pendaftaran Pelatihan) -->
+        <!-- Admin 1: Admin ijef (Admin Rekrutmen / Pendaftaran Pelatihan) -->
         <div class="admin-card">
           <div class="admin-info">
             <div class="admin-avatar" style="background: #e0f2fe; color: #0284c7;">
               <i class="fa-solid fa-user-tie"></i>
             </div>
             <div class="admin-details">
-              <h4>Tania</h4>
+              <h4>Admin IJEF</h4>
               <span>Admin Rekrutmen</span>
             </div>
           </div>
-          <a href="https://wa.me/6282130826893?text=Halo%20Tania,%20saya%20ingin%20berkonsultasi%20dan%20mendapatkan%20informasi%20terkait%20pendaftaran%20pelatihan%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
+          <a href="https://wa.me/628981191774?text=Halo%20Kak,%20saya%20ingin%20berkonsultasi%20dan%20mendapatkan%20informasi%20terkait%20pendaftaran%20pelatihan%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
             <i class="fa-brands fa-whatsapp"></i>WhatsApp
           </a>
         </div>
 
-        <!-- Admin 2: Salma (Admin Job) -->
+        <!-- Admin 2: adm ijef (Admin Job) -->
         <div class="admin-card">
           <div class="admin-info">
             <div class="admin-avatar" style="background: #fef3c7; color: #d97706;">
               <i class="fa-solid fa-headset"></i>
             </div>
             <div class="admin-details">
-              <h4>Salma</h4>
-              <span>Admin Job</span>
+              <h4>Admin Job</h4>
+              <span>Informasi Matching Job</span>
             </div>
           </div>
-          <a href="https://wa.me/6282130826893?text=Halo%20Salma%20Sensei,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20dan%20kerja%20sama%20mitra%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
+          <a href="https://wa.me/6282130826893?text=Halo%20Kak,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20dan%20kerja%20sama%20mitra%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
             <i class="fa-brands fa-whatsapp"></i>WhatsApp
           </a>
         </div>
