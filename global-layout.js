@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <li class="dropdown">
           <a href="${pagePrefix}our-partner.html" class="dropdown-toggle">
-            <span>Our Partner</span>
+            <span>Kemitraan</span>
           </a>
         </li>
 
