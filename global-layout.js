@@ -540,7 +540,7 @@ document.addEventListener("DOMContentLoaded", function () {
       event.target.classList.add('active');
     }
 
-    // Bersihkan semua kemungkinan cookie googtrans
+    // Hapus seluruh cookie googtrans dari berbagai kombinasi domain & path
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
     document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname;
@@ -549,8 +549,9 @@ document.addEventListener("DOMContentLoaded", function () {
       document.cookie = "googtrans=/id/ja; path=/";
       location.reload();
     } else {
-      // Hapus hash / query string lalu reload paksa tanpa cache
-      window.location.href = window.location.pathname + '?hl=id&t=' + new Date().getTime();
+      // Set paksa cookie kembali ke bahasa Indonesia sebelum reload
+      document.cookie = "googtrans=/id/id; path=/";
+      window.location.href = window.location.pathname + '?v=' + new Date().getTime();
     }
   };
 
