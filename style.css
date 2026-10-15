@@ -78,7 +78,8 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 65px;
-  padding: 0 25px;
+  padding: 0 15px; /* Diubah dari 25px menjadi 15px */
+  gap: 10px;       /* Tambahkan gap antar elemen utama di navbar */
   transition: height 0.3s ease;
 }
 
@@ -146,7 +147,7 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 14px;
+  gap: 8px; /* Diubah dari 14px menjadi 8px agar lebih rapat */
 }
 
 .nav-links a {
@@ -174,15 +175,21 @@ body {
   display: none;
 }
 
+@media (min-width: 992px) and (max-width: 1200px) {
+  .nav-links a {
+    font-size: 0.82rem; /* Sedikit memperkecil teks menu di layar laptop standar */
+  }
+}
+
 /* Buttons */
 .btn-primary {
   background-color: var(--primary-navy);
   color: var(--white) !important;
-  padding: 8px 18px;
+  padding: 7px 14px; /* Diubah dari 8px 18px menjadi 7px 14px */
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.88rem;
+  font-size: 0.82rem; /* Sedikit memperkecil ukuran font */
   white-space: nowrap;
   transition: all 0.3s ease;
   display: inline-block;

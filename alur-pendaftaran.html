@@ -18,8 +18,8 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container">
-      <h1>Section Alur Pendaftaran</h1>
-      <p>Pilih program pelatihan kerja ke Jepang sesuai dengan kebutuhan dan kualifikasi Anda.</p>
+      <h1 data-i18n="alur_header_title">Section Alur Pendaftaran</h1>
+      <p data-i18n="alur_header_desc">Pilih program pelatihan kerja ke Jepang sesuai dengan kebutuhan dan kualifikasi Anda.</p>
     </div>
   </header>
 
@@ -28,26 +28,26 @@
 
       <!-- Tombol Navigasi Kategori / Tab Program -->
       <div class="program-tabs" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; justify-content: center;">
-        <button class="tab-btn active" onclick="switchProgram('reguler', event)">1. Kelas Reguler</button>
-        <button class="tab-btn" onclick="switchProgram('online', event)">2. Kelas Online</button>
-        <button class="tab-btn" onclick="switchProgram('matching', event)">3. Kelas Matching Job</button>
-        <button class="tab-btn" onclick="switchProgram('pemantapan', event)">4. Kelas Pemantapan</button>
+        <button class="tab-btn active" onclick="switchProgram('reguler', event)" data-i18n="tab_reguler">1. Kelas Reguler</button>
+        <button class="tab-btn" onclick="switchProgram('online', event)" data-i18n="tab_online">2. Kelas Online</button>
+        <button class="tab-btn" onclick="switchProgram('matching', event)" data-i18n="tab_matching">3. Kelas Matching Job</button>
+        <button class="tab-btn" onclick="switchProgram('pemantapan', event)" data-i18n="tab_pemantapan">4. Kelas Pemantapan</button>
       </div>
 
       <!-- KONTEN 1: KELAS REGULER -->
       <div id="reguler" class="program-content">
         <section class="content-card reveal" style="margin-bottom: 30px; border-left: 5px solid #1e3a8a; background: #ffffff;">
-          <h3 style="color: #1e3a8a; margin-bottom: 15px;"><i class="fas fa-clipboard-list"></i> Syarat Siswa - Kelas Reguler</h3>
+          <h3 style="color: #1e3a8a; margin-bottom: 15px;"><i class="fas fa-clipboard-list"></i> <span data-i18n="syarat_reguler_title">Syarat Siswa - Kelas Reguler</span></h3>
           <ul style="padding-left: 20px; line-height: 1.8; color: #334155;">
-            <li>Lulusan pendidikan SMA/SMK/MA atau sederajat</li>
-            <li>Tidak buta warna total maupun parsial</li>
-            <li>Tidak bekerja selama mengikuti pelatihan</li>
-            <li>Tidak ada penyakit menular seperti TBC, Hepatitis, dan sebagainya.</li>
+            <li data-i18n="syarat_reg_1">Lulusan pendidikan SMA/SMK/MA atau sederajat</li>
+            <li data-i18n="syarat_reg_2">Tidak buta warna total maupun parsial</li>
+            <li data-i18n="syarat_reg_3">Tidak bekerja selama mengikuti pelatihan</li>
+            <li data-i18n="syarat_reg_4">Tidak ada penyakit menular seperti TBC, Hepatitis, dan sebagainya.</li>
           </ul>
         </section>
 
         <div class="reveal" style="margin-bottom: 25px;">
-          <h3 style="font-size: 1.5rem; color: #0f172a;">Tahapan Pendaftaran Kelas Reguler</h3>
+          <h3 style="font-size: 1.5rem; color: #0f172a;" data-i18n="tahap_reg_title">Tahapan Pendaftaran Kelas Reguler</h3>
         </div>
 
         <div class="timeline-container">
@@ -57,10 +57,10 @@
           <div class="timeline-item">
             <div class="timeline-number">1</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 1: Menghubungi Admin/Marketing</h4>
-              <p style="color: #475569; margin-bottom: 15px;">Silakan terhubung dengan tim admin atau marketing kami untuk informasi awal.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="reg_step_1_title">Tahap 1: Menghubungi Admin/Marketing</h4>
+              <p style="color: #475569; margin-bottom: 15px;" data-i18n="reg_step_1_desc">Silakan terhubung dengan tim admin atau marketing kami untuk informasi awal.</p>
               <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 8px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px;">
-                <i class="fa-brands fa-whatsapp"></i> Hubungi Admin
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_hubungi_admin">Hubungi Admin</span>
               </a>
             </div>
           </div>
@@ -68,32 +68,32 @@
           <div class="timeline-item">
             <div class="timeline-number">2</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 2: Pengisian Biodata & Tes</h4>
-              <p style="color: #475569; margin: 0;">Mengisi biodata calon siswa, dilanjutkan dengan pengisian DISC dan Psikotes.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="reg_step_2_title">Tahap 2: Pengisian Biodata & Tes</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="reg_step_2_desc">Mengisi biodata calon siswa, dilanjutkan dengan pengisian DISC dan Psikotes.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">3</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 3: Interview Calon Siswa</h4>
-              <p style="color: #475569; margin: 0;">Sesi wawancara langsung bersama pihak lembaga.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="reg_step_3_title">Tahap 3: Interview Calon Siswa</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="reg_step_3_desc">Sesi wawancara langsung bersama pihak lembaga.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">4</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 4: Daftar Ulang</h4>
-              <p style="color: #475569; margin: 0;">Melakukan proses daftar ulang administrasi.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="reg_step_4_title">Tahap 4: Daftar Ulang</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="reg_step_4_desc">Melakukan proses daftar ulang administrasi.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">5</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 5: Mulai Pelatihan Program Asrama</h4>
-              <p style="color: #475569; margin: 0;">Peserta resmi memulai pelatihan intensif dengan program asrama.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="reg_step_5_title">Tahap 5: Mulai Pelatihan Program Asrama</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="reg_step_5_desc">Peserta resmi memulai pelatihan intensif dengan program asrama.</p>
             </div>
           </div>
         </div>
@@ -102,14 +102,14 @@
       <!-- KONTEN 2: KELAS ONLINE -->
       <div id="online" class="program-content" style="display: none;">
         <section class="content-card reveal" style="margin-bottom: 30px; border-left: 5px solid #1e3a8a; background: #ffffff;">
-          <h3 style="color: #1e3a8a; margin-bottom: 15px;"><i class="fas fa-clipboard-list"></i> Syarat Siswa - Kelas Online</h3>
+          <h3 style="color: #1e3a8a; margin-bottom: 15px;"><i class="fas fa-clipboard-list"></i> <span data-i18n="syarat_online_title">Syarat Siswa - Kelas Online</span></h3>
           <ul style="padding-left: 20px; line-height: 1.8; color: #334155;">
-            <li>Lulusan pendidikan SMA/SMK/MA atau sederajat</li>
+            <li data-i18n="syarat_online_1">Lulusan pendidikan SMA/SMK/MA atau sederajat</li>
           </ul>
         </section>
 
         <div class="reveal" style="margin-bottom: 25px;">
-          <h3 style="font-size: 1.5rem; color: #0f172a;">Tahapan Pendaftaran Kelas Online</h3>
+          <h3 style="font-size: 1.5rem; color: #0f172a;" data-i18n="tahap_online_title">Tahapan Pendaftaran Kelas Online</h3>
         </div>
 
         <div class="timeline-container">
@@ -119,10 +119,10 @@
           <div class="timeline-item">
             <div class="timeline-number">1</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 1: Menghubungi Admin/Marketing</h4>
-              <p style="color: #475569; margin-bottom: 15px;">Menghubungi admin untuk pendaftaran kelas online.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="online_step_1_title">Tahap 1: Menghubungi Admin/Marketing</h4>
+              <p style="color: #475569; margin-bottom: 15px;" data-i18n="online_step_1_desc">Menghubungi admin untuk pendaftaran kelas online.</p>
               <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 8px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px;">
-                <i class="fa-brands fa-whatsapp"></i> Hubungi Admin
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_hubungi_admin">Hubungi Admin</span>
               </a>
             </div>
           </div>
@@ -130,24 +130,24 @@
           <div class="timeline-item">
             <div class="timeline-number">2</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 2: Mengisi Data Diri</h4>
-              <p style="color: #475569; margin: 0;">Melengkapi formulir data diri secara online.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="online_step_2_title">Tahap 2: Mengisi Data Diri</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="online_step_2_desc">Melengkapi formulir data diri secara online.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">3</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 3: Melakukan Pembayaran</h4>
-              <p style="color: #475569; margin: 0;">Melunasi biaya administrasi kelas online.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="online_step_3_title">Tahap 3: Melakukan Pembayaran</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="online_step_3_desc">Melunasi biaya administrasi kelas online.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">4</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 4: Mulai Pembelajaran secara Offline</h4>
-              <p style="color: #475569; margin: 0;">Mulai mengikuti jadwal pembelajaran yang telah ditentukan.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="online_step_4_title">Tahap 4: Mulai Pembelajaran secara Offline</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="online_step_4_desc">Mulai mengikuti jadwal pembelajaran yang telah ditentukan.</p>
             </div>
           </div>
         </div>
@@ -156,14 +156,14 @@
       <!-- KONTEN 3: KELAS MATCHING JOB -->
       <div id="matching" class="program-content" style="display: none;">
         <section class="content-card reveal" style="margin-bottom: 30px; border-left: 5px solid #1e3a8a; background: #ffffff;">
-          <h3 style="color: #1e3a8a; margin-bottom: 15px;"><i class="fas fa-clipboard-list"></i> Syarat Siswa - Kelas Matching Job</h3>
+          <h3 style="color: #1e3a8a; margin-bottom: 15px;"><i class="fas fa-clipboard-list"></i> <span data-i18n="syarat_matching_title">Syarat Siswa - Kelas Matching Job</span></h3>
           <ul style="padding-left: 20px; line-height: 1.8; color: #334155;">
-            <li>Tergantung kebutuhan lowongan dari perusahaan Jepang</li>
+            <li data-i18n="syarat_matching_1">Tergantung kebutuhan lowongan dari perusahaan Jepang</li>
           </ul>
         </section>
 
         <div class="reveal" style="margin-bottom: 25px;">
-          <h3 style="font-size: 1.5rem; color: #0f172a;">Tahapan Matching Job</h3>
+          <h3 style="font-size: 1.5rem; color: #0f172a;" data-i18n="tahap_matching_title">Tahapan Matching Job</h3>
         </div>
 
         <div class="timeline-container">
@@ -173,10 +173,10 @@
           <div class="timeline-item">
             <div class="timeline-number">1</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 1: Cek Ketersediaan Job</h4>
-              <p style="color: #475569; margin-bottom: 15px;">Melihat lowongan pekerjaan yang sedang open melalui tautan resmi.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="matching_step_1_title">Tahap 1: Cek Ketersediaan Job</h4>
+              <p style="color: #475569; margin-bottom: 15px;" data-i18n="matching_step_1_desc">Melihat lowongan pekerjaan yang sedang open melalui tautan resmi.</p>
               <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 8px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px;">
-                <i class="fa-brands fa-whatsapp"></i> Hubungi Admin
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_hubungi_admin">Hubungi Admin</span>
               </a>
             </div>
           </div>
@@ -184,40 +184,40 @@
           <div class="timeline-item">
             <div class="timeline-number">2</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 2: Mengisi Biodata / CV</h4>
-              <p style="color: #475569; margin: 0;">Mengisi biodata di portal job atau menggunakan format CV IJEF.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="matching_step_2_title">Tahap 2: Mengisi Biodata / CV</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="matching_step_2_desc">Mengisi biodata di portal job atau menggunakan format CV IJEF.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">3</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 3: Tindak Lanjut Admin</h4>
-              <p style="color: #475569; margin: 0;">Admin matching job akan meninjau dan menindaklanjuti data yang masuk.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="matching_step_3_title">Tahap 3: Tindak Lanjut Admin</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="matching_step_3_desc">Admin matching job akan meninjau dan menindaklanjuti data yang masuk.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">4</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 4: Proses Prosedur Kandidat</h4>
-              <p style="color: #475569; margin: 0;">Kandidat diproses sesuai dengan prosedur operasional oleh admin.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="matching_step_4_title">Tahap 4: Proses Prosedur Kandidat</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="matching_step_4_desc">Kandidat diproses sesuai dengan prosedur operasional oleh admin.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">5</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 5: Pengalihan Job Alternatif</h4>
-              <p style="color: #475569; margin: 0;">Jika tidak lolos kualifikasi, admin langsung mengarahkan ke job lain sesuai ketentuan IJEF.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="matching_step_5_title">Tahap 5: Pengalihan Job Alternatif</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="matching_step_5_desc">Jika tidak lolos kualifikasi, admin langsung mengarahkan ke job lain sesuai ketentuan IJEF.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">6</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 6: Informasi Nihongo Check & Mendan</h4>
-              <p style="color: #475569; margin: 0;">Hasil evaluasi bahasa Jepang dan wawancara (Mendan) selalu diinformasikan secara berkala oleh admin.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="matching_step_6_title">Tahap 6: Informasi Nihongo Check & Mendan</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="matching_step_6_desc">Hasil evaluasi bahasa Jepang dan wawancara (Mendan) selalu diinformasikan secara berkala oleh admin.</p>
             </div>
           </div>
         </div>
@@ -227,15 +227,15 @@
       <div id="pemantapan" class="program-content" style="display: none;">
         
         <section class="content-card reveal" style="margin-bottom: 30px; border-left: 5px solid #1e3a8a; background: #ffffff;">
-          <h3 style="color: #1e3a8a; margin-bottom: 15px;"><i class="fas fa-clipboard-list"></i> Syarat Siswa - Kelas Pemantapan (SSW & Mensetsu)</h3>
+          <h3 style="color: #1e3a8a; margin-bottom: 15px;"><i class="fas fa-clipboard-list"></i> <span data-i18n="syarat_pemantapan_title">Syarat Siswa - Kelas Pemantapan (SSW & Mensetsu)</span></h3>
           <ul style="padding-left: 20px; line-height: 1.8; color: #334155;">
-            <li>Memiliki minimal JFT A2 atau JLPT N4</li>
-            <li>Memiliki sertifikat SSW (untuk pemantapan Mensetsu / lanjutan)</li>
+            <li data-i18n="syarat_pemantapan_1">Memiliki minimal JFT A2 atau JLPT N4</li>
+            <li data-i18n="syarat_pemantapan_2">Memiliki sertifikat SSW (untuk pemantapan Mensetsu / lanjutan)</li>
           </ul>
         </section>
 
         <div class="reveal" style="margin-bottom: 25px;">
-          <h3 style="font-size: 1.5rem; color: #0f172a;">Tahapan Pendaftaran Kelas Pemantapan</h3>
+          <h3 style="font-size: 1.5rem; color: #0f172a;" data-i18n="tahap_pemantapan_title">Tahapan Pendaftaran Kelas Pemantapan</h3>
         </div>
 
         <div class="timeline-container">
@@ -245,10 +245,10 @@
           <div class="timeline-item">
             <div class="timeline-number">1</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 1: Menghubungi Admin/Marketing</h4>
-              <p style="color: #475569; margin-bottom: 15px;">Konsultasi awal pendaftaran kelas pemantapan SSW dan Mensetsu.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="pemantapan_step_1_title">Tahap 1: Menghubungi Admin/Marketing</h4>
+              <p style="color: #475569; margin-bottom: 15px;" data-i18n="pemantapan_step_1_desc">Konsultasi awal pendaftaran kelas pemantapan SSW dan Mensetsu.</p>
               <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 8px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px;">
-                <i class="fa-brands fa-whatsapp"></i> Hubungi Admin
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_hubungi_admin">Hubungi Admin</span>
               </a>
             </div>
           </div>
@@ -256,24 +256,24 @@
           <div class="timeline-item">
             <div class="timeline-number">2</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 2: Melengkapi Berkas / Verifikasi Data</h4>
-              <p style="color: #475569; margin: 0;">Pengisian formulir data diri dan verifikasi sertifikat pendukung.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="pemantapan_step_2_title">Tahap 2: Melengkapi Berkas / Verifikasi Data</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="pemantapan_step_2_desc">Pengisian formulir data diri dan verifikasi sertifikat pendukung.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">3</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 3: Melakukan Pembayaran Kelas</h4>
-              <p style="color: #475569; margin: 0;">Melunasi administrasi biaya kelas pemantapan.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="pemantapan_step_3_title">Tahap 3: Melakukan Pembayaran Kelas</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="pemantapan_step_3_desc">Melunasi administrasi biaya kelas pemantapan.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-number">4</div>
             <div class="content-card timeline-card" style="background: #f1f5f9; text-align: center;">
-              <h4 style="color: #1e3a8a; margin-bottom: 8px;">Tahap 4: Mulai Pembelajaran</h4>
-              <p style="color: #475569; margin: 0;">Peserta mulai aktif mengikuti program pemantapan SSW dan Mensetsu.</p>
+              <h4 style="color: #1e3a8a; margin-bottom: 8px;" data-i18n="pemantapan_step_4_title">Tahap 4: Mulai Pembelajaran</h4>
+              <p style="color: #475569; margin: 0;" data-i18n="pemantapan_step_4_desc">Peserta mulai aktif mengikuti program pemantapan SSW dan Mensetsu.</p>
             </div>
           </div>
         </div>
@@ -287,6 +287,7 @@
   <div id="footer-placeholder"></div>
 
   <!-- JavaScript Utama & Layout Global -->
+  <script src="translations.js"></script>
   <script src="global-layout.js"></script>
   <script src="script.js"></script>
 </body>

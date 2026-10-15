@@ -21,8 +21,8 @@
       
       <!-- Header Judul Halaman -->
       <div style="text-align: center; margin-bottom: 40px;">
-        <span style="color: #1e3a8a; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Program Pemantapan LPK IJEF</span>
-        <h1 style="color: #0f172a; font-size: 2.2rem; margin-top: 10px; font-weight: 700;">Kelas SSW (Specified Skilled Worker)</h1>
+        <span style="color: #1e3a8a; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;" data-i18n="ssw_badge">Program Pemantapan LPK IJEF</span>
+        <h1 style="color: #0f172a; font-size: 2.2rem; margin-top: 10px; font-weight: 700;" data-i18n="ssw_title">Kelas SSW (Specified Skilled Worker)</h1>
         <div style="width: 60px; height: 4px; background-color: #1e3a8a; margin: 15px auto 0 auto; border-radius: 2px;"></div>
       </div>
 
@@ -30,40 +30,45 @@
       <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
         
         <!-- Deskripsi -->
-        <p style="color: #334155; font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">
+        <p style="color: #334155; font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;" data-i18n="ssw_desc">
           Kelas SSW diperuntukkan bagi peserta yang telah memiliki sertifikat kemampuan bahasa Jepang (JLPT atau JFT) tetapi belum memiliki Sertifikat Tokutei Ginou (SSW). Dalam program ini peserta akan mendapatkan pembelajaran yang berfokus pada persiapan ujian SSW, khususnya sesuai bidang yang dituju, sehingga peserta lebih siap menghadapi ujian dan memenuhi persyaratan untuk melanjutkan proses kerja di Jepang.
         </p>
 
         <!-- Bagian Persyaratan Umum -->
         <h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
-          <i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Persyaratan Umum:
+          <i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> <span data-i18n="ssw_syarat_title">Persyaratan Umum:</span>
         </h3>
 
         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; margin-bottom: 35px;">
           <li style="display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 14px 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
             <i class="fa-solid fa-check" style="color: #16a34a; margin-top: 4px;"></i>
-            <span style="color: #334155; font-size: 1rem;">Memiliki sertifikat JLPT / JFT</span>
+            <span style="color: #334155; font-size: 1rem;" data-i18n="ssw_syarat_1">Memiliki sertifikat JLPT / JFT</span>
           </li>
         </ul>
 
         <!-- Bagian Detail Pelaksanaan Kelas -->
         <h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
-          <i class="fa-solid fa-calendar-days" style="color: #2563eb;"></i> Detail Pelaksanaan Kelas:
+          <i class="fa-solid fa-calendar-days" style="color: #2563eb;"></i> <span data-i18n="ssw_detail_title">Detail Pelaksanaan Kelas:</span>
         </h3>
 
         <div style="background: #eff6ff; padding: 20px; border-radius: 8px; border: 1px solid #bfdbfe; display: flex; align-items: flex-start; gap: 15px;">
           <i class="fa-solid fa-clock" style="color: #1e3a8a; font-size: 1.3rem; margin-top: 3px;"></i>
           <div>
-            <p style="color: #1e3a8a; font-weight: 600; margin-bottom: 4px; font-size: 1.05rem;">Sistem Belajar Offline</p>
+            <p style="color: #1e3a8a; font-weight: 600; margin-bottom: 4px; font-size: 1.05rem;" data-i18n="ssw_offline_title">Sistem Belajar Offline</p>
             <p style="color: #334155; font-size: 1rem; line-height: 1.5; margin: 0;">
-              Dilakukan secara <strong>offline</strong> di LPK IJEF Corp setiap hari <strong>Senin s.d Jumat</strong> pukul <strong>08.00 s.d 15.00 WIB</strong>.
+              <span data-i18n="ssw_offline_desc_part1">Dilakukan secara</span> 
+              <strong data-i18n="ssw_offline_strong_1">offline</strong> 
+              <span data-i18n="ssw_offline_desc_part2">di LPK IJEF Corp setiap hari</span> 
+              <strong data-i18n="ssw_offline_strong_2">Senin s.d Jumat</strong> 
+              <span data-i18n="ssw_offline_desc_part3">pukul</span> 
+              <strong data-i18n="ssw_offline_strong_3">08.00 s.d 15.00 WIB</strong>.
             </p>
           </div>
         </div>
 
         <!-- Tombol Aksi / Pendaftaran -->
         <div style="margin-top: 35px; text-align: center;">
-          <a href="index.html#kontak" class="btn-primary" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: background 0.3s;">Daftar Kelas SSW Sekarang</a>
+          <a href="index.html#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: background 0.3s;" data-i18n="btn_daftar_ssw">Daftar Kelas SSW Sekarang</a>
         </div>
 
       </div>
@@ -74,7 +79,8 @@
   <!-- Placeholder Footer untuk dynamic load dari global-layout.js -->
   <div id="footer-placeholder"></div>
 
-  <!-- Pemanggilan global-layout.js diletakkan di atas script.js -->
+  <!-- Pemanggilan translations.js dan global-layout.js -->
+  <script src="translations.js"></script>
   <script src="global-layout.js"></script>
   <script src="script.js"></script>
 </body>

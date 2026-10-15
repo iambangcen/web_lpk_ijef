@@ -18,8 +18,8 @@
   <!-- Header Banner Subpage -->
   <section class="page-header reveal">
     <div class="container">
-      <h1>SSW (Specified Skilled Worker)</h1>
-      <p>Program Izin Tinggal dan Kerja Resmi Pemerintah Jepang untuk Tenaga Kerja Berketerampilan Khusus</p>
+      <h1 data-i18n="ssw_page_title">SSW (Specified Skilled Worker)</h1>
+      <p data-i18n="ssw_page_desc">Program Izin Tinggal dan Kerja Resmi Pemerintah Jepang untuk Tenaga Kerja Berketerampilan Khusus</p>
     </div>
   </section>
 
@@ -36,14 +36,14 @@
           <!-- Kolom Teks -->
           <div>
             <h2 style="color: #1e293b; font-size: 26px; margin-bottom: 20px; font-weight: 700;">
-              <i class="fa-solid fa-id-card" style="color: #0056b3; margin-right: 12px;"></i> Apa itu SSW?
+              <i class="fa-solid fa-id-card" style="color: #0056b3; margin-right: 12px;"></i> <span data-i18n="ssw_what_title">Apa itu SSW?</span>
             </h2>
             
             <p style="color: #334155; line-height: 1.8; font-size: 16px; margin-bottom: 20px;">
-              <strong>SSW (Specified Skilled Worker)</strong> atau <em>Tokutei Ginou</em> adalah status izin tinggal di Jepang bagi tenaga kerja asing yang memiliki keterampilan tertentu untuk bekerja pada bidang-bidang yang telah ditetapkan oleh pemerintah Jepang.
+              <strong data-i18n="ssw_strong_1">SSW (Specified Skilled Worker)</strong> <span data-i18n="ssw_desc_1">atau</span> <em><strong data-i18n="ssw_em_tokutei">Tokutei Ginou</strong></em> <span data-i18n="ssw_desc_2">adalah status izin tinggal di Jepang bagi tenaga kerja asing yang memiliki keterampilan tertentu untuk bekerja pada bidang-bidang yang telah ditetapkan oleh pemerintah Jepang.</span>
             </p>
 
-            <p style="color: #334155; line-height: 1.8; font-size: 16px; margin-bottom: 0;">
+            <p style="color: #334155; line-height: 1.8; font-size: 16px; margin-bottom: 0;" data-i18n="ssw_desc_3">
               Program ini ditujukan untuk menerima tenaga kerja asing yang memiliki keterampilan dan kemampuan bahasa Jepang yang dibutuhkan sesuai bidang pekerjaan.
             </p>
           </div>
@@ -55,7 +55,7 @@
               <img src="assets/ssw.png" alt="Ilustrasi Program Specified Skilled Worker (SSW)" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 6px;">
             </div>
             <span style="display: inline-block; margin-top: 12px; font-size: 13px; color: #64748b; font-weight: 500;">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a; margin-right: 4px;"></i> Ilustrasi / Dokumentasi Program SSW
+              <i class="fa-solid fa-circle-check" style="color: #16a34a; margin-right: 4px;"></i> <span data-i18n="ssw_caption">Ilustrasi / Dokumentasi Program SSW</span>
             </span>
           </div>
 
@@ -63,7 +63,7 @@
 
         <!-- Tombol Aksi Konsultasi/Admin -->
         <div style="text-align: center;">
-          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none;">Konsultasi Program SSW</a>
+          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none;" data-i18n="btn_konsul_ssw">Konsultasi Program SSW</a>
         </div>
 
       </div>
@@ -95,7 +95,8 @@
     });
   </script>
 
-  <!-- Pemanggilan global-layout.js diletakkan di atas script.js -->
+  <!-- Pemanggilan translations.js dan global-layout.js -->
+  <script src="translations.js"></script>
   <script src="global-layout.js"></script>
   <script src="script.js"></script>
 </body>

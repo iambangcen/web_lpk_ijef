@@ -5,6 +5,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const pagePrefix = isInSubfolder ? "../" : "";
 
   // ==========================================
+  // FUNGSI UTAMA PENERJEMAH (APPLY TRANSLATIONS)
+  // ==========================================
+  function applyTranslations() {
+    const currentLang = localStorage.getItem('selectedLang') || 'id';
+
+    if (typeof translations !== 'undefined' && translations[currentLang]) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          el.textContent = translations[currentLang][key];
+        }
+      });
+    }
+
+    document.querySelectorAll('.nav-lang-btn').forEach(b => b.classList.remove('active'));
+    if (currentLang === 'ja') {
+      const btnJa = document.getElementById('btn-ja');
+      if (btnJa) btnJa.classList.add('active');
+    } else {
+      const btnId = document.getElementById('btn-id');
+      if (btnId) btnId.classList.add('active');
+    }
+  }
+
+  // ==========================================
   // 0. GLOBAL CLOUD BACKGROUND ANIMATION
   // ==========================================
   const existingCloud = document.querySelector('.global-cloud-container');
@@ -39,58 +64,41 @@ document.addEventListener("DOMContentLoaded", function () {
       100% { transform: translate(0, 0) rotate(0deg); }
     }
 
-    /* Styling Global Language Switcher */
-    .global-lang-wrapper {
+    /* Styling Navbar Language Switcher di Samping Hamburger */
+    .nav-actions-wrapper {
       display: flex;
-      justify-content: center;
-      margin-bottom: 15px;
-      width: 100%;
+      align-items: center;
+      gap: 10px;
     }
-    .lang-switcher {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+    .nav-lang-switcher {
+      background: rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(15, 23, 42, 0.12);
       border-radius: 50px;
-      padding: 4px 12px;
+      padding: 3px 8px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
-    .lang-btn {
+    .nav-lang-btn {
       background: transparent;
       border: none;
-      color: #fff;
+      color: #334155;
       font-weight: 600;
       cursor: pointer;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 20px;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       transition: all 0.2s ease;
     }
-    .lang-btn.active {
-      background: #ffffff;
-      color: #0f172a;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .nav-lang-btn.active {
+      background: #0056b3;
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .lang-divider {
-      color: rgba(255, 255, 255, 0.6);
+    .nav-lang-divider {
+      color: #cbd5e1;
+      font-size: 0.75rem;
     }
-
-    /* Sembunyikan banner & atur ulang posisi body Google Translate secara permanen */
-    .goog-te-banner-frame { 
-      display: none !important; 
-      visibility: hidden !important;
-      height: 0 !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-    body { 
-      top: 0 !important; 
-      position: static !important; 
-    }
-    .goog-tooltip { display: none !important; }
-    .goog-tooltip:hover { display: none !important; }
-    .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
 
     /* ==========================================
        MODERN PROFESSIONAL ADMIN MODAL STYLING
@@ -355,12 +363,20 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="container nav-container reveal">
       <a href="${pagePrefix}index.html" class="brand-logo">
         <img src="${assetPath}ijef-logo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
-        <span class="notranslate" translate="no">LPK IJEF Corp.</span>
+        <span>LPK IJEF Corp.</span>
       </a>
 
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <div class="nav-actions-wrapper">
+        <div class="nav-lang-switcher">
+          <button class="nav-lang-btn" id="btn-id" onclick="triggerTranslate('id')">IDN</button>
+          <span class="nav-lang-divider">|</span>
+          <button class="nav-lang-btn" id="btn-ja" onclick="triggerTranslate('ja')">JPN</button>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
 
       <ul class="nav-links" id="nav-links">
         <li class="sidebar-header">
@@ -372,65 +388,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <li class="dropdown">
           <a href="${pagePrefix}index.html" class="dropdown-toggle">
-            <span>Beranda</span>
+            <span data-i18n="nav_home">Beranda</span>
           </a>
         </li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle">
-            <span>Profile</span>
+            <span data-i18n="nav_profile">Profile</span>
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="${pagePrefix}company-profile.html">Company Profile</a></li>
-            <li><a href="${pagePrefix}legalitas.html">Perizinan & Legalitas</a></li>
-            <li><a href="${pagePrefix}our-team.html">Our Team</a></li>
-            <li><a href="${pagePrefix}lokasi-pelatihan.html">Lokasi Pendidikan & Pelatihan</a></li>
+            <li><a href="${pagePrefix}company-profile.html" data-i18n="nav_company_profile">Company Profile</a></li>
+            <li><a href="${pagePrefix}legalitas.html" data-i18n="nav_legalitas">Perizinan & Legalitas</a></li>
+            <li><a href="${pagePrefix}our-team.html" data-i18n="nav_team">Our Team</a></li>
+            <li><a href="${pagePrefix}lokasi-pelatihan.html" data-i18n="nav_lokasi">Lokasi Pendidikan & Pelatihan</a></li>
           </ul>
         </li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle">
-            <span>Informasi</span>
+            <span data-i18n="nav_informasi">Informasi</span>
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="${pagePrefix}bidang-kerja.html">Bidang Kerja</a></li>
+            <li><a href="${pagePrefix}bidang-kerja.html" data-i18n="nav_bidang_kerja">Bidang Kerja</a></li>
             
             <li class="dropdown-sub dropdown-sub-down">
               <a href="#" class="dropdown-toggle-sub">
-                <span>Biaya</span>
+                <span data-i18n="nav_biaya">Biaya</span>
                 <i class="fa-solid fa-chevron-down arrow-sub"></i>
               </a>
               <ul class="submenu-sub submenu-down">
-                <li><a href="${pagePrefix}biaya-pelatihan.html">Biaya Pelatihan</a></li>
-                <li><a href="${pagePrefix}biaya-kelas-pemantapan-online.html">Biaya Kelas Pemantapan & Online</a></li>
-                <li><a href="${pagePrefix}mandiri.html">Biaya Keberangkatan</a></li>
+                <li><a href="${pagePrefix}biaya-pelatihan.html" data-i18n="nav_biaya_pelatihan">Biaya Pelatihan</a></li>
+                <li><a href="${pagePrefix}biaya-kelas-pemantapan-online.html" data-i18n="nav_biaya_online">Biaya Kelas Pemantapan & Online</a></li>
+                <li><a href="${pagePrefix}mandiri.html" data-i18n="nav_mandiri">Biaya Keberangkatan</a></li>
               </ul>
             </li>
 
             <li class="dropdown-sub dropdown-sub-down">
               <a href="#" class="dropdown-toggle-sub">
-                <span>Fasilitas</span>
+                <span data-i18n="nav_fasilitas">Fasilitas</span>
                 <i class="fa-solid fa-chevron-down arrow-sub"></i>
               </a>
               <ul class="submenu-sub submenu-down">
-                <li><a href="${pagePrefix}kelas.html">Kelas</a></li>
-                <li><a href="${pagePrefix}gedung.html">Gedung</a></li>
+                <li><a href="${pagePrefix}kelas.html" data-i18n="nav_kelas">Kelas</a></li>
+                <li><a href="${pagePrefix}gedung.html" data-i18n="nav_gedung">Gedung</a></li>
               </ul>
             </li>
 
             <li class="dropdown-sub dropdown-sub-down">
               <a href="#" class="dropdown-toggle-sub">
-                <span>Dokumen & Sertifikat</span>
+                <span data-i18n="nav_dokumen">Dokumen & Sertifikat</span>
                 <i class="fa-solid fa-chevron-down arrow-sub"></i>
               </a>
               <ul class="submenu-sub submenu-down">
-                <li><a href="${pagePrefix}coe.html">COE</a></li>
-                <li><a href="${pagePrefix}e-ktln.html">E-KTLN</a></li>
-                <li><a href="${pagePrefix}jft-basic.html">JFT Basic</a></li>
-                <li><a href="${pagePrefix}jlpt.html">JLPT</a></li>
-                <li><a href="${pagePrefix}ssw.html">SSW</a></li>
+                <li><a href="${pagePrefix}coe.html" data-i18n="nav_coe">COE</a></li>
+                <li><a href="${pagePrefix}e-ktln.html" data-i18n="nav_ektln">E-KTLN</a></li>
+                <li><a href="${pagePrefix}jft-basic.html" data-i18n="nav_jft">JFT Basic</a></li>
+                <li><a href="${pagePrefix}jlpt.html" data-i18n="nav_jlpt">JLPT</a></li>
+                <li><a href="${pagePrefix}ssw.html" data-i18n="nav_ssw">SSW</a></li>
               </ul>
             </li>
           </ul>
@@ -438,141 +454,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle">
-            <span>Program</span>
+            <span data-i18n="nav_program">Program</span>
             <i class="fa-solid fa-chevron-down icon-arrow"></i>
           </a>
           <ul class="submenu">
-            <li><a href="${pagePrefix}tokutei-ginou.html">Tokutei Ginou</a></li>
-            <li><a href="${pagePrefix}nihongo-gakkou.html">Nihongo Gakkou</a></li>
-            <li><a href="${pagePrefix}engineering.html">Engineering</a></li>
-            <li><a href="${pagePrefix}internship.html">Internship</a></li>
+            <li><a href="${pagePrefix}tokutei-ginou.html" data-i18n="nav_tokutei">Tokutei Ginou</a></li>
+            <li><a href="${pagePrefix}nihongo-gakkou.html" data-i18n="nav_nihongo">Nihongo Gakkou</a></li>
+            <li><a href="${pagePrefix}engineering.html" data-i18n="nav_engineering">Engineering</a></li>
+            <li><a href="${pagePrefix}internship.html" data-i18n="nav_internship">Internship</a></li>
             <li class="dropdown-sub dropdown-sub-right">
               <a href="#" class="dropdown-toggle-sub">
-                <span>Kelas Pemantapan</span>
+                <span data-i18n="nav_pemantapan">Kelas Pemantapan</span>
                 <i class="fa-solid fa-chevron-right arrow-sub"></i>
               </a>
               <ul class="submenu-sub submenu-right">
-                <li><a href="${pagePrefix}kelas-ssw.html">Kelas SSW</a></li>
-                <li><a href="${pagePrefix}kelas-mensetsu.html">Kelas Mensetsu</a></li>
+                <li><a href="${pagePrefix}kelas-ssw.html" data-i18n="nav_kelas_ssw">Kelas SSW</a></li>
+                <li><a href="${pagePrefix}kelas-mensetsu.html" data-i18n="nav_kelas_mensetsu">Kelas Mensetsu</a></li>
               </ul>
             </li>
-            <li><a href="${pagePrefix}matching-job.html">Matching Job</a></li>
-            <li><a href="${pagePrefix}kelas-online.html">Kelas Online</a></li>
+            <li><a href="${pagePrefix}matching-job.html" data-i18n="nav_matching">Matching Job</a></li>
+            <li><a href="${pagePrefix}kelas-online.html" data-i18n="nav_kelas_online">Kelas Online</a></li>
           </ul>
         </li>
 
         <li class="dropdown">
           <a href="${pagePrefix}alur-pendaftaran.html" class="dropdown-toggle">
-            <span>Alur Pendaftaran</span>
+            <span data-i18n="nav_alur">Alur Pendaftaran</span>
           </a>
         </li>
 
         <li class="dropdown">
           <a href="${pagePrefix}our-partner.html" class="dropdown-toggle">
-            <span>Kemitraan</span>
+            <span data-i18n="nav_kemitraan">Kemitraan</span>
           </a>
         </li>
 
-        <li><a href="#kontak" class="btn-primary btn-sidebar-cta">Daftar Sekarang</a></li>
+        <li><a href="#kontak" class="btn-primary btn-sidebar-cta" data-i18n="nav_cta">Daftar Sekarang</a></li>
       </ul>
     </div>
   </nav>
   `;
 
   document.body.insertAdjacentHTML('afterbegin', navbarHTML);
-
-
-  // ==========================================
-  // 1.5. INJECT GOOGLE TRANSLATE & SWITCHER
-  // ==========================================
-  if (!document.getElementById('google-translate-script')) {
-    const translateScript = document.createElement('script');
-    translateScript.id = 'google-translate-script';
-    translateScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    document.head.appendChild(translateScript);
-  }
-
-  window.googleTranslateElementInit = function() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'id',
-      includedLanguages: 'id,ja',
-      autoDisplay: false
-    }, 'google_translate_element');
-  };
-
-  const langSwitcherHTML = `
-    <div class="global-lang-wrapper">
-      <div class="lang-switcher">
-        <button class="lang-btn" id="btn-id" onclick="triggerTranslate('id', event)">IDN</button>
-        <span class="lang-divider">|</span>
-        <button class="lang-btn" id="btn-ja" onclick="triggerTranslate('ja', event)">JPN</button>
-      </div>
-      <div id="google_translate_element" style="display:none;"></div>
-    </div>
-  `;
-
-  const heroContent = document.querySelector('.hero-content');
-  const pageHeaderContainer = document.querySelector('.page-header .container');
-
-  if (heroContent) {
-    heroContent.insertAdjacentHTML('afterbegin', langSwitcherHTML);
-  } else if (pageHeaderContainer) {
-    pageHeaderContainer.insertAdjacentHTML('afterbegin', langSwitcherHTML);
-  }
-
-  setTimeout(() => {
-    const match = document.cookie.match(new RegExp('(^| )googtrans=([^;]+)'));
-    const currentLang = match ? match[2].split('/')[2] : 'id';
-    
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    if (currentLang === 'ja') {
-      const btnJa = document.getElementById('btn-ja');
-      if (btnJa) btnJa.classList.add('active');
-    } else {
-      const btnId = document.getElementById('btn-id');
-      if (btnId) btnId.classList.add('active');
-    }
-  }, 300);
-
-  window.triggerTranslate = function(lang, event) {
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    if(event && event.target) {
-      event.target.classList.add('active');
-    }
-
-    // Hapus seluruh cookie googtrans dari berbagai kombinasi domain & path
-    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
-    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname;
-
-    if (lang === 'ja') {
-      document.cookie = "googtrans=/id/ja; path=/";
-      location.reload();
-    } else {
-      // Set paksa cookie kembali ke bahasa Indonesia sebelum reload
-      document.cookie = "googtrans=/id/id; path=/";
-      window.location.href = window.location.pathname + '?v=' + new Date().getTime();
-    }
-  };
-
-
-  // ==========================================
-  // HAPUS BANNER GOOGLE TRANSLATE SECARA PAKSA
-  // ==========================================
-  const removeGoogleBanner = () => {
-    const bannerFrame = document.querySelector('.goog-te-banner-frame');
-    if (bannerFrame) {
-      bannerFrame.remove();
-    }
-    if (document.body.style.top === '40px' || document.body.style.top === '24px' || document.body.style.top !== '0px') {
-      document.body.style.setProperty('top', '0px', 'important');
-    }
-    if (document.documentElement.style.top !== '0px') {
-      document.documentElement.style.setProperty('top', '0px', 'important');
-    }
-  };
-
-  setInterval(removeGoogleBanner, 50);
 
 
   // ==========================================
@@ -584,21 +507,21 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="container footer-container">
               <div class="footer-content">
                   <div class="footer-brand">
-                      <h3><span class="notranslate" translate="no">LPK IJEF Corp.</span></h3>
+                      <h3><span>LPK IJEF Corp.</span></h3>
                       <p class="footer-slogan">
                           <span>Bridging Indonesia to Japan - Training, Study, and Career.</span>
                           <span>日本語学校</span>
-                          <span class="notranslate" translate="no">LPK INTERNATIONAL JAPAN ECONOMY FUTURE CORP.</span>
+                          <span>LPK INTERNATIONAL JAPAN ECONOMY FUTURE CORP.</span>
                       </p>
                   </div>
                   <div class="footer-contact">
-                      <h4>Alamat Kantor</h4>
-                      <p><i class="fas fa-map-marker-alt"></i> <span>Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasirhalang Cisarua, Bandung Barat 40551</span></p>
+                      <h4 data-i18n="footer_alamat_title">Alamat Kantor</h4>
+                      <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_alamat_desc">Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasirhalang Cisarua, Bandung Barat 40551</span></p>
                       <p><i class="fas fa-phone-alt"></i> <span>08981191774 (Admin IJEF)</span></p>
                   </div>
               </div>
               <div class="footer-bottom">
-                  <p>&copy; 2026 v1.3 <span class="notranslate" translate="no">LPK IJEF Corp.</span> All rights reserved.</p>
+                  <p>&copy; 2026 v1.3 <span>LPK IJEF Corp.</span> All rights reserved.</p>
               </div>
           </div>
       </footer>
@@ -624,8 +547,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="admin-modal-icon-wrapper">
           <i class="fa-brands fa-whatsapp"></i>
         </div>
-        <h3>Kontak Kami</h3>
-        <p>Silakan hubungi tim admin kami di bawah ini untuk konsultasi, pendaftaran pelatihan, maupun kerja sama mitra dengan <span class="notranslate" translate="no">LPK IJEF Corp</span>:</p>
+        <h3 data-i18n="modal_title">Kontak Kami</h3>
+        <p data-i18n="modal_desc">Silakan hubungi tim admin kami di bawah ini untuk konsultasi, pendaftaran pelatihan, maupun kerja sama mitra dengan LPK IJEF Corp:</p>
       </div>
 
       <div class="admin-list">
@@ -635,8 +558,8 @@ document.addEventListener("DOMContentLoaded", function () {
               <i class="fa-solid fa-user-tie"></i>
             </div>
             <div class="admin-details">
-              <h4>Admin IJEF</h4>
-              <span>Admin Rekrutmen</span>
+              <h4 data-i18n="admin_1_name">Admin IJEF</h4>
+              <span data-i18n="admin_1_role">Admin Rekrutmen</span>
             </div>
           </div>
           <a href="https://wa.me/628981191774?text=Halo%20Kak,%20saya%20ingin%20berkonsultasi%20dan%20mendapatkan%20informasi%20terkait%20pendaftaran%20pelatihan%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
@@ -650,8 +573,8 @@ document.addEventListener("DOMContentLoaded", function () {
               <i class="fa-solid fa-headset"></i>
             </div>
             <div class="admin-details">
-              <h4>Admin Job</h4>
-              <span>Informasi Matching Job</span>
+              <h4 data-i18n="admin_2_name">Admin Job</h4>
+              <span data-i18n="admin_2_role">Informasi Matching Job</span>
             </div>
           </div>
           <a href="https://wa.me/6282130826893?text=Halo%20Kak,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20dan%20kerja%20sama%20mitra%20di%20LPK%20IJEF%20Corp." target="_blank" class="btn-wa-chat">
@@ -694,4 +617,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Jalankan fungsi terjemahan setelah seluruh komponen (termasuk footer) dimuat ke DOM
+  applyTranslations();
+
+  // Fungsi global untuk tombol switcher bahasa
+  window.triggerTranslate = function(lang) {
+    localStorage.setItem('selectedLang', lang);
+    location.reload();
+  };
 });

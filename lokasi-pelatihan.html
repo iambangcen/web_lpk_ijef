@@ -18,8 +18,8 @@
   <!-- Header Banner Subpage -->
   <section class="page-header reveal">
     <div class="container">
-      <h1>Lokasi Pendidikan & Pelatihan</h1>
-      <p>Pusat Kegiatan Belajar & Asrama LPK IJEF Corp</p>
+      <h1 data-i18n="lokasi_header_title">Lokasi Pendidikan & Pelatihan</h1>
+      <p data-i18n="lokasi_header_desc">Pusat Kegiatan Belajar & Asrama LPK IJEF Corp</p>
     </div>
   </section>
 
@@ -27,7 +27,7 @@
   <main class="section-padding">
     <article id="lokasi" class="container">
       <div class="section-header reveal text-center">
-        <h2>Alamat Kantor & Pusat Pelatihan</h2>
+        <h2 data-i18n="lokasi_section_title">Alamat Kantor & Pusat Pelatihan</h2>
       </div>
       <!-- Wrapper dipusatkan menggunakan flexbox dan lebar maksimum agar rapi -->
       <div class="map-responsive reveal" style="margin-top: 20px; display: flex; justify-content: center; width: 100%;">
@@ -39,7 +39,8 @@
   <!-- Placeholder Footer untuk dynamic load dari global-layout.js -->
   <div id="footer-placeholder"></div>
 
-  <!-- Pemanggilan global-layout.js diletakkan di atas script.js -->
+  <!-- Pemanggilan translations.js dan global-layout.js -->
+  <script src="translations.js"></script>
   <script src="global-layout.js"></script>
   <script src="script.js"></script>
 </body>

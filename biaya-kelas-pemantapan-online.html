@@ -16,8 +16,8 @@
 
   <section class="page-header reveal">
     <div class="container">
-      <h1>Biaya Kelas Pemantapan dan Kelas Online</h1>
-      <p>Informasi Biaya Program Tambahan dan Belajar Jarak Jauh</p>
+      <h1 data-i18n="biaya_online_header_title">Biaya Kelas Pemantapan dan Kelas Online</h1>
+      <p data-i18n="biaya_online_header_desc">Informasi Biaya Program Tambahan dan Belajar Jarak Jauh</p>
     </div>
   </section>
 
@@ -29,21 +29,21 @@
       <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <h2 style="color: #1e293b; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
-            <i class="fa-solid fa-graduation-cap" style="color: #0056b3; margin-right: 10px;"></i> Biaya Kelas Pemantapan
+            <i class="fa-solid fa-graduation-cap" style="color: #0056b3; margin-right: 10px;"></i> <span data-i18n="title_kelas_pemantapan">Biaya Kelas Pemantapan</span>
           </h2>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px;">
             <li style="background: #ffffff; padding: 14px 18px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #cbd5e1;">
-              <span style="color: #334155; font-weight: 600;">Kelas SSW</span>
+              <span style="color: #334155; font-weight: 600;" data-i18n="label_kelas_ssw">Kelas SSW</span>
               <span style="color: #0284c7; font-weight: 700;">Rp 2.500.000</span>
             </li>
             <li style="background: #ffffff; padding: 14px 18px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #cbd5e1;">
-              <span style="color: #334155; font-weight: 600;">Kelas Mensetsu</span>
+              <span style="color: #334155; font-weight: 600;" data-i18n="label_kelas_mensetsu">Kelas Mensetsu</span>
               <span style="color: #0284c7; font-weight: 700;">Rp 1.000.000</span>
             </li>
           </ul>
         </div>
         <div style="text-align: center; margin-top: auto;">
-          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 10px 25px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px;">Daftar Kelas Pemantapan</a>
+          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 10px 25px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px;" data-i18n="btn_daftar_pemantapan">Daftar Kelas Pemantapan</a>
         </div>
       </div>
 
@@ -51,23 +51,26 @@
       <div class="reveal-up" style="background: #e2e8f0; padding: 30px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <h2 style="color: #1e293b; font-size: 22px; margin-bottom: 15px; font-weight: 700;">
-            <i class="fa-solid fa-laptop" style="color: #0056b3; margin-right: 10px;"></i> Biaya Kelas Online
+            <i class="fa-solid fa-laptop" style="color: #0056b3; margin-right: 10px;"></i> <span data-i18n="title_kelas_online">Biaya Kelas Online</span>
           </h2>
           <div style="background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #cbd5e1; margin-bottom: 25px;">
             <p style="font-size: 20px; color: #0284c7; font-weight: 700; margin-bottom: 8px;">Rp 3.000.000</p>
             <p style="color: #334155; font-size: 15px; line-height: 1.5; margin: 0;">
-              <i class="fa-solid fa-clock" style="color: #64748b; margin-right: 6px;"></i> Durasi Pelatihan: <strong>Selama 2 Bulan</strong>
+              <i class="fa-solid fa-clock" style="color: #64748b; margin-right: 6px;"></i> 
+              <span data-i18n="label_durasi_prefix">Durasi Pelatihan:</span> 
+              <strong data-i18n="label_durasi_value">Selama 2 Bulan</strong>
             </p>
           </div>
         </div>
         <div style="text-align: center; margin-top: auto;">
-          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 10px 25px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px;">Daftar Kelas Online</a>
+          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 10px 25px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 14px;" data-i18n="btn_daftar_online">Daftar Kelas Online</a>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- Placeholder Footer otomatis dari global-layout.js -->
   <div id="footer-placeholder"></div>
 
   <script>
@@ -87,6 +90,7 @@
     });
   </script>
 
+  <script src="translations.js"></script>
   <script src="global-layout.js"></script>
   <script src="script.js"></script>
 </body>

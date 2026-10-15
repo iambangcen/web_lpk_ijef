@@ -21,8 +21,8 @@
       
       <!-- Header Judul Halaman -->
       <div style="text-align: center; margin-bottom: 40px;">
-        <span style="color: #1e3a8a; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Program Layanan LPK IJEF</span>
-        <h1 style="color: #0f172a; font-size: 2.2rem; margin-top: 10px; font-weight: 700;">Matching Job</h1>
+        <span style="color: #1e3a8a; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;" data-i18n="mj_badge">Program Layanan LPK IJEF</span>
+        <h1 style="color: #0f172a; font-size: 2.2rem; margin-top: 10px; font-weight: 700;" data-i18n="mj_title">Matching Job</h1>
         <div style="width: 60px; height: 4px; background-color: #1e3a8a; margin: 15px auto 0 auto; border-radius: 2px;"></div>
       </div>
 
@@ -30,33 +30,33 @@
       <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
         
         <!-- Deskripsi -->
-        <p style="color: #334155; font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;">
+        <p style="color: #334155; font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px;" data-i18n="mj_desc">
           Program Job Matching LPK IJEF CORP membantu peserta mendapatkan informasi dan mengikuti proses seleksi lowongan kerja di Jepang yang sesuai dengan kemampuan, bidang, dan persyaratan yang dimiliki. Peserta akan mendapatkan pendampingan dalam proses persiapan dokumen, penyampaian informasi lowongan, hingga persiapan menghadapi proses seleksi dan interview dengan perusahaan Jepang.
         </p>
 
         <!-- Bagian Persyaratan Utama -->
         <h3 style="color: #1e3a8a; font-size: 1.3rem; margin-bottom: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
-          <i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> Persyaratan Utama:
+          <i class="fa-solid fa-circle-check" style="color: #2563eb;"></i> <span data-i18n="mj_syarat_title">Persyaratan Utama:</span>
         </h3>
 
         <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; margin-bottom: 35px;">
           <li style="display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 14px 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
             <i class="fa-solid fa-check" style="color: #16a34a; margin-top: 4px;"></i>
-            <span style="color: #334155; font-size: 1rem;">Memenuhi kualifikasi lowongan job terkait</span>
+            <span style="color: #334155; font-size: 1rem;" data-i18n="mj_syarat_1">Memenuhi kualifikasi lowongan job terkait</span>
           </li>
           <li style="display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 14px 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
             <i class="fa-solid fa-check" style="color: #16a34a; margin-top: 4px;"></i>
-            <span style="color: #334155; font-size: 1rem;">Sudah memiliki sertifikat bahasa</span>
+            <span style="color: #334155; font-size: 1rem;" data-i18n="mj_syarat_2">Sudah memiliki sertifikat bahasa</span>
           </li>
           <li style="display: flex; align-items: flex-start; gap: 12px; background: #f8fafc; padding: 14px 18px; border-radius: 8px; border: 1px solid #e2e8f0;">
             <i class="fa-solid fa-check" style="color: #16a34a; margin-top: 4px;"></i>
-            <span style="color: #334155; font-size: 1rem;">Memiliki sertifikat SSW</span>
+            <span style="color: #334155; font-size: 1rem;" data-i18n="mj_syarat_3">Memiliki sertifikat SSW</span>
           </li>
         </ul>
 
         <!-- Tombol Aksi / Pendaftaran -->
         <div style="margin-top: 35px; text-align: center;">
-          <a href="index.html#kontak" class="btn-primary" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: background 0.3s;">Ikuti Program Matching Job</a>
+          <a href="index.html#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: background 0.3s;" data-i18n="btn_ikuti_mj">Ikuti Program Matching Job</a>
         </div>
 
       </div>
@@ -67,7 +67,8 @@
   <!-- Placeholder Footer untuk dynamic load dari global-layout.js -->
   <div id="footer-placeholder"></div>
 
-  <!-- Pemanggilan global-layout.js diletakkan di atas script.js -->
+  <!-- Pemanggilan translations.js dan global-layout.js -->
+  <script src="translations.js"></script>
   <script src="global-layout.js"></script>
   <script src="script.js"></script>
 </body>
