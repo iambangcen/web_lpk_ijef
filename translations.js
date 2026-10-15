@@ -568,6 +568,7 @@ const translations = {
   "ssw_caption": "Ilustrasi / Dokumentasi Program SSW",
   "btn_konsul_ssw": "Konsultasi Program SSW",
   
+  "loading_text": "Memuat halaman...",
   "btn_daftar_kelas": "Daftar Kelas Ini",
 
 
@@ -1189,6 +1190,7 @@ const translations = {
   "ssw_desc_3": "このプログラムは、職種に応じて必要なスキルと日本語能力を持つ外国人労働者を受け入れることを目的としています。",
   "ssw_caption": "SSWプログラムのイラスト・ドキュメント",
   "btn_konsul_ssw": "特定技能プログラムに関する相談",
+  "loading_text": "読み込み中...",
 
     // Footer
     "footer_alamat_title": "オフィス住所",

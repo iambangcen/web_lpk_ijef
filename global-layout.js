@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     .nav-lang-switcher {
       background: rgba(15, 23, 42, 0.06);
-      border: 1px solid rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(32, 42, 15, 0.12);
       border-radius: 50px;
       padding: 3px 8px;
       display: inline-flex;
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .nav-lang-btn {
       background: transparent;
       border: none;
-      color: #334155;
+      color: #798699;
       font-weight: 600;
       cursor: pointer;
       padding: 3px 8px;
@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="spinner-container">
       <img src="${assetPath}ijef-logo-small.png" alt="Logo LPK IJEF Corp" class="preloader-logo">
       <div class="spinner"></div>
-      <p class="preloader-text">Memuat halaman...</p>
+      <p class="preloader-text" data-i18n="loading_text">Memuat halaman...</p>
     </div>
   </div>
 

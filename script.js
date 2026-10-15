@@ -1,26 +1,29 @@
 // ==========================================================================
-// 1. PRELOADER HANDLER (PRESERVED DELAY + SAFETY FALLBACK)
+// 1. PRELOADER HANDLER (FIXED: MUNCUL PERTAMA KALI SEBELUM HALAMAN TERLOAD)
 // ==========================================================================
+document.body.classList.add('loading');
+
 function hidePreloader() {
   const preloader = document.getElementById('preloader');
   if (preloader && !preloader.classList.contains('fade-out')) {
     preloader.classList.add('fade-out');
   }
+  document.body.classList.remove('loading');
 }
 
 let isLoaded = false;
 
 window.addEventListener('load', () => {
   isLoaded = true;
-  setTimeout(hidePreloader, 1000); // Sembunyikan preloader 1 detik setelah aset selesai
+  // Berikan sedikit jeda (misal 600ms) agar terjemahan data-i18n sempat dieksekusi di balik layar preloader
+  setTimeout(hidePreloader, 600); 
 });
 
 setTimeout(() => {
   if (!isLoaded) {
     hidePreloader();
   }
-}, 5000); // Safety fallback maksimal 5 detik jika ada link/aset bermasalah
-
+}, 4000); // Safety fallback
 
 // ==========================================================================
 // 2. FUNGSI GLOBAL TAB PROGRAM (Diletakkan di Luar agar bisa dipanggil HTML onclick)

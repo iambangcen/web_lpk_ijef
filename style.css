@@ -39,6 +39,12 @@ body {
   padding: 0;
 }
 
+/* Sembunyikan isi halaman sebelum preloader siap */
+body.loading *:not(#preloader):not(#preloader *) {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
