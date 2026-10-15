@@ -540,11 +540,15 @@ document.addEventListener("DOMContentLoaded", function () {
       event.target.classList.add('active');
     }
 
+    // Hapus cookie googtrans sepenuhnya dari berbagai domain/path agar bersih
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
+
     if (lang === 'ja') {
       document.cookie = "googtrans=/id/ja; path=/";
       location.reload();
     } else {
-      document.cookie = "googtrans=/id/id; path=/";
+      // Set kosong atau hapus total lalu reload halaman ke bahasa asli
       location.reload();
     }
   };
