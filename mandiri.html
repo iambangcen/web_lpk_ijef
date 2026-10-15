@@ -11,35 +11,106 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styling Kartu Modern & Elegan */
+    .biaya-card-modern {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+      padding: 50px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .biaya-card-modern:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1);
+    }
+    .badge-populer {
+      display: inline-block;
+      background: #eff6ff;
+      color: #1e3a8a;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1.5px solid #bfdbfe;
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      color: #334155;
+      font-size: 0.975rem;
+      line-height: 1.6;
+    }
+    .feature-item i {
+      color: #0284c7;
+      margin-top: 4px;
+      font-size: 1.15rem;
+    }
+  </style>
 </head>
 <body>
 
   <section class="page-header reveal">
     <div class="container">
       <h1>Biaya Keberangkatan</h1>
-      <p>Informasi Estimasi Pembiayaan Proses Menuju Jepang</p>
+      <p>Informasi Proses Menuju Jepang Full Dana Talang</p>
+      <p style="margin-top: 12px; font-weight: 600; color: #38bdf8; font-size: 1.1rem; letter-spacing: 0.5px;">"Biaya Jelas, No Drama, Langsung Terbang" ✈️</p>
     </div>
   </section>
 
   <section class="section-content container" style="padding: 60px 20px; max-width: 900px;">
     <div class="biaya-card-container">
       
-      <div class="reveal-up" style="background: #e2e8f0; padding: 40px; border-radius: 14px; border: 1.5px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);">
-        <h2 style="color: #1e293b; font-size: 26px; margin-bottom: 15px; font-weight: 700;">
-          <i class="fa-solid fa-plane-departure" style="color: #0056b3; margin-right: 10px;"></i> Biaya Keberangkatan (Full Dana Talang)
+      <div class="reveal-up biaya-card-modern">
+        
+        <!-- Judul Biaya Keberangkatan -->
+        <h2 style="color: #0f172a; font-size: 28px; margin-bottom: 15px; font-weight: 700; display: flex; align-items: center; gap: 12px;">
+          <i class="fa-solid fa-plane-departure" style="color: #1e3a8a;"></i> Biaya Keberangkatan
         </h2>
-        
-        
 
-        <div style="background: #ffffff; padding: 25px; border-radius: 10px; border: 1px solid #cbd5e1; margin-bottom: 30px;">
-          <p style="color: #334155; font-size: 16px; line-height: 1.7; margin: 0;">
-            Biaya yang dipersiapkan untuk proses administrasi, pengurusan COE & visa, tiket pesawat internasional, serta keperluan penunjang lainnya menuju Jepang.
-          </p>
+        <!-- Badge Highlight -->
+        <div style="margin-bottom: 25px;">
+          <span class="badge-populer">
+            <i class="fa-solid fa-shield-check" style="margin-right: 6px; color: #2563eb;"></i> 
+            Full Dana Talang - Transparan & Terpercaya
+          </span>
         </div>
 
-        <!-- Tombol Konsultasi / Dana Talang -->
+        <div style="background: #f8fafc; padding: 28px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 35px;">
+          <p style="color: #0f172a; font-weight: 600; margin-bottom: 16px; font-size: 1.05rem;">
+            Fasilitas & Layanan yang Dicakup:
+          </p>
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Pengurusan dokumen administrasi lengkap secara profesional dan cepat.</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Pengurusan COE (Certificate of Eligibility) & Visa resmi ke Jepang.</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Tiket pesawat internasional langsung menuju negara tujuan (Jepang).</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Pendampingan penuh serta berbagai keperluan penunjang keberangkatan lainnya.</span>
+          </div>
+        </div>
+
+        <!-- Tombol Konsultasi (Warna Biru Kotak Elegan) -->
         <div style="text-align: center;">
-          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background-color: #1e3a8a; color: white; padding: 12px 30px; border-radius: 6px; font-weight: 600; text-decoration: none;">Konsultasi Biaya Keberangkatan</a>
+          <a href="#kontak" class="btn-primary btn-admin-trigger" style="display: inline-block; background: #1e3a8a; color: white; padding: 14px 35px; border-radius: 10px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.25); transition: all 0.3s ease; font-size: 1.05rem;">
+            <i class="fa-brands fa-whatsapp" style="margin-right: 8px; font-size: 1.2rem;"></i> Konsultasi Biaya Keberangkatan
+          </a>
         </div>
       </div>
 

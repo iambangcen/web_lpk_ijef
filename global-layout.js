@@ -39,6 +39,59 @@ document.addEventListener("DOMContentLoaded", function () {
       100% { transform: translate(0, 0) rotate(0deg); }
     }
 
+    /* Styling Global Language Switcher */
+    .global-lang-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .lang-switcher {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      padding: 4px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .lang-divider {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Sembunyikan banner & atur ulang posisi body Google Translate secara permanen */
+    .goog-te-banner-frame { 
+      display: none !important; 
+      visibility: hidden !important;
+      height: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    body { 
+      top: 0 !important; 
+      position: static !important; 
+    }
+    .goog-tooltip { display: none !important; }
+    .goog-tooltip:hover { display: none !important; }
+    .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+
     /* ==========================================
        MODERN PROFESSIONAL ADMIN MODAL STYLING
        ================================---------- */
@@ -302,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="container nav-container reveal">
       <a href="${pagePrefix}index.html" class="brand-logo">
         <img src="${assetPath}ijef-logo-small.png" alt="Logo LPK IJEF" class="nav-logo-img">
-        LPK IJEF Corp.
+        <span class="notranslate" translate="no">LPK IJEF Corp.</span>
       </a>
 
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
@@ -430,6 +483,93 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
+  // 1.5. INJECT GOOGLE TRANSLATE & SWITCHER
+  // ==========================================
+  if (!document.getElementById('google-translate-script')) {
+    const translateScript = document.createElement('script');
+    translateScript.id = 'google-translate-script';
+    translateScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.head.appendChild(translateScript);
+  }
+
+  window.googleTranslateElementInit = function() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'id',
+      includedLanguages: 'id,ja',
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
+
+  const langSwitcherHTML = `
+    <div class="global-lang-wrapper">
+      <div class="lang-switcher">
+        <button class="lang-btn" id="btn-id" onclick="triggerTranslate('id', event)">IDN</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" id="btn-ja" onclick="triggerTranslate('ja', event)">JPN</button>
+      </div>
+      <div id="google_translate_element" style="display:none;"></div>
+    </div>
+  `;
+
+  const heroContent = document.querySelector('.hero-content');
+  const pageHeaderContainer = document.querySelector('.page-header .container');
+
+  if (heroContent) {
+    heroContent.insertAdjacentHTML('afterbegin', langSwitcherHTML);
+  } else if (pageHeaderContainer) {
+    pageHeaderContainer.insertAdjacentHTML('afterbegin', langSwitcherHTML);
+  }
+
+  setTimeout(() => {
+    const match = document.cookie.match(new RegExp('(^| )googtrans=([^;]+)'));
+    const currentLang = match ? match[2].split('/')[2] : 'id';
+    
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    if (currentLang === 'ja') {
+      const btnJa = document.getElementById('btn-ja');
+      if (btnJa) btnJa.classList.add('active');
+    } else {
+      const btnId = document.getElementById('btn-id');
+      if (btnId) btnId.classList.add('active');
+    }
+  }, 300);
+
+  window.triggerTranslate = function(lang, event) {
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    if(event && event.target) {
+      event.target.classList.add('active');
+    }
+
+    if (lang === 'ja') {
+      document.cookie = "googtrans=/id/ja; path=/";
+      location.reload();
+    } else {
+      document.cookie = "googtrans=/id/id; path=/";
+      location.reload();
+    }
+  };
+
+
+  // ==========================================
+  // HAPUS BANNER GOOGLE TRANSLATE SECARA PAKSA
+  // ==========================================
+  const removeGoogleBanner = () => {
+    const bannerFrame = document.querySelector('.goog-te-banner-frame');
+    if (bannerFrame) {
+      bannerFrame.remove();
+    }
+    if (document.body.style.top === '40px' || document.body.style.top === '24px' || document.body.style.top !== '0px') {
+      document.body.style.setProperty('top', '0px', 'important');
+    }
+    if (document.documentElement.style.top !== '0px') {
+      document.documentElement.style.setProperty('top', '0px', 'important');
+    }
+  };
+
+  setInterval(removeGoogleBanner, 50);
+
+
+  // ==========================================
   // 2. GLOBAL FOOTER
   // ==========================================
   const footerHTML = `
@@ -438,22 +578,21 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="container footer-container">
               <div class="footer-content">
                   <div class="footer-brand">
-                      <h3>LPK <span>IJEF Corp.</span></h3>
+                      <h3><span class="notranslate" translate="no">LPK IJEF Corp.</span></h3>
                       <p class="footer-slogan">
                           <span>Bridging Indonesia to Japan - Training, Study, and Career.</span>
                           <span>日本語学校</span>
-                          <span>LPK INTERNATIONAL JAPAN ECONOMY FUTURE CORP.</span>
+                          <span class="notranslate" translate="no">LPK INTERNATIONAL JAPAN ECONOMY FUTURE CORP.</span>
                       </p>
                   </div>
                   <div class="footer-contact">
                       <h4>Alamat Kantor</h4>
-                      <p><i class="fas fa-map-marker-alt"></i> <span>
-Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasirhalang Cisarua, Bandung Barat 40551</span></p>
+                      <p><i class="fas fa-map-marker-alt"></i> <span>Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasirhalang Cisarua, Bandung Barat 40551</span></p>
                       <p><i class="fas fa-phone-alt"></i> <span>08981191774 (Admin IJEF)</span></p>
                   </div>
               </div>
               <div class="footer-bottom">
-                  <p>&copy; 2026 v1.3 LPK IJEF Corp. All rights reserved.</p>
+                  <p>&copy; 2026 v1.3 <span class="notranslate" translate="no">LPK IJEF Corp.</span> All rights reserved.</p>
               </div>
           </div>
       </footer>
@@ -480,11 +619,10 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasi
           <i class="fa-brands fa-whatsapp"></i>
         </div>
         <h3>Kontak Kami</h3>
-        <p>Silakan hubungi tim admin kami di bawah ini untuk konsultasi, pendaftaran pelatihan, maupun kerja sama mitra dengan LPK IJEF Corp:</p>
+        <p>Silakan hubungi tim admin kami di bawah ini untuk konsultasi, pendaftaran pelatihan, maupun kerja sama mitra dengan <span class="notranslate" translate="no">LPK IJEF Corp</span>:</p>
       </div>
 
       <div class="admin-list">
-        <!-- Admin 1: Admin ijef (Admin Rekrutmen / Pendaftaran Pelatihan) -->
         <div class="admin-card">
           <div class="admin-info">
             <div class="admin-avatar" style="background: #e0f2fe; color: #0284c7;">
@@ -500,7 +638,6 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasi
           </a>
         </div>
 
-        <!-- Admin 2: adm ijef (Admin Job) -->
         <div class="admin-card">
           <div class="admin-info">
             <div class="admin-avatar" style="background: #fef3c7; color: #d97706;">
@@ -522,7 +659,6 @@ Jl. Raya Padalarang Cisarua KM 2,5 no.5 Kampung Babakan Cinta RT.003 RW.004 Pasi
 
   document.body.insertAdjacentHTML('beforeend', adminModalHTML);
 
-  // Logika interaksi Modal Admin
   const adminModal = document.getElementById("adminModal");
   const closeAdminModal = document.getElementById("closeAdminModal");
   const ctaButtons = document.querySelectorAll('a[href="#kontak"], .btn-sidebar-cta, .btn-primary');
