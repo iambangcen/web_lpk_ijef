@@ -81,14 +81,7 @@ const translations = {
     "testi_title_2": "Mereka",
     "testi_desc": "Testimoni alumni dan ulasan resmi dari Google Review LPK IJEF Corp.",
 
-    "alur_header_title": "Section Alur Pendaftaran",
-    "alur_header_desc": "Pilih program pelatihan kerja ke Jepang sesuai dengan kebutuhan dan kualifikasi Anda.",
-    "tab_reguler": "1. Kelas Reguler",
-    "tab_online": "2. Kelas Online",
-    "tab_matching": "3. Kelas Matching Job",
-    "tab_pemantapan": "4. Kelas Pemantapan",
-
-    "alur_header_title": "Section Alur Pendaftaran",
+    "alur_header_title": "Alur Pendaftaran",
   "alur_header_desc": "Pilih program pelatihan kerja ke Jepang sesuai dengan kebutuhan dan kualifikasi Anda.",
   "tab_reguler": "1. Kelas Reguler",
   "tab_online": "2. Kelas Online",
@@ -574,7 +567,7 @@ const translations = {
 
     // Kata Animasi Hero
     "flip_1": "Impian",
-    "flip_2": "Potensi",
+    "flip_2": "Kemampuan",
     "flip_3": "Sukses",
 
     // Footer
@@ -614,7 +607,7 @@ const translations = {
     "nav_kelas_mensetsu": "面接クラス",
     "nav_matching": "求人マッチング",
     "nav_kelas_online": "オンラインクラス",
-    "nav_alur": "登録フロー",
+    "nav_alur": "申し込みの流れ",
     "nav_kemitraan": "パートナーシップ",
     "nav_cta": "今すぐ登録",
 
@@ -636,7 +629,7 @@ const translations = {
     "btn_konsultasi": "無料相談",
     
     "tentang_title": "私たちについて",
-    "tentang_desc": "LPK IJEF Corp は、インドネシアの若い世代が日本でのプロフェッショナルなキャリアに向けて準備できるよう支援する信頼できる訓練機関です。",
+    "tentang_desc": "LPK IJEF Corpは、インドネシアの若い世代が日本でのプロフェッショナルなキャリアに向けて準備できるよう支援する日本語学校です。", 
     
     "keunggulan_title": "私たちが選ばれる理由",
     "keunggulan_desc": "LPK IJEF Corp.は、日本語研修や心身の育成を通じて、日本企業で即戦力として活躍できる、スキルと責任感を兼ね備えた人材の育成に努めています。",
@@ -665,14 +658,7 @@ const translations = {
     "testi_title_2": "の声",
     "testi_desc": "卒業生からの体験談およびLPK IJEF CorpのGoogle公式レビュー。",
 
-    "alur_header_title": "登録フローセクション",
-    "alur_header_desc": "あなたのニーズと資格に合わせて、日本での就職訓練プログラムをお選びください。",
-    "tab_reguler": "1. レギュラークラス",
-    "tab_online": "2. オンラインクラス",
-    "tab_matching": "3. 求人マッチングクラス",
-    "tab_pemantapan": "4. 強化クラス",
-
-    "alur_header_title": "登録フローセクション",
+    "alur_header_title": "申し込みの流れ",
     "alur_header_desc": "あなたのニーズと資格に合わせて、日本での就職訓練プログラムをお選びください。",
     "tab_reguler": "1. レギュラークラス",
     "tab_online": "2. オンラインクラス",
@@ -921,7 +907,7 @@ const translations = {
   "prog_box_3_sub": "(特定技能)",
     // Kata Animasi Hero
     "flip_1": "夢",
-    "flip_2": "潜在能力",
+    "flip_2": "スキル",
     "flip_3": "成功",
     "coe_header_title": "在留資格認定証明書 (COE)",
   "coe_header_desc": "日本での就労と渡航のための重要な公式在留許可書類",
