@@ -412,6 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
           <ul class="submenu">
             <li><a href="${pagePrefix}bidang-kerja.html" data-i18n="nav_bidang_kerja">Bidang Kerja</a></li>
+            <li><a href="${pagePrefix}timeline-akademik.html" data-i18n="nav_timeline_akademik">Timeline Akademik</a></li> <!-- TAMBAHAN DI SINI -->
             
             <li class="dropdown-sub dropdown-sub-down">
               <a href="#" class="dropdown-toggle-sub">

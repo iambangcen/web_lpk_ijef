@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline Akademik - LPK IJEF Corp</title>
+  
+  <!-- Font Google & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Banner Subpage -->
+  <section class="page-header reveal">
+    <div class="container">
+      <h1 data-i18n="timeline_akademik_title">Timeline Akademik</h1>
+      <p data-i18n="timeline_akademik_subtitle">Jadwal & Tahapan Kegiatan Pembelajaran LPK IJEF Corp</p>
+    </div>
+  </section>
+
+  <!-- Konten Utama Timeline Akademik -->
+  <main class="section-padding" style="padding: 60px 0;">
+    <div class="container" style="max-width: 1100px;">
+      
+      <div class="content-card reveal" style="background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 25px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+        
+        <!-- Bagian Atas: Gambar Infografis Timeline -->
+        <div style="text-align: center; margin-bottom: 35px;">
+          <img src="assets/timeline-akademik.png" alt="Timeline Akademik LPK IJEF Corp" style="width: 100%; height: auto; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+        </div>
+
+        <!-- Bagian Bawah: Ringkasan atau Penjelasan Singkat -->
+        <div style="border-top: 1px solid #e2e8f0; padding-top: 30px;">
+          <h2 style="color: #0f172a; margin-bottom: 15px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-calendar-days" style="color: #0284c7;"></i> <span data-i18n="timeline_card_title">Alur Proses Akademik Siswa</span>
+          </h2>
+          <p style="color: #334155; line-height: 1.8; margin-bottom: 25px; font-size: 1.05rem;" data-i18n="timeline_card_desc">
+            Program Persiapan Kerja SSW Jepang di LPK IJEF Corp dirancang secara sistematis selama 7 bulan. Program ini mencakup pembelajaran bahasa Jepang intensif menggunakan kurikulum Irodori (Nyumon hingga Shokyu 2), evaluasi dan pemantapan JFT, pemantapan teori serta praktik SSW, hingga tahap wawancara kerja dan penempatan ke Jepang.
+          </p>
+
+          <!-- Ringkasan Poin Singkat -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+            <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+              <h4 style="color: #1e3a8a; margin-bottom: 8px; font-size: 1.05rem;" data-i18n="t_sum_1_title">Bulan 1 - 3: Fondasi Bahasa</h4>
+              <p style="color: #64748b; font-size: 0.9rem; margin: 0; line-height: 1.5;" data-i18n="t_sum_1_desc">Fokus penguasaan materi Irodori Nyumon & Shokyu, kosakata harian, kanji, serta kegiatan harian seperti apel dan senam pagi.</p>
+            </div>
+            <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+              <h4 style="color: #0284c7; margin-bottom: 8px; font-size: 1.05rem;" data-i18n="t_sum_2_title">Bulan 4 - 5: Evaluasi & Teori SSW</h4>
+              <p style="color: #64748b; font-size: 0.9rem; margin: 0; line-height: 1.5;" data-i18n="t_sum_2_desc">Pemantapan ujian JFT-Basic serta pendalaman materi dan teori Specified Skilled Worker (SSW) sesuai bidang pekerjaan.</p>
+            </div>
+            <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border: 1px solid #e2e8f0;">
+              <h4 style="color: #16a34a; margin-bottom: 8px; font-size: 1.05rem;" data-i18n="t_sum_3_title">Bulan 6 - 7: SSW & Penempatan</h4>
+              <p style="color: #64748b; font-size: 0.9rem; margin: 0; line-height: 1.5;" data-i18n="t_sum_3_desc">Simulasi wawancara kerja, pencocokan perusahaan (matching job), penyiapan dokumen, hingga keberangkatan ke Jepang.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Placeholder Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Pemanggilan script -->
+  <script src="translations.js"></script>
+  <script src="global-layout.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
