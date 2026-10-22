@@ -341,8 +341,8 @@ const translations = {
   "gedung_img_title": "Pusat Pelatihan Representatif di Bandung",
   "gedung_desc": "Gedung LPK IJEF Corp dirancang khusus untuk menciptakan atmosfer belajar yang kondusif, tenang, dan mendukung interaksi aktif antara siswa dan sensei (pengajar). Terletak di lokasi yang strategis dan mudah diakses, lingkungan kampus kami memberikan kenyamanan optimal selama masa pelatihan.",
   
-  "fasilitas_1_title": "Kelas Ber-AC",
-  "fasilitas_1_desc": "Ruang kelas bersih, ber-AC, dan dilengkapi proyektor untuk kegiatan belajar interaktif.",
+  "fasilitas_1_title": "Mountain View & Udara Sejuk",
+  "fasilitas_1_desc": "Berlokasi di Kabupaten Bandung Barat dengan pemandangan pegunungan yang asri serta udara alami yang sejuk dan menyegarkan.",
   "fasilitas_2_title": "Area Wi-Fi Cepat",
   "fasilitas_2_desc": "Akses internet stabil untuk mendukung riset materi dan modul pembelajaran online.",
   "fasilitas_3_title": "Pojok Baca & Referensi",
@@ -943,8 +943,8 @@ const translations = {
   "gedung_img_title": "バンドンの代表的なトレーニングセンター",
   "gedung_desc": "LPK IJEF Corpの校舎は、集中しやすく静かで、生徒と先生（講師）の活発なコミュニケーションを促進する学習雰囲気を特に考慮して設計されています。戦略的でアクセスしやすい立地にあり、トレーニング期間中最適快適さを提供します。",
   
-  "fasilitas_1_title": "冷暖房完備の教室",
-  "fasilitas_1_desc": "清潔でエアコンが完備されており、インタラクティブな学習活動のためのプロジェクターを備えた教室です。",
+  "fasilitas_1_title": "マウンテンビュー＆爽やかな空気",
+  "fasilitas_1_desc": "西バンドン県に位置し、美しい山々の景色と、自然で心地よい爽やかな空気の中で学習できます。",
   "fasilitas_2_title": "高速Wi-Fiエリア",
   "fasilitas_2_desc": "資料調査やオンライン学習モジュールをサポートする安定したインターネットアクセス。",
   "fasilitas_3_title": "読書・参考書コーナー",
