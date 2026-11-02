@@ -77,8 +77,8 @@ const translations = {
     "dest_5_loc": "Nara", "dest_5_title": "Nara Park", "dest_5_desc": "Berinteraksi langsung dengan rusa-rusa ramah yang berkeliaran bebas di taman bersejarah.",
     "dest_6_loc": "Yamanashi / Shizuoka", "dest_6_title": "Gunung Fuji", "dest_6_desc": "Saksikan simbol kebanggaan Jepang, gunung berapi tertinggi yang menakjubkan dan memesona.",
     
-    "testi_title_1": "Apa Kata",
-    "testi_title_2": "Mereka",
+    "testi_title_1": "Google",
+    "testi_title_2": "Review",
     "testi_desc": "Testimoni alumni dan ulasan resmi dari Google Review LPK IJEF Corp.",
 
     "alur_header_title": "Alur Pendaftaran",
@@ -663,8 +663,8 @@ const translations = {
     "dest_5_loc": "奈良", "dest_5_title": "奈良公園", "dest_5_desc": "歴史ある公園で、自由に歩き回る人懐っこい鹿たちとふれあおう。",
     "dest_6_loc": "山梨・静岡", "dest_6_title": "富士山", "dest_6_desc": "日本の誇りであり、美しく魅惑的な最高峰の火山を眺めよう。",
     
-    "testi_title_1": "卒業生",
-    "testi_title_2": "の声",
+    "testi_title_1": "Google",
+    "testi_title_2": "レビュー",
     "testi_desc": "卒業生からの体験談およびLPK IJEF CorpのGoogle公式レビュー。",
 
     "alur_header_title": "申し込みの流れ",
