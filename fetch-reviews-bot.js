@@ -33,29 +33,19 @@ async function runScraper() {
             const placeData = items[0];
             const rawReviews = placeData.reviews || items;
 
-            // Ambil rating total dan jumlah ulasan dari Google Maps
-            const totalScore = placeData.totalScore || 5.0;
-            const reviewsCount = placeData.reviewsCount || 41;
-
+            // Langsung map menjadi array ulasan (format lama yang terbukti berhasil dan cocok dengan frontend)
             const formattedReviews = rawReviews.slice(0, 10).map(review => ({
                 author: review.name || review.authorName || 'Pengguna Google',
                 rating: review.stars || review.rating || 5,
-                // Ambil waktu asli dari Apify secara langsung
+                // Mengambil waktu asli dari Apify (misal: "sebulan lalu", "seminggu lalu")
                 time: review.relativePublishDate || review.publishedAtDate || 'Baru-baru ini',
                 text: review.text || review.comment || '',
                 photos: review.reviewPhotos || review.photos || (review.imageUrl ? [review.imageUrl] : [])
             }));
 
-            // Bungkus dalam objek agar menyimpan rating keseluruhan, total ulasan, dan list review
-            const outputData = {
-                rating: totalScore,
-                totalReviews: reviewsCount,
-                reviews: formattedReviews
-            };
-
-            // Timpa (overwrite) file reviews.json secara otomatis
-            fs.writeFileSync('reviews.json', JSON.stringify(outputData, null, 2), 'utf-8');
-            console.log('Berhasil! File reviews.json telah diperbarui dengan data rating, total ulasan, dan foto akurat.');
+            // Timpa (overwrite) file reviews.json dengan format array langsung
+            fs.writeFileSync('reviews.json', JSON.stringify(formattedReviews, null, 2), 'utf-8');
+            console.log('Berhasil! File reviews.json telah diperbarui dengan waktu asli.');
         } else {
             console.log('Tidak ada data ulasan yang ditemukan.');
         }
@@ -63,11 +53,6 @@ async function runScraper() {
         console.error('Gagal menjalankan scraper Apify:', error);
         process.exit(1);
     }
-}
-
-// Fungsi pembantu untuk format waktu
-function formatRelativeTime(dateString) {
-    return 'Baru-baru ini';
 }
 
 runScraper();
