@@ -32,18 +32,16 @@ async function runScraper() {
         const { items } = await client.dataset(run.defaultDatasetId).listItems();
 
         if (items && items.length > 0) {
-            // Ambil data tempat (biasanya ulasan berada di dalam properti reviews dari item pertama)
+            // Tangkap ulasan langsung dari items atau dari properti reviews di dalamnya
             const placeData = items[0];
-            const rawReviews = placeData.reviews || [];
+            const rawReviews = placeData.reviews || items; // Fallback langsung ke items jika struktur review di level utama
 
-            // Petakan data agar sesuai dengan format yang dibutuhkan oleh frontend website kita
             const formattedReviews = rawReviews.slice(0, 10).map(review => ({
-                author: review.name || 'Pengguna Google',
-                rating: review.stars || 5,
-                time: review.publishedAtDate ? formatRelativeTime(review.publishedAtDate) : 'Baru-baru ini',
-                text: review.text || '',
-                // Ambil daftar foto ulasan jika ada
-                photos: review.reviewImageUrls || []
+                author: review.name || review.authorName || 'Pengguna Google',
+                rating: review.stars || review.rating || 5,
+                time: review.publishedAtDate ? formatRelativeTime(review.publishedAtDate) : (review.relativePublishDate || 'Baru-baru ini'),
+                text: review.text || review.comment || '',
+                photos: review.reviewImageUrls || review.imageUrl ? [review.imageUrl] : []
             }));
 
             // Timpa (overwrite) file reviews.json secara otomatis di repositori
