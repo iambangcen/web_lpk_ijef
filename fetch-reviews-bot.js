@@ -32,22 +32,19 @@ async function runScraper() {
         const { items } = await client.dataset(run.defaultDatasetId).listItems();
 
         if (items && items.length > 0) {
-            // Apify mengembalikan data ulasan langsung sebagai array items
             const rawReviews = items[0].reviews || items;
 
-            // Petakan data agar sesuai dengan format yang dibutuhkan oleh frontend website kita
             const formattedReviews = rawReviews.slice(0, 10).map(review => ({
                 author: review.name || review.authorName || 'Pengguna Google',
                 rating: review.stars || review.rating || 5,
                 time: review.publishedAtDate ? formatRelativeTime(review.publishedAtDate) : (review.relativePublishDate || 'Baru-baru ini'),
                 text: review.text || review.comment || '',
-                // Ambil daftar foto ulasan jika ada
-                photos: review.reviewImageUrls || (review.imageUrl ? [review.imageUrl] : [])
+                // Perbaikan: Ambil foto spesifik milik ulasan tersebut, atau kosongkan jika tidak ada
+                photos: review.reviewPhotos || review.photos || (review.imageUrl ? [review.imageUrl] : [])
             }));
 
-            // Timpa (overwrite) file reviews.json secara otomatis di repositori
             fs.writeFileSync('reviews.json', JSON.stringify(formattedReviews, null, 2), 'utf-8');
-            console.log('Berhasil! File reviews.json telah diperbarui dengan data terbaru.');
+            console.log('Berhasil! File reviews.json telah diperbarui dengan data foto yang akurat.');
         } else {
             console.log('Tidak ada data ulasan yang ditemukan.');
         }
