@@ -79,13 +79,15 @@ async function runScraper() {
                     : []
             }));
 
-            // WAJIB dibungkus objek { reviews: [...] } agar cocok dengan script.js frontend (menghindari error .slice)
+            // Struktur output lengkap: Menyediakan rating, total ulasan, dan array reviews
             const outputData = {
+                rating: placeData.totalScore || 5.0,
+                totalReviews: placeData.reviewsCount || formattedReviews.length,
                 reviews: formattedReviews
             };
 
             fs.writeFileSync('reviews.json', JSON.stringify(outputData, null, 2), 'utf-8');
-            console.log('Berhasil! File reviews.json telah diperbarui.');
+            console.log('Berhasil! File reviews.json telah diperbarui dengan data lengkap dan stabil.');
         } else {
             console.log('Tidak ada data ulasan yang ditemukan.');
         }
