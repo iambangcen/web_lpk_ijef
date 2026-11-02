@@ -14,10 +14,14 @@ async function runScraper() {
         // Sesuaikan 'searchStrings' dengan nama bisnis dan lokasi Anda
         const input = {
             "searchStringsArray": ["LPK IJEF CORP International Japan Eco Future Corp"],
-            "maxReviews": 10, // Ambil 10 ulasan terbaru
-            "reviewsSort": "newest", // Urutkan dari yang paling baru
+            "maxReviews": 10,
+            "reviewsSort": "newest",
             "language": "id",
-            "includeReviewsWithImages": true, // Pastikan mengambil ulasan yang ada fotonya
+            "includeReviewsWithImages": true,
+            // Tambahkan koordinat pusat pencarian Bandung Barat agar tepat sasaran
+            "lat": -6.8378,
+            "lng": 107.5073,
+            "zoom": 14
         };
 
         // Jalankan Aktor resmi Apify untuk Google Maps Reviews (ID: compass/google-maps-reviews-scraper)
