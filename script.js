@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // FETCH DAN RENDER GOOGLE REVIEWS (DENGAN PENANGANAN AMAN UNTUK ARRAY ATAU OBJEK)
+  // FETCH DAN RENDER GOOGLE REVIEWS & METADATA (RATING & TOTAL REVIEW ASLI)
   fetch('reviews.json')
     .then(response => {
       if (!response.ok) {
@@ -312,12 +312,23 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json();
     })
     .then(data => {
+      // 1. Render Rating Keseluruhan & Total Ulasan Asli dari Google Maps
+      const ratingScoreEl = document.getElementById('google-rating-score');
+      const totalReviewsEl = document.getElementById('google-total-reviews');
+
+      if (ratingScoreEl && data.rating) {
+        ratingScoreEl.textContent = data.rating;
+      }
+      if (totalReviewsEl && data.totalReviews) {
+        totalReviewsEl.textContent = data.totalReviews;
+      }
+
+      // 2. Render Daftar Kartu Ulasan
       const container = document.getElementById('reviews-container');
       if (!container) return;
       
       container.innerHTML = ''; // Kosongkan kontainer
 
-      // Deteksi struktur data secara aman (bisa berupa Array langsung atau Objek { reviews: [...] })
       let reviewsArray = [];
       if (Array.isArray(data)) {
         reviewsArray = data;
@@ -334,7 +345,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const authorName = review.author || 'Pengguna Google';
         const initial = authorName.charAt(0).toUpperCase();
         
-        // Render galeri foto jika ulasan memiliki lampiran foto
         let photosHtml = '';
         if (review.photos && review.photos.length > 0) {
           photosHtml = '<div class="review-photos-grid" style="display: flex; gap: 8px; margin-top: 12px; overflow-x: auto;">';
