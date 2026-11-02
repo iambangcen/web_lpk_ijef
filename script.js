@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // FETCH DAN RENDER GOOGLE REVIEWS DENGAN DUKUNGAN FOTO
+  // FETCH DAN RENDER GOOGLE REVIEWS (DENGAN PENANGANAN AMAN UNTUK ARRAY ATAU OBJEK)
   fetch('reviews.json')
     .then(response => {
       if (!response.ok) {
@@ -311,13 +311,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       return response.json();
     })
-    .then(reviews => {
+    .then(data => {
       const container = document.getElementById('reviews-container');
       if (!container) return;
       
       container.innerHTML = ''; // Kosongkan kontainer
 
-      reviews.slice(0, 10).forEach(review => {
+      // Deteksi struktur data secara aman (bisa berupa Array langsung atau Objek { reviews: [...] })
+      let reviewsArray = [];
+      if (Array.isArray(data)) {
+        reviewsArray = data;
+      } else if (data && Array.isArray(data.reviews)) {
+        reviewsArray = data.reviews;
+      }
+
+      if (reviewsArray.length === 0) {
+        container.innerHTML = '<p style="color: #64748b; text-align: center;">Belum ada ulasan yang dimuat.</p>';
+        return;
+      }
+
+      reviewsArray.slice(0, 10).forEach(review => {
         const authorName = review.author || 'Pengguna Google';
         const initial = authorName.charAt(0).toUpperCase();
         
