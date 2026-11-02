@@ -25,6 +25,7 @@ setTimeout(() => {
   }
 }, 4000); // Safety fallback
 
+
 // ==========================================================================
 // 2. FUNGSI GLOBAL TAB PROGRAM (Diletakkan di Luar agar bisa dipanggil HTML onclick)
 // ==========================================================================
@@ -180,7 +181,184 @@ document.addEventListener('DOMContentLoaded', () => {
     switchProgram('reguler', { currentTarget: firstTabBtn });
   }
 
-});
+
+  // F. CAROUSEL TESTIMONIAL INIT
+  const track = document.querySelector(".testimonial-track");
+  if (track) {
+    const slideGroups = Array.from(track.children);
+    const nextButton = document.querySelector(".next-btn");
+    const prevButton = document.querySelector(".prev-btn");
+    const dotsContainer = document.querySelector(".testimonial-dots");
+
+    let currentIndex = 0;
+    const slideCount = slideGroups.length;
+    let autoSlideInterval;
+
+    if (dotsContainer) {
+      slideGroups.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.classList.add("testimonial-dot");
+        if (index === 0) dot.classList.add("active");
+        dot.setAttribute("aria-label", `Slide ${index + 1}`);
+        dot.addEventListener("click", () => {
+          goToSlide(index);
+          resetAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    const dots = dotsContainer ? Array.from(dotsContainer.children) : [];
+
+    function updateSlidePosition() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateSlidePosition();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateSlidePosition();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+      updateSlidePosition();
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        nextSlide();
+        resetAutoSlide();
+      });
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        prevSlide();
+        resetAutoSlide();
+      });
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    const container = document.querySelector(".testimonial-carousel-container");
+    if (container) {
+      container.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+      container.addEventListener("mouseleave", startAutoSlide);
+    }
+
+    startAutoSlide();
+  }
+
+
+  // G. ANIMASI ODOMETER STATISTIK
+  const odometerElements = document.querySelectorAll(".odometer");
+  if (odometerElements.length > 0) {
+    const runOdometer = (el) => {
+      const target = parseInt(el.getAttribute("data-target"), 10);
+      const suffix = el.getAttribute("data-suffix") || "";
+      const duration = 2000; 
+      const frameRate = 30;  
+      const totalFrames = Math.round((duration / 1000) * frameRate);
+      let frame = 0;
+
+      const counter = setInterval(() => {
+        frame++;
+        const progress = frame / totalFrames;
+        const currentCount = Math.round(target * (1 - Math.pow(1 - progress, 2)));
+
+        if (frame === totalFrames) {
+          el.textContent = target + suffix;
+          clearInterval(counter);
+        } else {
+          el.textContent = currentCount + suffix;
+        }
+      }, 1000 / frameRate);
+    };
+
+    const odometerObserver = new IntersectionObserver((entries, observerInstance) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runOdometer(entry.target);
+          observerInstance.unobserve(entry.target); 
+        }
+      });
+    }, { threshold: 0.5 });
+
+    odometerElements.forEach(el => odometerObserver.observe(el));
+  }
+
+
+  // FETCH DAN RENDER GOOGLE REVIEWS DENGAN DUKUNGAN FOTO
+  fetch('reviews.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("File reviews.json tidak ditemukan atau kosong.");
+      }
+      return response.json();
+    })
+    .then(reviews => {
+      const container = document.getElementById('reviews-container');
+      if (!container) return;
+      
+      container.innerHTML = ''; // Kosongkan kontainer
+
+      reviews.slice(0, 10).forEach(review => {
+        const authorName = review.author || 'Pengguna Google';
+        const initial = authorName.charAt(0).toUpperCase();
+        
+        // Render galeri foto jika ulasan memiliki lampiran foto
+        let photosHtml = '';
+        if (review.photos && review.photos.length > 0) {
+          photosHtml = '<div class="review-photos-grid" style="display: flex; gap: 8px; margin-top: 12px; overflow-x: auto;">';
+          review.photos.forEach(photoUrl => {
+            photosHtml += `<img src="${photoUrl}" alt="Foto Ulasan Alumni" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 1px solid #dadce0;">`;
+          });
+          photosHtml += '</div>';
+        }
+
+        const reviewCard = document.createElement('div');
+        reviewCard.className = 'google-review-card';
+        reviewCard.innerHTML = `
+          <div class="review-header">
+            <div class="review-avatar">${initial}</div>
+            <div class="review-meta">
+              <h4>${authorName}</h4>
+              <div class="review-subinfo">
+                <span class="review-stars">★★★★★</span>
+                <span class="review-time">${review.time || 'Baru-baru ini'}</span>
+              </div>
+            </div>
+          </div>
+          <p class="review-text">"${review.text}"</p>
+          ${photosHtml}
+        `;
+        container.appendChild(reviewCard);
+      });
+    })
+    .catch(error => {
+      console.warn("Gagal memuat ulasan:", error);
+      const container = document.getElementById('reviews-container');
+      if (container) {
+        container.innerHTML = '<p style="color: #64748b; text-align: center;">Belum ada ulasan yang dimuat.</p>';
+      }
+    });
+
+}); // AKHIR DARI DOM CONTENT LOADED UTAMA
 
 
 // ==========================================================================
@@ -189,7 +367,6 @@ document.addEventListener('DOMContentLoaded', () => {
 let hasScrolledArrow = false;
 
 window.addEventListener("scroll", () => {
-  // Jika user melakukan scroll lebih dari 20px dan animasi belum pernah dipicu
   if (window.scrollY > 20 && !hasScrolledArrow) {
     hasScrolledArrow = true;
     const statCards = document.querySelectorAll(".stat-card");
@@ -205,7 +382,6 @@ window.addEventListener("scroll", () => {
 // 5. PROGRESS BAR DINAMIK UNTUK SEMUA SUB-BAGIAN TIMELINE
 // ==========================================================================
 window.addEventListener('scroll', () => {
-  // Cari semua container timeline yang sedang aktif di tab terbuka
   const activeContent = document.querySelector('.program-content:not([style*="display: none"])');
   if (!activeContent) return;
 
@@ -229,7 +405,6 @@ window.addEventListener('scroll', () => {
     const windowHeight = window.innerHeight;
     const containerRect = container.getBoundingClientRect();
 
-    // Pastikan kalkulasi hanya berjalan jika container sedang terlihat di layar
     if (containerRect.top < windowHeight && containerRect.bottom > 0) {
       const startY = firstNum.getBoundingClientRect().top + window.scrollY + 19;
       const endY = lastNum.getBoundingClientRect().top + window.scrollY + (lastNum.offsetHeight / 2);
@@ -237,149 +412,15 @@ window.addEventListener('scroll', () => {
       const totalDistance = endY - startY;
       const currentScroll = window.scrollY + (windowHeight * 0.5);
 
-      // Hitung progress khusus untuk container ini
       let progress = (currentScroll - startY) / totalDistance;
       progress = Math.max(0, Math.min(1, progress));
 
       const currentHeightPx = progress * totalDistance;
       progressBar.style.height = currentHeightPx + 'px';
 
-      // Sesuaikan tinggi garis abu-abu secara otomatis mengikuti jarak total item
       if (timelineLine) {
         timelineLine.style.height = (totalDistance) + 'px';
       }
     }
   });
-});
-
-// =========================================
-// SCRIPT CAROUSEL TESTIMONI
-// =========================================
-
-document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector(".testimonial-track");
-  if (!track) return;
-
-  const slideGroups = Array.from(track.children);
-  const nextButton = document.querySelector(".next-btn");
-  const prevButton = document.querySelector(".prev-btn");
-  const dotsContainer = document.querySelector(".testimonial-dots");
-
-  let currentIndex = 0;
-  const slideCount = slideGroups.length;
-  let autoSlideInterval;
-
-  // Buat titik-titik indikator (dots) sesuai jumlah grup slide
-  slideGroups.forEach((_, index) => {
-    const dot = document.createElement("button");
-    dot.classList.add("testimonial-dot");
-    if (index === 0) dot.classList.add("active");
-    dot.setAttribute("aria-label", `Slide ${index + 1}`);
-    dot.addEventListener("click", () => {
-      goToSlide(index);
-      resetAutoSlide();
-    });
-    dotsContainer.appendChild(dot);
-  });
-
-  const dots = Array.from(dotsContainer.children);
-
-  function updateSlidePosition() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("active", index === currentIndex);
-    });
-  }
-
-  function goToSlide(index) {
-    currentIndex = index;
-    updateSlidePosition();
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slideCount;
-    updateSlidePosition();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-    updateSlidePosition();
-  }
-
-  // Event listener untuk tombol navigasi
-  if (nextButton) {
-    nextButton.addEventListener("click", () => {
-      nextSlide();
-      resetAutoSlide();
-    });
-  }
-
-  if (prevButton) {
-    prevButton.addEventListener("click", () => {
-      prevSlide();
-      resetAutoSlide();
-    });
-  }
-
-  // Fungsi Auto-Slide setiap 5 detik
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(nextSlide, 5000);
-  }
-
-  function resetAutoSlide() {
-    clearInterval(autoSlideInterval);
-    startAutoSlide();
-  }
-
-  // Jeda auto-slide ketika kursor diarahkan ke area carousel
-  const container = document.querySelector(".testimonial-carousel-container");
-  if (container) {
-    container.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
-    container.addEventListener("mouseleave", startAutoSlide);
-  }
-
-  // Jalankan auto-slide saat pertama kali dimuat
-  startAutoSlide();
-});
-
-// Animasi Odometer Statistik
-document.addEventListener("DOMContentLoaded", function () {
-  const odometerElements = document.querySelectorAll(".odometer");
-
-  if (odometerElements.length === 0) return;
-
-  const runOdometer = (el) => {
-    const target = parseInt(el.getAttribute("data-target"), 10);
-    const suffix = el.getAttribute("data-suffix") || "";
-    const duration = 2000; // Durasi animasi dalam milidetik (2 detik)
-    const frameRate = 30;  // Jumlah frame per detik
-    const totalFrames = Math.round((duration / 1000) * frameRate);
-    let frame = 0;
-
-    const counter = setInterval(() => {
-      frame++;
-      const progress = frame / totalFrames;
-      // Menggunakan efek easeOutQuad agar gerakan melambat di akhir
-      const currentCount = Math.round(target * (1 - Math.pow(1 - progress, 2)));
-
-      if (frame === totalFrames) {
-        el.textContent = target + suffix;
-        clearInterval(counter);
-      } else {
-        el.textContent = currentCount + suffix;
-      }
-    }, 1000 / frameRate);
-  };
-
-  // Menggunakan IntersectionObserver agar animasi berjalan saat elemen terlihat di layar
-  const observer = new IntersectionObserver((entries, observerInstance) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        runOdometer(entry.target);
-        observerInstance.unobserve(entry.target); // Jalankan hanya sekali
-      }
-    });
-  }, { threshold: 0.5 });
-
-  odometerElements.forEach(el => observer.observe(el));
 });

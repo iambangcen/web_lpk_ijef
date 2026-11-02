@@ -2326,3 +2326,78 @@ body.loading *:not(#preloader):not(#preloader *) {
   }
 }
 
+/* Styling Utama Kotak Ulasan ala Google Review */
+#reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.google-review-card {
+  background: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.1);
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  transition: box-shadow 0.2s ease;
+}
+
+.google-review-card:hover {
+  box-shadow: 0 2px 8px rgba(60, 64, 67, 0.15);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1a73e8; /* Warna khas avatar Google */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: 12px;
+}
+
+.review-meta h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #202124;
+  font-weight: 600;
+}
+
+.review-subinfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.review-stars {
+  color: #fbbc04; /* Warna bintang khas Google */
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.review-time {
+  font-size: 0.75rem;
+  color: #5f6368;
+}
+
+.review-text {
+  color: #3c4043;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}

@@ -1,0 +1,36 @@
+name: Update Google Reviews via Apify
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # Berjalan otomatis setiap hari pukul 22:00 UTC (artinya pukul 05:00 Pagi WIB)
+  workflow_dispatch: # Tombol manual di tab Actions GitHub
+
+jobs:
+  update-reviews:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Wajib agar bot bisa melakukan commit file reviews.json ke repo Anda
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: |
+          npm install apify-client
+
+      - name: Run Apify Scraper Bot
+        run: node fetch-reviews-bot.js
+        env:
+          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+
+      - name: Commit and Push Changes if Reviews Updated
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reviews.json
+          git diff --quiet && git diff --cached --quiet || (git commit -m "chore: auto-update google reviews and photos [skip ci]" && git push)
