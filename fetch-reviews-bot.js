@@ -65,29 +65,39 @@ async function runScraper() {
         const { items } = await client.dataset(run.defaultDatasetId).listItems();
 
         if (items && items.length > 0) {
-            const placeData = items[0];
-            const rawReviews = placeData.reviews || items;
+            // Deteksi otomatis struktur data Apify (apakah langsung array review atau objek tempat)
+            let rawReviews = items;
+            let totalScore = 5.0;
+            let reviewsCount = 41;
+
+            if (items[0].reviews && Array.isArray(items[0].reviews)) {
+                rawReviews = items[0].reviews;
+                totalScore = items[0].totalScore || 5.0;
+                reviewsCount = items[0].reviewsCount || 41;
+            } else if (items[0].totalScore) {
+                totalScore = items[0].totalScore;
+                reviewsCount = items[0].reviewsCount || 41;
+            }
 
             const formattedReviews = rawReviews.slice(0, 10).map(review => ({
                 author: review.name || review.authorName || 'Pengguna Google',
                 rating: review.stars || review.rating || 5,
                 time: timeAgo(review.relativePublishDate || review.publishedAtDate),
                 text: review.text || review.comment || '',
-                // Kosongkan foto jika ulasan tidak memiliki foto pribadi, mencegah duplikat gambar acak
                 photos: (review.reviewImageUrls && review.reviewImageUrls.length > 0) 
                     ? review.reviewImageUrls 
-                    : []
+                    : (review.reviewPhotos || review.photos || [])
             }));
 
-            // Struktur output lengkap: Menyediakan rating, total ulasan, dan array reviews
+            // Struktur output stabil yang berisi rating, total ulasan, dan array reviews
             const outputData = {
-                rating: placeData.totalScore || 5.0,
-                totalReviews: placeData.reviewsCount || formattedReviews.length,
+                rating: totalScore,
+                totalReviews: reviewsCount,
                 reviews: formattedReviews
             };
 
             fs.writeFileSync('reviews.json', JSON.stringify(outputData, null, 2), 'utf-8');
-            console.log('Berhasil! File reviews.json telah diperbarui dengan data lengkap dan stabil.');
+            console.log('Berhasil! File reviews.json telah diperbarui dengan data stabil.');
         } else {
             console.log('Tidak ada data ulasan yang ditemukan.');
         }
