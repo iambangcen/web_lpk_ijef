@@ -73,12 +73,12 @@ async function runScraper() {
             const formattedReviews = rawReviews.slice(0, 10).map(review => ({
                 author: review.name || review.authorName || 'Pengguna Google',
                 rating: review.stars || review.rating || 5,
-                // Ubah waktu mentah menjadi format relatif Bahasa Indonesia
                 time: timeAgo(review.relativePublishDate || review.publishedAtDate),
                 text: review.text || review.comment || '',
-                photos: (review.reviewImageUrls && review.reviewImageUrls.length > 0) 
-                    ? review.reviewImageUrls 
-                    : (review.imageUrl ? [review.imageUrl] : [])
+                // Pastikan hanya ambil jika ada foto spesifik milik review itu sendiri
+                photos: (review.photos && Array.isArray(review.photos) && review.photos.length > 0 && typeof review.photos[0] === 'string') 
+                    ? [review.photos[0]] 
+                    : (review.reviewImageUrls && review.reviewImageUrls.length > 0 ? [review.reviewImageUrls[0]] : [])
             }));
 
             const outputData = {
