@@ -13,7 +13,7 @@ async function runScraper() {
         // Input konfigurasi untuk aktor Google Maps Reviews Scraper di Apify
         // Sesuaikan 'searchStrings' dengan nama bisnis dan lokasi Anda
         const input = {
-            "searchStringsArray": ["LPK IJEF Corp Bandung Barat"],
+            "searchStringsArray": ["LPK IJEF CORP International Japan Eco Future Corp"],
             "maxReviews": 10, // Ambil 10 ulasan terbaru
             "reviewsSort": "newest", // Urutkan dari yang paling baru
             "language": "id",
