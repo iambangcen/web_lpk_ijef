@@ -9,7 +9,6 @@ const client = new ApifyClient({
 function timeAgo(dateString) {
     if (!dateString) return 'Baru-baru ini';
     
-    // Jika dari apify sudah berupa teks relatif (misal: "2 weeks ago"), kita terjemahkan atau gunakan
     if (!dateString.includes('T') && !dateString.includes('-')) {
         let text = dateString.toLowerCase();
         if (text.includes('day') || text.includes('hari')) {
@@ -31,7 +30,6 @@ function timeAgo(dateString) {
         return dateString;
     }
 
-    // Konversi jika formatnya tanggal ISO (misal: 2026-10-22T...)
     const date = new Date(dateString);
     const now = new Date();
     const diffTime = Math.abs(now - date);
@@ -75,18 +73,19 @@ async function runScraper() {
                 rating: review.stars || review.rating || 5,
                 time: timeAgo(review.relativePublishDate || review.publishedAtDate),
                 text: review.text || review.comment || '',
-                // Pastikan hanya ambil jika ada foto spesifik milik review itu sendiri
-                photos: (review.photos && Array.isArray(review.photos) && review.photos.length > 0 && typeof review.photos[0] === 'string') 
-                    ? [review.photos[0]] 
-                    : (review.reviewImageUrls && review.reviewImageUrls.length > 0 ? [review.reviewImageUrls[0]] : [])
+                // Kosongkan foto jika ulasan tidak memiliki foto pribadi, mencegah duplikat gambar acak
+                photos: (review.reviewImageUrls && review.reviewImageUrls.length > 0) 
+                    ? review.reviewImageUrls 
+                    : []
             }));
 
+            // WAJIB dibungkus objek { reviews: [...] } agar cocok dengan script.js frontend (menghindari error .slice)
             const outputData = {
                 reviews: formattedReviews
             };
 
             fs.writeFileSync('reviews.json', JSON.stringify(outputData, null, 2), 'utf-8');
-            console.log('Berhasil! File reviews.json telah diperbarui dengan waktu relatif.');
+            console.log('Berhasil! File reviews.json telah diperbarui.');
         } else {
             console.log('Tidak ada data ulasan yang ditemukan.');
         }
