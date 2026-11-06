@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <ul class="nav-links" id="nav-links">
         <li class="sidebar-header">
           <div class="logo-wrapper">
-            <img src="${assetPath}ijef-logo-small.png" alt="Logo LPK IJEF" class="sidebar-logo">
+            <img src="${assetPath}favicon.ico" alt="Logo LPK IJEF" class="sidebar-logo">
           </div>
           <button class="close-btn" id="close-btn"><i class="fa-solid fa-xmark"></i></button>
         </li>
