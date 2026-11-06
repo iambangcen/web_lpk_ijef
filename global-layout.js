@@ -5,6 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const pagePrefix = isInSubfolder ? "../" : "";
 
   // ==========================================
+  // INJEKSI OTOMATIS FAVICON KE HEAD
+  // ==========================================
+  const existingFavicon = document.querySelector("link[rel*='icon']");
+  if (!existingFavicon) {
+    const faviconLink = document.createElement('link');
+    faviconLink.rel = 'icon';
+    faviconLink.type = 'image/png';
+    faviconLink.href = `${assetPath}favicon.ico`; // Menggunakan logo kecil yang sudah ada di folder assets
+    document.head.appendChild(faviconLink);
+  }
+
+  // ==========================================
   // FUNGSI UTAMA PENERJEMAH (APPLY TRANSLATIONS)
   // ==========================================
   function applyTranslations() {
@@ -412,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
           <ul class="submenu">
             <li><a href="${pagePrefix}bidang-kerja.html" data-i18n="nav_bidang_kerja">Bidang Kerja</a></li>
-            <li><a href="${pagePrefix}timeline-akademik.html" data-i18n="nav_timeline_akademik">Timeline Akademik</a></li> <!-- TAMBAHAN DI SINI -->
+            <li><a href="${pagePrefix}timeline-akademik.html" data-i18n="nav_timeline_akademik">Timeline Akademik</a></li>
             
             <li class="dropdown-sub dropdown-sub-down">
               <a href="#" class="dropdown-toggle-sub">
@@ -522,7 +534,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   </div>
               </div>
               <div class="footer-bottom">
-                  <p>&copy; 2026 v1.3 <span>LPK IJEF Corp.</span> All rights reserved.</p>
+                  <p>© 2026 v1.3 <span>LPK IJEF Corp.</span> All rights reserved.</p>
               </div>
           </div>
       </footer>
@@ -542,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const adminModalHTML = `
   <div class="admin-modal-overlay" id="adminModal">
     <div class="admin-modal-box">
-      <button class="admin-modal-close" id="closeAdminModal">&times;</button>
+      <button class="admin-modal-close" id="closeAdminModal">×</button>
       
       <div class="admin-modal-header">
         <div class="admin-modal-icon-wrapper">
