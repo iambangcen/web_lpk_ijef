@@ -1,11 +1,20 @@
 {
   "rating": 5,
-  "totalReviews": 41,
+  "totalReviews": 42,
   "reviews": [
+    {
+      "author": "Asti Setiasih",
+      "rating": 5,
+      "time": "Baru-baru ini",
+      "text": "Sangat senang dan bangga bisa jadi bagian dari lpk ijef 🫶🏻",
+      "photos": [
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLcJIRcn98N0OM2AhMePW-MxcgFMuiKITsjtHG2iGluj59DazTH1XV2VK_m3Il25kKDLLBQe5BB10dJ4FmOdzWKk44EkLney9odVn_9Qn5Md5nu6zWGtnnHnK-OjTE0g0pWoajMagu2N2s_I=k-no"
+      ]
+    },
     {
       "author": "Ubi Manis",
       "rating": 5,
-      "time": "28 hari yang lalu",
+      "time": "29 hari yang lalu",
       "text": "awal 2026 tau LPK IJEF CORP karena ada tetangga yang ikut pelatihan juga, tanpa pikir lama langsung ikut pelatihannya. pembelajaran kurang lebih 6 bulan aja udah bisa proses matching job, sekarang tinggal nunggu berangkat ke Jepang yuhuu",
       "photos": []
     },
@@ -55,7 +64,7 @@
       "time": "3 bulan yang lalu",
       "text": "yattaa tanggal 31 berangkattt",
       "photos": [
-        "https://lh3.googleusercontent.com/grass-cs/AABkmLeOgn_1iS9ZYAiWZAo6CeKj57pThXr7EV-iKPR6Z1s6Uxw3ExeuPpRreFMsQ4QUSzIkxIj6KvMq4xV19diIuRAABa2iGCoscPl2wQgQq3aL_HjUTC_-ZBMNEo8xDZwvWwjeKUYFw70VsyJk=k-no"
+        "https://lh3.googleusercontent.com/grass-cs/AABkmLcmGS7BK3K3TGfq9UtcnEY1mSbi1TNAMJEfIuH84uZno2dTRxqU2cZoeWA2vDoPXu8gaH74mEZNsh0G_J6RgdBGYqo91aub7KUxVP6GxdpDDpbiKkRb-K7mDx3TzmCtAZ8ANcdFy8SDz0tR=k-no"
       ]
     },
     {
@@ -70,13 +79,6 @@
       "rating": 5,
       "time": "4 bulan yang lalu",
       "text": "alhamdulillah di lpk ijeff cepett berangkattt, dari belajar sampai berangkat di urusin semuanya🤲",
-      "photos": []
-    },
-    {
-      "author": "MUHAMAD ILYAS SODIKIN",
-      "rating": 5,
-      "time": "6 bulan yang lalu",
-      "text": "すごいいいいい",
       "photos": []
     }
   ]
